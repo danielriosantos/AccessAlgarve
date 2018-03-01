@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BFB7FBD4204832BC000522E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FBD3204832BC000522E8 /* AppDelegate.swift */; };
+		BFB7FBD6204832BC000522E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FBD5204832BC000522E8 /* ViewController.swift */; };
+		BFB7FBD9204832BC000522E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB7FBD7204832BC000522E8 /* Main.storyboard */; };
+		BFB7FBDB204832BC000522E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB7FBDA204832BC000522E8 /* Assets.xcassets */; };
+		BFB7FBDE204832BC000522E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB7FBDC204832BC000522E8 /* LaunchScreen.storyboard */; };
+		BFB7FBE9204832BC000522E8 /* Access_Algarve_LightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FBE8204832BC000522E8 /* Access_Algarve_LightTests.swift */; };
+		BFB7FBF4204832BC000522E8 /* Access_Algarve_LightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FBF3204832BC000522E8 /* Access_Algarve_LightUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BFB7FBE5204832BC000522E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFB7FBC8204832BC000522E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFB7FBCF204832BC000522E8;
+			remoteInfo = "Access Algarve Light";
+		};
+		BFB7FBF0204832BC000522E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFB7FBC8204832BC000522E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFB7FBCF204832BC000522E8;
+			remoteInfo = "Access Algarve Light";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BFB7FBD0204832BC000522E8 /* Access Algarve Light.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Access Algarve Light.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB7FBD3204832BC000522E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BFB7FBD5204832BC000522E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BFB7FBD8204832BC000522E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BFB7FBDA204832BC000522E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFB7FBDD204832BC000522E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BFB7FBDF204832BC000522E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFB7FBE4204832BC000522E8 /* Access Algarve LightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Access Algarve LightTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB7FBE8204832BC000522E8 /* Access_Algarve_LightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Access_Algarve_LightTests.swift; sourceTree = "<group>"; };
+		BFB7FBEA204832BC000522E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFB7FBEF204832BC000522E8 /* Access Algarve LightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Access Algarve LightUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB7FBF3204832BC000522E8 /* Access_Algarve_LightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Access_Algarve_LightUITests.swift; sourceTree = "<group>"; };
+		BFB7FBF5204832BC000522E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFB7FBCD204832BC000522E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB7FBE1204832BC000522E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB7FBEC204832BC000522E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BFB7FBC7204832BC000522E8 = {
+			isa = PBXGroup;
+			children = (
+				BFB7FBD2204832BC000522E8 /* Access Algarve Light */,
+				BFB7FBE7204832BC000522E8 /* Access Algarve LightTests */,
+				BFB7FBF2204832BC000522E8 /* Access Algarve LightUITests */,
+				BFB7FBD1204832BC000522E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BFB7FBD1204832BC000522E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFB7FBD0204832BC000522E8 /* Access Algarve Light.app */,
+				BFB7FBE4204832BC000522E8 /* Access Algarve LightTests.xctest */,
+				BFB7FBEF204832BC000522E8 /* Access Algarve LightUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFB7FBD2204832BC000522E8 /* Access Algarve Light */ = {
+			isa = PBXGroup;
+			children = (
+				BFB7FBD3204832BC000522E8 /* AppDelegate.swift */,
+				BFB7FBD5204832BC000522E8 /* ViewController.swift */,
+				BFB7FBD7204832BC000522E8 /* Main.storyboard */,
+				BFB7FBDA204832BC000522E8 /* Assets.xcassets */,
+				BFB7FBDC204832BC000522E8 /* LaunchScreen.storyboard */,
+				BFB7FBDF204832BC000522E8 /* Info.plist */,
+			);
+			path = "Access Algarve Light";
+			sourceTree = "<group>";
+		};
+		BFB7FBE7204832BC000522E8 /* Access Algarve LightTests */ = {
+			isa = PBXGroup;
+			children = (
+				BFB7FBE8204832BC000522E8 /* Access_Algarve_LightTests.swift */,
+				BFB7FBEA204832BC000522E8 /* Info.plist */,
+			);
+			path = "Access Algarve LightTests";
+			sourceTree = "<group>";
+		};
+		BFB7FBF2204832BC000522E8 /* Access Algarve LightUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BFB7FBF3204832BC000522E8 /* Access_Algarve_LightUITests.swift */,
+				BFB7FBF5204832BC000522E8 /* Info.plist */,
+			);
+			path = "Access Algarve LightUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFB7FBCF204832BC000522E8 /* Access Algarve Light */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFB7FBF8204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve Light" */;
+			buildPhases = (
+				BFB7FBCC204832BC000522E8 /* Sources */,
+				BFB7FBCD204832BC000522E8 /* Frameworks */,
+				BFB7FBCE204832BC000522E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Access Algarve Light";
+			productName = "Access Algarve Light";
+			productReference = BFB7FBD0204832BC000522E8 /* Access Algarve Light.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BFB7FBE3204832BC000522E8 /* Access Algarve LightTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFB7FBFB204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve LightTests" */;
+			buildPhases = (
+				BFB7FBE0204832BC000522E8 /* Sources */,
+				BFB7FBE1204832BC000522E8 /* Frameworks */,
+				BFB7FBE2204832BC000522E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFB7FBE6204832BC000522E8 /* PBXTargetDependency */,
+			);
+			name = "Access Algarve LightTests";
+			productName = "Access Algarve LightTests";
+			productReference = BFB7FBE4204832BC000522E8 /* Access Algarve LightTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BFB7FBEE204832BC000522E8 /* Access Algarve LightUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFB7FBFE204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve LightUITests" */;
+			buildPhases = (
+				BFB7FBEB204832BC000522E8 /* Sources */,
+				BFB7FBEC204832BC000522E8 /* Frameworks */,
+				BFB7FBED204832BC000522E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFB7FBF1204832BC000522E8 /* PBXTargetDependency */,
+			);
+			name = "Access Algarve LightUITests";
+			productName = "Access Algarve LightUITests";
+			productReference = BFB7FBEF204832BC000522E8 /* Access Algarve LightUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFB7FBC8204832BC000522E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Daniel Santos";
+				TargetAttributes = {
+					BFB7FBCF204832BC000522E8 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					BFB7FBE3204832BC000522E8 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BFB7FBCF204832BC000522E8;
+					};
+					BFB7FBEE204832BC000522E8 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BFB7FBCF204832BC000522E8;
+					};
+				};
+			};
+			buildConfigurationList = BFB7FBCB204832BC000522E8 /* Build configuration list for PBXProject "Access Algarve Light" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BFB7FBC7204832BC000522E8;
+			productRefGroup = BFB7FBD1204832BC000522E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFB7FBCF204832BC000522E8 /* Access Algarve Light */,
+				BFB7FBE3204832BC000522E8 /* Access Algarve LightTests */,
+				BFB7FBEE204832BC000522E8 /* Access Algarve LightUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFB7FBCE204832BC000522E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB7FBDE204832BC000522E8 /* LaunchScreen.storyboard in Resources */,
+				BFB7FBDB204832BC000522E8 /* Assets.xcassets in Resources */,
+				BFB7FBD9204832BC000522E8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB7FBE2204832BC000522E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB7FBED204832BC000522E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFB7FBCC204832BC000522E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB7FBD6204832BC000522E8 /* ViewController.swift in Sources */,
+				BFB7FBD4204832BC000522E8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB7FBE0204832BC000522E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB7FBE9204832BC000522E8 /* Access_Algarve_LightTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB7FBEB204832BC000522E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB7FBF4204832BC000522E8 /* Access_Algarve_LightUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BFB7FBE6204832BC000522E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFB7FBCF204832BC000522E8 /* Access Algarve Light */;
+			targetProxy = BFB7FBE5204832BC000522E8 /* PBXContainerItemProxy */;
+		};
+		BFB7FBF1204832BC000522E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFB7FBCF204832BC000522E8 /* Access Algarve Light */;
+			targetProxy = BFB7FBF0204832BC000522E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BFB7FBD7204832BC000522E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFB7FBD8204832BC000522E8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BFB7FBDC204832BC000522E8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFB7FBDD204832BC000522E8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BFB7FBF6204832BC000522E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BFB7FBF7204832BC000522E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFB7FBF9204832BC000522E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 62DFZMQT4A;
+				INFOPLIST_FILE = "Access Algarve Light/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.danielriosantos.Access-Algarve-Light";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BFB7FBFA204832BC000522E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 62DFZMQT4A;
+				INFOPLIST_FILE = "Access Algarve Light/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.danielriosantos.Access-Algarve-Light";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BFB7FBFC204832BC000522E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 62DFZMQT4A;
+				INFOPLIST_FILE = "Access Algarve LightTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.danielriosantos.Access-Algarve-LightTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Access Algarve Light.app/Access Algarve Light";
+			};
+			name = Debug;
+		};
+		BFB7FBFD204832BC000522E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 62DFZMQT4A;
+				INFOPLIST_FILE = "Access Algarve LightTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.danielriosantos.Access-Algarve-LightTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Access Algarve Light.app/Access Algarve Light";
+			};
+			name = Release;
+		};
+		BFB7FBFF204832BC000522E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 62DFZMQT4A;
+				INFOPLIST_FILE = "Access Algarve LightUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.danielriosantos.Access-Algarve-LightUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Access Algarve Light";
+			};
+			name = Debug;
+		};
+		BFB7FC00204832BC000522E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 62DFZMQT4A;
+				INFOPLIST_FILE = "Access Algarve LightUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.danielriosantos.Access-Algarve-LightUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Access Algarve Light";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFB7FBCB204832BC000522E8 /* Build configuration list for PBXProject "Access Algarve Light" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB7FBF6204832BC000522E8 /* Debug */,
+				BFB7FBF7204832BC000522E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFB7FBF8204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve Light" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB7FBF9204832BC000522E8 /* Debug */,
+				BFB7FBFA204832BC000522E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFB7FBFB204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve LightTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB7FBFC204832BC000522E8 /* Debug */,
+				BFB7FBFD204832BC000522E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFB7FBFE204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve LightUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFB7FBFF204832BC000522E8 /* Debug */,
+				BFB7FC00204832BC000522E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFB7FBC8204832BC000522E8 /* Project object */;
+}
