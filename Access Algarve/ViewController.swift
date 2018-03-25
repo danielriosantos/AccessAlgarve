@@ -44,6 +44,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             outletDetailsViewController.outlet = self.outlet
             outletDetailsViewController.currentLocation = currentLocation
             outletDetailsViewController.previousVC = "main"
+        } else if segueidentifier == "showFavourites" {
+            guard let favouritesViewController = segue.destination as? FavouritesViewController else {return}
+            favouritesViewController.currentLocation = currentLocation
         } else {
             guard let outletsViewController = segue.destination as? OutletsViewController else {return}
             switch segueidentifier {

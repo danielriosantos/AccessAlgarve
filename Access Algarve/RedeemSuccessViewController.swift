@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
 
-class RedeemSuccessViewController: UIViewController {
+class RedeemSuccessViewController: UIViewController, CLLocationManagerDelegate {
 
+    let locationManager: CLLocationManager = CLLocationManager()
+    var currentLocation: CLLocation!
+    
     @IBOutlet weak var voucherBackground: UIImageView!
     @IBOutlet weak var smileImage: UIImageView!
     @IBOutlet weak var redeemCongrats: UILabel!
@@ -26,7 +30,13 @@ class RedeemSuccessViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.locationManager.delegate = self
 
+        //: Handle location
+        locationManager.startUpdatingLocation()
+        locationManager.distanceFilter = 100
+        
         //: Set Colors
         var currentColor: UIColor
         var currentColorName: String
@@ -47,6 +57,19 @@ class RedeemSuccessViewController: UIViewController {
         redeemSuccessMessage.textColor = currentColor
         enjoyLabel.textColor = currentColor
 
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        for location in locations {
+            currentLocation = location
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       if segue.identifier == "showFavourites" {
+            guard let favouritesViewController = segue.destination as? FavouritesViewController else {return}
+            favouritesViewController.currentLocation = currentLocation
+        }
     }
 
 }

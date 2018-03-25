@@ -47,7 +47,7 @@
         <!--Home Page-->
         <scene sceneID="GyI-sQ-6wU">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="5aD-58-ZP2" userLabel="Home Page" customClass="ViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="5aD-58-ZP2" userLabel="Home Page" customClass="ViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2gt-Hx-sLO" userLabel="Main View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,7 +238,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="YEA-Fa-r0n"/>
                                     <barButtonItem image="heart-button-unselected" width="50" style="plain" id="Awb-Xe-1o4" userLabel="Favourites Button">
                                         <connections>
-                                            <segue destination="NAC-T3-ILt" kind="show" id="8PM-gX-RjR"/>
+                                            <segue destination="NAC-T3-ILt" kind="show" identifier="showFavourites" id="8PM-gX-RjR"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="bGU-Oi-d9x"/>
@@ -282,7 +282,7 @@
         <!--Outlets-->
         <scene sceneID="IxE-YF-rrb">
             <objects>
-                <viewController id="NTF-dz-AxD" userLabel="Outlets" customClass="OutletsViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NTF-dz-AxD" userLabel="Outlets" customClass="OutletsViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ikM-Qk-NBi" userLabel="Main View">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -396,7 +396,7 @@
                                 <color key="separatorColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="voucherCell" focusStyle="custom" rowHeight="110" id="Pct-xq-L4u" customClass="ViewControllerTableViewCell" customModule="Access_Algarve_Light" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="voucherCell" focusStyle="custom" rowHeight="110" id="Pct-xq-L4u" customClass="ViewControllerTableViewCell" customModule="Access_Algarve" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pct-xq-L4u" id="WNv-6C-s3E">
@@ -490,7 +490,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Gkq-Y6-uTM"/>
                                     <barButtonItem image="heart-button-unselected" width="50" style="plain" id="PnS-mY-BUg" userLabel="Favourites Button">
                                         <connections>
-                                            <segue destination="NAC-T3-ILt" kind="show" id="jLh-Kn-RyY"/>
+                                            <segue destination="NAC-T3-ILt" kind="show" identifier="showFavourites" id="jLh-Kn-RyY"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="5mP-am-jsg"/>
@@ -544,7 +544,7 @@
         <!--Outlet Details View Controller-->
         <scene sceneID="4FB-6Y-JKj">
             <objects>
-                <viewController id="nwR-33-Qoc" customClass="OutletDetailsViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nwR-33-Qoc" customClass="OutletDetailsViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q7z-cD-uuU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -621,7 +621,7 @@
                                             <constraint firstAttribute="height" constant="300" id="TZd-DE-aMk"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="voucherCell" rowHeight="111" id="zn1-ez-Uef" customClass="ViewControllerTableViewCell" customModule="Access_Algarve_Light" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="voucherCell" rowHeight="111" id="zn1-ez-Uef" customClass="ViewControllerTableViewCell" customModule="Access_Algarve" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zn1-ez-Uef" id="JN0-6E-l6h">
@@ -761,7 +761,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ObW-y9-ldn"/>
                                     <barButtonItem image="heart-button-unselected" width="50" style="plain" id="9qB-yl-PB9" userLabel="Favourites Button">
                                         <connections>
-                                            <segue destination="NAC-T3-ILt" kind="show" id="z0G-Cf-ReL"/>
+                                            <segue destination="NAC-T3-ILt" kind="show" identifier="showFavourites" id="z0G-Cf-ReL"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ytn-tH-bFC"/>
@@ -849,6 +849,7 @@
                         <outlet property="vouchersTableView" destination="naU-RL-ael" id="k8C-bw-Qev"/>
                         <segue destination="ZQQ-ox-C2r" kind="unwind" identifier="didUnwindFromOutletDetailsSegue" unwindAction="didUnwindFromVoucherDetailsController:" id="CRr-iw-iZy"/>
                         <segue destination="ZQQ-ox-C2r" kind="unwind" identifier="didUnwindFromOutletSegue" unwindAction="didUnwindFromVouchersController:" id="gls-xf-ytO"/>
+                        <segue destination="ZQQ-ox-C2r" kind="unwind" identifier="didUnwindToFavouritesSegue" unwindAction="unwindToFavouritesViewController:" id="Ak5-97-Drv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mE-ay-jrq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -859,7 +860,7 @@
         <!--Outlet Location-->
         <scene sceneID="ZAc-5e-15i">
             <objects>
-                <viewController id="ALL-HU-uFe" userLabel="Outlet Location" customClass="OutletLocationViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ALL-HU-uFe" userLabel="Outlet Location" customClass="OutletLocationViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GqO-Lr-OBb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -898,7 +899,7 @@
         <!--Redeem Voucher-->
         <scene sceneID="dtU-yS-l66">
             <objects>
-                <viewController id="HUz-sE-Qix" userLabel="Redeem Voucher" customClass="RedeemViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HUz-sE-Qix" userLabel="Redeem Voucher" customClass="RedeemViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="74w-v7-2Lp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1061,7 +1062,7 @@
         <!--Redeem Success-->
         <scene sceneID="ZU7-MW-Eec">
             <objects>
-                <viewController id="IA4-6f-UVi" userLabel="Redeem Success" customClass="RedeemSuccessViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IA4-6f-UVi" userLabel="Redeem Success" customClass="RedeemSuccessViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I8m-IQ-oL5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1112,7 +1113,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="QAy-Vd-uKQ"/>
                                     <barButtonItem image="heart-button-unselected" width="50" style="plain" id="ctv-lz-2OO" userLabel="Favourites Button">
                                         <connections>
-                                            <segue destination="NAC-T3-ILt" kind="show" id="UTE-Av-Thy"/>
+                                            <segue destination="NAC-T3-ILt" kind="show" identifier="showFavourites" id="UTE-Av-Thy"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rYJ-wh-giv"/>
@@ -1166,7 +1167,7 @@
         <!--Enter User Pin-->
         <scene sceneID="Tog-bN-Xl0">
             <objects>
-                <viewController id="usZ-pn-mlp" userLabel="Enter User Pin" customClass="RedeemPinUserViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="usZ-pn-mlp" userLabel="Enter User Pin" customClass="RedeemPinUserViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cB0-Sc-vBe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1327,7 +1328,7 @@
         <!--Enter Outlet Pin-->
         <scene sceneID="SZ7-ni-Jhl">
             <objects>
-                <viewController id="kHZ-n6-U4J" userLabel="Enter Outlet Pin" customClass="RedeemPinOutletViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kHZ-n6-U4J" userLabel="Enter Outlet Pin" customClass="RedeemPinOutletViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ZO-2f-Iig">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1506,7 +1507,7 @@
         <!--Log-in-->
         <scene sceneID="8B5-Aj-QlF">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="bJU-h1-1J1" userLabel="Log-in" customClass="LoginViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="bJU-h1-1J1" userLabel="Log-in" customClass="LoginViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y9s-YY-u3F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1715,7 +1716,7 @@
         <!--Profile-->
         <scene sceneID="is0-Iz-ylD">
             <objects>
-                <viewController id="DSi-Qn-oea" userLabel="Profile" customClass="UserProfileViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DSi-Qn-oea" userLabel="Profile" customClass="UserProfileViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xi9-Ot-Dkc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1864,7 +1865,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Vh5-iw-Hlr"/>
                                     <barButtonItem image="heart-button-unselected" width="50" style="plain" id="xgg-4z-7gk" userLabel="Favourites Button">
                                         <connections>
-                                            <segue destination="NAC-T3-ILt" kind="show" id="kUS-8y-cRe"/>
+                                            <segue destination="NAC-T3-ILt" kind="show" identifier="showFavourites" id="kUS-8y-cRe"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="R4J-QC-r3f"/>
@@ -1964,7 +1965,7 @@
         <!--Settings page-->
         <scene sceneID="uSC-YB-wmg">
             <objects>
-                <viewController id="jAQ-kB-HDz" userLabel="Settings page" customClass="SettingsViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jAQ-kB-HDz" userLabel="Settings page" customClass="SettingsViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qST-i3-vV3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2709,7 +2710,7 @@
         <!--Create Account-->
         <scene sceneID="hnx-7V-d0y">
             <objects>
-                <viewController id="UsM-1y-nH4" userLabel="Create Account" customClass="CreateAccountViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UsM-1y-nH4" userLabel="Create Account" customClass="CreateAccountViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iuG-Le-H1D">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2858,7 +2859,7 @@
         <!--User PIN-->
         <scene sceneID="Fo3-fk-v60">
             <objects>
-                <viewController id="z7R-u0-X77" userLabel="User PIN" customClass="SetUserPinViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="z7R-u0-X77" userLabel="User PIN" customClass="SetUserPinViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EMR-hJ-h6v">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2981,7 +2982,7 @@
         <!--Welcome page-->
         <scene sceneID="csF-la-kyg">
             <objects>
-                <viewController storyboardIdentifier="welcomepage" id="bE4-7L-d8t" userLabel="Welcome page" customClass="ViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="welcomepage" id="bE4-7L-d8t" userLabel="Welcome page" customClass="ViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wMv-Rq-ml2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3080,7 +3081,7 @@
         <!--Select 3 vouchers-->
         <scene sceneID="jho-bi-hRp">
             <objects>
-                <viewController id="CCv-Xg-qX7" userLabel="Select 3 vouchers" customClass="SelectInitialOffersViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CCv-Xg-qX7" userLabel="Select 3 vouchers" customClass="SelectInitialOffersViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YPz-TQ-cpV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3121,7 +3122,7 @@
                                 <rect key="frame" x="0.0" y="179" width="320" height="297"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="voucherCell" rowHeight="110" id="5V0-Yt-Bef" customClass="ViewControllerTableViewCell" customModule="Access_Algarve_Light" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="voucherCell" rowHeight="110" id="5V0-Yt-Bef" customClass="ViewControllerTableViewCell" customModule="Access_Algarve" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5V0-Yt-Bef" id="1k4-KC-5yo">
@@ -3249,7 +3250,7 @@
         <!--View Savings View Controller-->
         <scene sceneID="h1c-aQ-IKw">
             <objects>
-                <viewController id="CcK-rg-GJa" customClass="ViewSavingsViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CcK-rg-GJa" customClass="ViewSavingsViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bNJ-hz-0FF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3348,7 +3349,7 @@
         <!--Select Locations-->
         <scene sceneID="UHN-30-Soz">
             <objects>
-                <viewController id="Jwd-Eh-ySF" userLabel="Select Locations" customClass="SelectLocationsViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Jwd-Eh-ySF" userLabel="Select Locations" customClass="SelectLocationsViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yEX-lh-dAE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3409,7 +3410,7 @@
                                 <color key="separatorColor" white="0.67475043400000001" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="locationCell" id="ZTC-Sy-zLG" customClass="LocationsTableViewCell" customModule="Access_Algarve_Light" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="locationCell" id="ZTC-Sy-zLG" customClass="LocationsTableViewCell" customModule="Access_Algarve" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZTC-Sy-zLG" id="SvE-tL-rXT">
@@ -3492,7 +3493,7 @@
         <!--Forgot Password Pop Up-->
         <scene sceneID="s9E-KB-fb5">
             <objects>
-                <viewController id="heK-nI-BIJ" userLabel="Forgot Password Pop Up" customClass="ForgotPasswordViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="heK-nI-BIJ" userLabel="Forgot Password Pop Up" customClass="ForgotPasswordViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U3r-oO-0z6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3597,7 +3598,7 @@
         <!--Reset User PIN-->
         <scene sceneID="Fqi-Ar-57Q">
             <objects>
-                <viewController id="C2F-t9-ZSh" userLabel="Reset User PIN" customClass="ResetPinViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="C2F-t9-ZSh" userLabel="Reset User PIN" customClass="ResetPinViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BXC-hR-kMh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4769,7 +4770,7 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <!--Notification-->
         <scene sceneID="XIZ-l2-D1r">
             <objects>
-                <viewController id="z9g-8u-Ru5" userLabel="Notification" sceneMemberID="viewController">
+                <viewController id="z9g-8u-Ru5" userLabel="Notification" customClass="NotificationsViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nZL-0H-Wyy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1350"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4989,7 +4990,7 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="4hy-lu-Esr"/>
                                     <barButtonItem image="heart-button-unselected" width="50" style="plain" id="GjD-eM-DkB" userLabel="Favourites Button">
                                         <connections>
-                                            <segue destination="NAC-T3-ILt" kind="show" id="AFU-Sf-aSc"/>
+                                            <segue destination="NAC-T3-ILt" kind="show" identifier="showFavourites" id="AFU-Sf-aSc"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="JnE-qM-jnK"/>
@@ -5029,7 +5030,7 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <!--Favourites-->
         <scene sceneID="dZJ-DG-1CE">
             <objects>
-                <viewController id="NAC-T3-ILt" userLabel="Favourites" customClass="FavouritesViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NAC-T3-ILt" userLabel="Favourites" customClass="FavouritesViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Max-Fb-6Fl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5067,16 +5068,15 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
                                     <constraint firstItem="VU5-5v-qll" firstAttribute="top" secondItem="UHC-8X-e9R" secondAttribute="top" constant="8" id="io7-Xr-RHR"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PVh-fS-pwR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PVh-fS-pwR">
                                 <rect key="frame" x="0.0" y="90" width="320" height="434"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="385" id="h6r-TA-jBx"/>
                                 </constraints>
-                                <color key="separatorColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="voucherCell" focusStyle="custom" rowHeight="110" id="TmG-L8-0kr" customClass="ViewControllerTableViewCell" customModule="Access_Algarve_Light" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="voucherCell" focusStyle="custom" rowHeight="110" id="TmG-L8-0kr" customClass="ViewControllerTableViewCell" customModule="Access_Algarve" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TmG-L8-0kr" id="hgO-qp-7b4">
@@ -5154,6 +5154,7 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
                                             <outlet property="voucherLocation" destination="o6Y-gl-xeB" id="Y3U-qj-HiB"/>
                                             <outlet property="voucherOfferName" destination="HSJ-AV-2kH" id="NdB-tk-wlT"/>
                                             <outlet property="voucherOfferType" destination="Peu-0H-lKb" id="IBM-2l-LQm"/>
+                                            <segue destination="nwR-33-Qoc" kind="show" identifier="viewOfferSegue" id="wI1-2C-MP6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -5205,6 +5206,10 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y2D-aP-Gda"/>
                     </view>
+                    <connections>
+                        <outlet property="outletsTableView" destination="PVh-fS-pwR" id="IPC-ab-ZHp"/>
+                        <outlet property="totalSavingsLabel" destination="bMF-as-c8I" id="2pR-rA-etq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1g5-4w-1II" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -5213,7 +5218,7 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <!--Buy-->
         <scene sceneID="MV5-F0-wmV">
             <objects>
-                <viewController id="UhB-yz-zZM" userLabel="Buy" customClass="CartViewController" customModule="Access_Algarve_Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UhB-yz-zZM" userLabel="Buy" customClass="CartViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DbQ-nk-Pk6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5296,7 +5301,7 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="6az-UX-Y8U"/>
                                     <barButtonItem image="heart-button-unselected" width="50" style="plain" id="VfU-fS-9dz" userLabel="Favourites Button">
                                         <connections>
-                                            <segue destination="NAC-T3-ILt" kind="show" id="RLw-8M-U04"/>
+                                            <segue destination="NAC-T3-ILt" kind="show" identifier="showFavourites" id="RLw-8M-U04"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TBT-4T-pUg"/>
@@ -5620,13 +5625,13 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="P3m-fv-2cI"/>
-        <segue reference="z0G-Cf-ReL"/>
+        <segue reference="jLh-Kn-RyY"/>
         <segue reference="HdP-JN-6ul"/>
         <segue reference="nz3-f1-fUy"/>
         <segue reference="OSY-c6-j17"/>
         <segue reference="eep-6i-Jq9"/>
-        <segue reference="NOF-zz-TqB"/>
-        <segue reference="bhB-Co-xUU"/>
+        <segue reference="wI1-2C-MP6"/>
+        <segue reference="19M-3L-nDi"/>
         <segue reference="nWi-oV-6Hu"/>
     </inferredMetricsTieBreakers>
 </document>

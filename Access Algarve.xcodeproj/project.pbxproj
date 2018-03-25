@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		659AC37B2067F81200C3535B /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659AC37A2067F81200C3535B /* NotificationsViewController.swift */; };
 		BF388F7C205783F400117674 /* RedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF388F7B205783F400117674 /* RedeemViewController.swift */; };
 		BF388F7E20579FB900117674 /* RedeemPinUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF388F7D20579FB900117674 /* RedeemPinUserViewController.swift */; };
 		BF388F802057BBDD00117674 /* RedeemPinOutletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF388F7F2057BBDD00117674 /* RedeemPinOutletViewController.swift */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		659AC37A2067F81200C3535B /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		BF388F7B205783F400117674 /* RedeemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemViewController.swift; sourceTree = "<group>"; };
 		BF388F7D20579FB900117674 /* RedeemPinUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemPinUserViewController.swift; sourceTree = "<group>"; };
 		BF388F7F2057BBDD00117674 /* RedeemPinOutletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemPinOutletViewController.swift; sourceTree = "<group>"; };
@@ -94,17 +96,17 @@
 		BFA5190A206088440098859B /* SetUserPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUserPinViewController.swift; sourceTree = "<group>"; };
 		BFA5190C206175EA0098859B /* LocationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewCell.swift; sourceTree = "<group>"; };
 		BFA5190E2061774E0098859B /* SelectLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationsViewController.swift; sourceTree = "<group>"; };
-		BFB7FBD0204832BC000522E8 /* Access Algarve Light.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Access Algarve Light.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB7FBD0204832BC000522E8 /* Access Algarve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Access Algarve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB7FBD3204832BC000522E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB7FBD5204832BC000522E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BFB7FBD8204832BC000522E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFB7FBDA204832BC000522E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFB7FBDD204832BC000522E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFB7FBDF204832BC000522E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFB7FBE4204832BC000522E8 /* Access Algarve LightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Access Algarve LightTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB7FBE4204832BC000522E8 /* Access AlgarveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Access AlgarveTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB7FBE8204832BC000522E8 /* Access_Algarve_LightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Access_Algarve_LightTests.swift; sourceTree = "<group>"; };
 		BFB7FBEA204832BC000522E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFB7FBEF204832BC000522E8 /* Access Algarve LightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Access Algarve LightUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB7FBEF204832BC000522E8 /* Access AlgarveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Access AlgarveUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB7FBF3204832BC000522E8 /* Access_Algarve_LightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Access_Algarve_LightUITests.swift; sourceTree = "<group>"; };
 		BFB7FBF5204832BC000522E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFB7FC022048350B000522E8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -165,9 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				BFB7FC0720483BEF000522E8 /* Fonts */,
-				BFB7FBD2204832BC000522E8 /* Access Algarve Light */,
-				BFB7FBE7204832BC000522E8 /* Access Algarve LightTests */,
-				BFB7FBF2204832BC000522E8 /* Access Algarve LightUITests */,
+				BFB7FBD2204832BC000522E8 /* Access Algarve */,
+				BFB7FBE7204832BC000522E8 /* Access AlgarveTests */,
+				BFB7FBF2204832BC000522E8 /* Access AlgarveUITests */,
 				BFB7FBD1204832BC000522E8 /* Products */,
 				BFB7FC012048350B000522E8 /* Frameworks */,
 			);
@@ -176,14 +178,14 @@
 		BFB7FBD1204832BC000522E8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BFB7FBD0204832BC000522E8 /* Access Algarve Light.app */,
-				BFB7FBE4204832BC000522E8 /* Access Algarve LightTests.xctest */,
-				BFB7FBEF204832BC000522E8 /* Access Algarve LightUITests.xctest */,
+				BFB7FBD0204832BC000522E8 /* Access Algarve.app */,
+				BFB7FBE4204832BC000522E8 /* Access AlgarveTests.xctest */,
+				BFB7FBEF204832BC000522E8 /* Access AlgarveUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BFB7FBD2204832BC000522E8 /* Access Algarve Light */ = {
+		BFB7FBD2204832BC000522E8 /* Access Algarve */ = {
 			isa = PBXGroup;
 			children = (
 				BFB7FBD3204832BC000522E8 /* AppDelegate.swift */,
@@ -207,6 +209,7 @@
 				BF85BB93206401540089A9ED /* ForgotPasswordViewController.swift */,
 				BFC2E58F206766F50031836C /* FavouritesViewController.swift */,
 				BF85BB99206440530089A9ED /* CartViewController.swift */,
+				659AC37A2067F81200C3535B /* NotificationsViewController.swift */,
 				BFB7FC2E204895ED000522E8 /* ViewControllerTableViewCell.swift */,
 				BFA5190C206175EA0098859B /* LocationsTableViewCell.swift */,
 				BF75159E204E497A003591C0 /* DatabaseExtension.swift */,
@@ -216,25 +219,25 @@
 				BFB7FBDC204832BC000522E8 /* LaunchScreen.storyboard */,
 				BFB7FBDF204832BC000522E8 /* Info.plist */,
 			);
-			path = "Access Algarve Light";
+			path = "Access Algarve";
 			sourceTree = "<group>";
 		};
-		BFB7FBE7204832BC000522E8 /* Access Algarve LightTests */ = {
+		BFB7FBE7204832BC000522E8 /* Access AlgarveTests */ = {
 			isa = PBXGroup;
 			children = (
 				BFB7FBE8204832BC000522E8 /* Access_Algarve_LightTests.swift */,
 				BFB7FBEA204832BC000522E8 /* Info.plist */,
 			);
-			path = "Access Algarve LightTests";
+			path = "Access AlgarveTests";
 			sourceTree = "<group>";
 		};
-		BFB7FBF2204832BC000522E8 /* Access Algarve LightUITests */ = {
+		BFB7FBF2204832BC000522E8 /* Access AlgarveUITests */ = {
 			isa = PBXGroup;
 			children = (
 				BFB7FBF3204832BC000522E8 /* Access_Algarve_LightUITests.swift */,
 				BFB7FBF5204832BC000522E8 /* Info.plist */,
 			);
-			path = "Access Algarve LightUITests";
+			path = "Access AlgarveUITests";
 			sourceTree = "<group>";
 		};
 		BFB7FC012048350B000522E8 /* Frameworks */ = {
@@ -274,9 +277,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BFB7FBCF204832BC000522E8 /* Access Algarve Light */ = {
+		BFB7FBCF204832BC000522E8 /* Access Algarve */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BFB7FBF8204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve Light" */;
+			buildConfigurationList = BFB7FBF8204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve" */;
 			buildPhases = (
 				BFB7FBCC204832BC000522E8 /* Sources */,
 				BFB7FBCD204832BC000522E8 /* Frameworks */,
@@ -286,14 +289,14 @@
 			);
 			dependencies = (
 			);
-			name = "Access Algarve Light";
+			name = "Access Algarve";
 			productName = "Access Algarve Light";
-			productReference = BFB7FBD0204832BC000522E8 /* Access Algarve Light.app */;
+			productReference = BFB7FBD0204832BC000522E8 /* Access Algarve.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BFB7FBE3204832BC000522E8 /* Access Algarve LightTests */ = {
+		BFB7FBE3204832BC000522E8 /* Access AlgarveTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BFB7FBFB204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve LightTests" */;
+			buildConfigurationList = BFB7FBFB204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access AlgarveTests" */;
 			buildPhases = (
 				BFB7FBE0204832BC000522E8 /* Sources */,
 				BFB7FBE1204832BC000522E8 /* Frameworks */,
@@ -304,14 +307,14 @@
 			dependencies = (
 				BFB7FBE6204832BC000522E8 /* PBXTargetDependency */,
 			);
-			name = "Access Algarve LightTests";
+			name = "Access AlgarveTests";
 			productName = "Access Algarve LightTests";
-			productReference = BFB7FBE4204832BC000522E8 /* Access Algarve LightTests.xctest */;
+			productReference = BFB7FBE4204832BC000522E8 /* Access AlgarveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BFB7FBEE204832BC000522E8 /* Access Algarve LightUITests */ = {
+		BFB7FBEE204832BC000522E8 /* Access AlgarveUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BFB7FBFE204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve LightUITests" */;
+			buildConfigurationList = BFB7FBFE204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access AlgarveUITests" */;
 			buildPhases = (
 				BFB7FBEB204832BC000522E8 /* Sources */,
 				BFB7FBEC204832BC000522E8 /* Frameworks */,
@@ -322,9 +325,9 @@
 			dependencies = (
 				BFB7FBF1204832BC000522E8 /* PBXTargetDependency */,
 			);
-			name = "Access Algarve LightUITests";
+			name = "Access AlgarveUITests";
 			productName = "Access Algarve LightUITests";
-			productReference = BFB7FBEF204832BC000522E8 /* Access Algarve LightUITests.xctest */;
+			productReference = BFB7FBEF204832BC000522E8 /* Access AlgarveUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -358,7 +361,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BFB7FBCB204832BC000522E8 /* Build configuration list for PBXProject "Access Algarve Light" */;
+			buildConfigurationList = BFB7FBCB204832BC000522E8 /* Build configuration list for PBXProject "Access Algarve" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -371,9 +374,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BFB7FBCF204832BC000522E8 /* Access Algarve Light */,
-				BFB7FBE3204832BC000522E8 /* Access Algarve LightTests */,
-				BFB7FBEE204832BC000522E8 /* Access Algarve LightUITests */,
+				BFB7FBCF204832BC000522E8 /* Access Algarve */,
+				BFB7FBE3204832BC000522E8 /* Access AlgarveTests */,
+				BFB7FBEE204832BC000522E8 /* Access AlgarveUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -432,6 +435,7 @@
 				BFA519092060757A0098859B /* CreateAccountViewController.swift in Sources */,
 				BF85BB902062BFBA0089A9ED /* SelectInitialOffersViewController.swift in Sources */,
 				BF388F7E20579FB900117674 /* RedeemPinUserViewController.swift in Sources */,
+				659AC37B2067F81200C3535B /* NotificationsViewController.swift in Sources */,
 				BF75159F204E497A003591C0 /* DatabaseExtension.swift in Sources */,
 				BF85BB9A206440530089A9ED /* CartViewController.swift in Sources */,
 				BF85BB98206422FB0089A9ED /* UserProfileViewController.swift in Sources */,
@@ -478,12 +482,12 @@
 /* Begin PBXTargetDependency section */
 		BFB7FBE6204832BC000522E8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BFB7FBCF204832BC000522E8 /* Access Algarve Light */;
+			target = BFB7FBCF204832BC000522E8 /* Access Algarve */;
 			targetProxy = BFB7FBE5204832BC000522E8 /* PBXContainerItemProxy */;
 		};
 		BFB7FBF1204832BC000522E8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BFB7FBCF204832BC000522E8 /* Access Algarve Light */;
+			target = BFB7FBCF204832BC000522E8 /* Access Algarve */;
 			targetProxy = BFB7FBF0204832BC000522E8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -621,9 +625,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62DFZMQT4A;
-				INFOPLIST_FILE = "Access Algarve Light/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Access Algarve/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.danielriosantos.Access-Algarve-Light";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.danielriosantos.AccessAlgarve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -636,9 +640,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62DFZMQT4A;
-				INFOPLIST_FILE = "Access Algarve Light/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Access Algarve/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.danielriosantos.Access-Algarve-Light";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.danielriosantos.AccessAlgarve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -658,7 +662,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Access Algarve Light.app/Access Algarve Light";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Access Algarve.app/Access Algarve";
 			};
 			name = Debug;
 		};
@@ -675,7 +679,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Access Algarve Light.app/Access Algarve Light";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Access Algarve.app/Access Algarve";
 			};
 			name = Release;
 		};
@@ -714,7 +718,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BFB7FBCB204832BC000522E8 /* Build configuration list for PBXProject "Access Algarve Light" */ = {
+		BFB7FBCB204832BC000522E8 /* Build configuration list for PBXProject "Access Algarve" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BFB7FBF6204832BC000522E8 /* Debug */,
@@ -723,7 +727,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BFB7FBF8204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve Light" */ = {
+		BFB7FBF8204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BFB7FBF9204832BC000522E8 /* Debug */,
@@ -732,7 +736,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BFB7FBFB204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve LightTests" */ = {
+		BFB7FBFB204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access AlgarveTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BFB7FBFC204832BC000522E8 /* Debug */,
@@ -741,7 +745,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BFB7FBFE204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve LightUITests" */ = {
+		BFB7FBFE204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access AlgarveUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BFB7FBFF204832BC000522E8 /* Debug */,

@@ -142,6 +142,9 @@ class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 voucherDetailsViewController.currentLocation = currentLocation
                 voucherDetailsViewController.previousVC = "vouchers"
             }
+        } else if segue.identifier == "showFavourites" {
+            guard let favouritesViewController = segue.destination as? FavouritesViewController else {return}
+            favouritesViewController.currentLocation = currentLocation
         }
     }
     

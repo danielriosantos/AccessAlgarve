@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
 
-class UserProfileViewController: UIViewController {
+class UserProfileViewController: UIViewController, CLLocationManagerDelegate {
 
     var user: User!
+    let locationManager: CLLocationManager = CLLocationManager()
+    var currentLocation: CLLocation!
     
     @IBOutlet var userName: UILabel!
     @IBOutlet var userEmail: UILabel!
@@ -20,6 +23,14 @@ class UserProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.locationManager.delegate = self
+        
+        //: Handle location
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.distanceFilter = 100
+        
         let defaults = UserDefaults.standard
         if let savedUser = defaults.object(forKey: "SavedUser") as? Data {
             do {
@@ -33,8 +44,18 @@ class UserProfileViewController: UIViewController {
         
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        for location in locations {
+            currentLocation = location
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        guard let segueidentifier = segue.identifier else {return}
+        if segueidentifier == "showFavourites" {
+            guard let favouritesViewController = segue.destination as? FavouritesViewController else {return}
+            favouritesViewController.currentLocation = currentLocation
+        }
     }
     
     @IBAction func unwindToUserProfileViewController(_ segue: UIStoryboardSegue) {

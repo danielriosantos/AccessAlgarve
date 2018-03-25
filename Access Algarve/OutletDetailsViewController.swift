@@ -190,6 +190,9 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
                 redeemViewController.outlet = outlet
                 redeemViewController.offer = outlet.offers[selectedRow]
             }
+        } else if segue.identifier == "showFavourites" {
+            guard let favouritesViewController = segue.destination as? FavouritesViewController else {return}
+            favouritesViewController.currentLocation = currentLocation
         } else if segue.identifier == "viewOutletLocationSegue" {
             guard let outletLocationNavigationViewController = segue.destination as? UINavigationController else {return}
             guard let outletLocationViewController = outletLocationNavigationViewController.topViewController as? OutletLocationViewController else {return}
@@ -201,6 +204,8 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         switch previousVC {
         case "main":
             self.performSegue(withIdentifier: "didUnwindFromOutletSegue", sender: self)
+        case "favourites":
+            self.performSegue(withIdentifier: "didUnwindToFavouritesSegue", sender: self)
         default:
             self.performSegue(withIdentifier: "didUnwindFromOutletDetailsSegue", sender: self)
         }
