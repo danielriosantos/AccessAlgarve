@@ -16,6 +16,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let defaults = UserDefaults.standard
+        if let savedUser = defaults.object(forKey: "SavedUser") as? Data {
+            do {
+                let user = try User.decode(data: savedUser)
+                if user.status == 1 {
+                    let viewController: ViewController = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+                    self.window?.rootViewController = viewController
+                    self.window?.makeKeyAndVisible()
+                } else {
+                    let loginViewController: LoginViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                    self.window?.rootViewController = loginViewController
+                    self.window?.makeKeyAndVisible()
+                }
+            } catch {
+                let loginViewController: LoginViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                self.window?.rootViewController = loginViewController
+                self.window?.makeKeyAndVisible()
+            }
+        } else {
+            let loginViewController: LoginViewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            self.window?.rootViewController = loginViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
         return true
     }
 
