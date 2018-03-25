@@ -53,6 +53,7 @@
 		BFB7FC2D20483CE3000522E8 /* SinkinSans-600SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFB7FC1B20483CE2000522E8 /* SinkinSans-600SemiBold.ttf */; };
 		BFB7FC2F204895ED000522E8 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FC2E204895ED000522E8 /* ViewControllerTableViewCell.swift */; };
 		BFB7FC3520490101000522E8 /* OutletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FC3420490101000522E8 /* OutletsViewController.swift */; };
+		BFC2E590206766F50031836C /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2E58F206766F50031836C /* FavouritesViewController.swift */; };
 		BFF6263E205AFBF7000F9CAE /* RedeemSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF6263D205AFBF7000F9CAE /* RedeemSuccessViewController.swift */; };
 		BFF62642205B8FD8000F9CAE /* OutletLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF62641205B8FD8000F9CAE /* OutletLocationViewController.swift */; };
 		BFFA8956205C592100FC55B2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA8955205C592100FC55B2 /* Extensions.swift */; };
@@ -128,6 +129,7 @@
 		BFB7FC1B20483CE2000522E8 /* SinkinSans-600SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SinkinSans-600SemiBold.ttf"; sourceTree = "<group>"; };
 		BFB7FC2E204895ED000522E8 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		BFB7FC3420490101000522E8 /* OutletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletsViewController.swift; sourceTree = "<group>"; };
+		BFC2E58F206766F50031836C /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		BFF6263D205AFBF7000F9CAE /* RedeemSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemSuccessViewController.swift; sourceTree = "<group>"; };
 		BFF62641205B8FD8000F9CAE /* OutletLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletLocationViewController.swift; sourceTree = "<group>"; };
 		BFFA8955205C592100FC55B2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				BF837075205E13A9003B8D21 /* SettingsViewController.swift */,
 				BF85BB95206411610089A9ED /* ResetPinViewController.swift */,
 				BF85BB93206401540089A9ED /* ForgotPasswordViewController.swift */,
+				BFC2E58F206766F50031836C /* FavouritesViewController.swift */,
 				BF85BB99206440530089A9ED /* CartViewController.swift */,
 				BFB7FC2E204895ED000522E8 /* ViewControllerTableViewCell.swift */,
 				BFA5190C206175EA0098859B /* LocationsTableViewCell.swift */,
@@ -449,6 +452,7 @@
 				BFF6263E205AFBF7000F9CAE /* RedeemSuccessViewController.swift in Sources */,
 				BF388F802057BBDD00117674 /* RedeemPinOutletViewController.swift in Sources */,
 				BFFA8956205C592100FC55B2 /* Extensions.swift in Sources */,
+				BFC2E590206766F50031836C /* FavouritesViewController.swift in Sources */,
 				BF85BB922063DF990089A9ED /* ViewSavingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
