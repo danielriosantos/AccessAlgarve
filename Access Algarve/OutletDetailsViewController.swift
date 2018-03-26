@@ -206,6 +206,8 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             self.performSegue(withIdentifier: "didUnwindFromOutletSegue", sender: self)
         case "favourites":
             self.performSegue(withIdentifier: "didUnwindToFavouritesSegue", sender: self)
+        case "searchresults":
+            self.performSegue(withIdentifier: "didUnwindToSearchResultsSegue", sender: self)
         default:
             self.performSegue(withIdentifier: "didUnwindFromOutletDetailsSegue", sender: self)
         }

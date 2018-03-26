@@ -9,26 +9,43 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
     
     let locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
     
     @IBOutlet weak var linkbutton: UIButton!
+    @IBOutlet var searchBar: UISearchBar!
     
     var outlet: Outlet!
+    
+    // When button "Search" pressed
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+        self.dismissSearchBar()
+        self.performSegue(withIdentifier: "showSearchResultsSegue", sender: self)
+    }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissSearchBar))
+        
+        view.addGestureRecognizer(tap)
+        
         self.locationManager.delegate = self
+        self.searchBar.delegate = self
         
         //: Handle location
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.distanceFilter = 100
         
+    }
+    
+    @objc func dismissSearchBar() {
+        self.searchBar.endEditing(true)
+        self.searchBar.isHidden = true
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -47,6 +64,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         } else if segueidentifier == "showFavourites" {
             guard let favouritesViewController = segue.destination as? FavouritesViewController else {return}
             favouritesViewController.currentLocation = currentLocation
+        } else if segueidentifier == "showSearchResultsSegue" {
+            guard let searchResultsViewController = segue.destination as? SearchResultsViewController else {return}
+            let searchTerm = searchBar.text
+            searchResultsViewController.searchTerm = searchTerm
         } else {
             guard let outletsViewController = segue.destination as? OutletsViewController else {return}
             switch segueidentifier {
@@ -63,6 +84,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func didUnwindFromVouchersController(_ segue: UIStoryboardSegue) {
         
+    }
+    
+    @IBAction func searchButtonClicked(_ sender: UIButton) {
+        searchBar.isHidden = false
+        self.searchBar.becomeFirstResponder()
     }
     
     @IBAction func buttonClicked(_ sender: Any) {

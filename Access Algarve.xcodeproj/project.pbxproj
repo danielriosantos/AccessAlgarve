@@ -56,6 +56,7 @@
 		BFB7FC2F204895ED000522E8 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FC2E204895ED000522E8 /* ViewControllerTableViewCell.swift */; };
 		BFB7FC3520490101000522E8 /* OutletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FC3420490101000522E8 /* OutletsViewController.swift */; };
 		BFC2E590206766F50031836C /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2E58F206766F50031836C /* FavouritesViewController.swift */; };
+		BFDC2B1C20697FF400F22300 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDC2B1B20697FF400F22300 /* SearchResultsViewController.swift */; };
 		BFF6263E205AFBF7000F9CAE /* RedeemSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF6263D205AFBF7000F9CAE /* RedeemSuccessViewController.swift */; };
 		BFF62642205B8FD8000F9CAE /* OutletLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF62641205B8FD8000F9CAE /* OutletLocationViewController.swift */; };
 		BFFA8956205C592100FC55B2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA8955205C592100FC55B2 /* Extensions.swift */; };
@@ -134,6 +135,7 @@
 		BFB7FC2E204895ED000522E8 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		BFB7FC3420490101000522E8 /* OutletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletsViewController.swift; sourceTree = "<group>"; };
 		BFC2E58F206766F50031836C /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		BFDC2B1B20697FF400F22300 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		BFF6263D205AFBF7000F9CAE /* RedeemSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemSuccessViewController.swift; sourceTree = "<group>"; };
 		BFF62641205B8FD8000F9CAE /* OutletLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletLocationViewController.swift; sourceTree = "<group>"; };
 		BFFA8955205C592100FC55B2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				BF388F7D20579FB900117674 /* RedeemPinUserViewController.swift */,
 				BF388F7F2057BBDD00117674 /* RedeemPinOutletViewController.swift */,
 				BFF6263D205AFBF7000F9CAE /* RedeemSuccessViewController.swift */,
+				BFDC2B1B20697FF400F22300 /* SearchResultsViewController.swift */,
 				BFA519082060757A0098859B /* CreateAccountViewController.swift */,
 				BFA5190A206088440098859B /* SetUserPinViewController.swift */,
 				BFA5190E2061774E0098859B /* SelectLocationsViewController.swift */,
@@ -440,6 +443,7 @@
 				BF388F7E20579FB900117674 /* RedeemPinUserViewController.swift in Sources */,
 				659AC37B2067F81200C3535B /* NotificationsViewController.swift in Sources */,
 				BF75159F204E497A003591C0 /* DatabaseExtension.swift in Sources */,
+				BFDC2B1C20697FF400F22300 /* SearchResultsViewController.swift in Sources */,
 				BF85BB9A206440530089A9ED /* CartViewController.swift in Sources */,
 				BF85BB98206422FB0089A9ED /* UserProfileViewController.swift in Sources */,
 				BF85BB96206411620089A9ED /* ResetPinViewController.swift in Sources */,
