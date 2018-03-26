@@ -16,7 +16,9 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     let locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
     
-    @IBOutlet weak var notificationsTableView: UITableView!
+    
+    @IBOutlet var notificationsTableView: UITableView!
+    @IBOutlet var noNotificationsMessage: UILabel!
     let loadingView = UIView()
     let spinner = UIActivityIndicatorView()
     let loadingLabel = UILabel()
@@ -33,8 +35,9 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         // set up cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "notificationCell", for: indexPath) as! NotificationsTableViewCell
         DispatchQueue.main.async() {
-            if (self.appnotifications[indexPath.row].image_url != nil) {cell.notificationImage.downloadedFrom(link: "\(self.appnotifications[indexPath.row].image_url)")}
+            //if (self.appnotifications[indexPath.row].image_url != nil) {cell.notificationImage.downloadedFrom(link: "\(self.appnotifications[indexPath.row].image_url)")}
             cell.notificationTitle.text = self.appnotifications[indexPath.row].title
+            cell.notificationDescription.text = self.appnotifications[indexPath.row].description
         }
         
         return cell
@@ -43,7 +46,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //currentColor = invisible
+        currentColor = invisible
 
         self.notificationsTableView.delegate = self
         self.notificationsTableView.dataSource = self
@@ -74,17 +77,29 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
+    
+    @IBAction func okButtonClicked(_ sender: UIButton) {
+        guard let cell = sender.superview?.superview as? NotificationsTableViewCell else {return}
+        if let indexPath = notificationsTableView?.indexPath(for: cell) {
+            if appnotifications[indexPath.row].destination_url != nil {
+                if let url = URL(string: appnotifications[indexPath.row].destination_url) {
+                    UIApplication.shared.open(url, options: [:])
+                }
+            }
+        }
+    }
+    
     private func loadResults() -> Void {
         
         //let params = ["user_id": 1]
         getAPIResults(endpoint: "notifications", parameters:[:]) { data in
             do {
                 //: Load the results
-                let appnotificationstmp: [AppNotification]! = try [AppNotification].decode(data: data)
-                self.appnotifications = appnotificationstmp
+                self.appnotifications = try [AppNotification].decode(data: data)
                 DispatchQueue.main.async {
                     self.notificationsTableView.reloadData()
                     self.removeLoadingScreen()
+                    if self.appnotifications.count == 0 {self.noNotificationsMessage.isHidden = false}
                 }
             } catch {
                 print("Error decoding Notifications data")
@@ -97,7 +112,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     private func setLoadingScreen() {
         
         //Hide the tableView
-        //notificationsTableView.separatorColor = invisible
+        notificationsTableView.separatorColor = invisible
         
         // Sets the view which contains the loading text and the spinner
         let width: CGFloat = 120
@@ -132,7 +147,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         spinner.stopAnimating()
         spinner.isHidden = true
         loadingLabel.isHidden = true
-        //notificationsTableView.separatorColor = currentColor
+        notificationsTableView.separatorColor = currentColor
         
     }
 

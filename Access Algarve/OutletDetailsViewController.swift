@@ -107,9 +107,9 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         }
         
         //: Turn heart on if outlet belongs to user favourites
-        for userFavourite: UserFavourite in user.favourites {
+        if user.favourites != nil {for userFavourite: UserFavourite in user.favourites {
             if userFavourite.outlet_id == outlet.id {favoutiteButton.setImage(UIImage(named: "favourites-heart-icon-selected"), for: .normal)}
-        }
+            }}
         
         self.vouchersTableView.delegate = self
         self.vouchersTableView.dataSource = self

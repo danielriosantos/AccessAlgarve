@@ -55,9 +55,8 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
                     "name": name.text!,
                     "email": email.text!,
                     "password": password.text!,
-                    "country": country.text!,
-                    "status": 0
-                    ] as [String : Any]
+                    "country": country.text!
+                    ]
                 let encoder = JSONEncoder()
                 do {
                     let jsonData = try encoder.encode(parameters)
