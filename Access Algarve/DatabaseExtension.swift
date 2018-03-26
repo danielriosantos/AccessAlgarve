@@ -123,6 +123,21 @@ struct Location: Codable {
     var status: Bool!
 }
 
+struct AppNotification: Codable {
+    let id: Int
+    let user_id: Int!
+    let product_id: Int!
+    let merchant_id: Int!
+    let outlet_id: Int!
+    let offer_id: Int!
+    let title: String
+    let description: String!
+    let image_url: String!
+    let destination_url: String!
+    let created_at: String
+    let updated_at: String
+}
+
 struct KeyValuePair<T: Codable>: Codable {
     var key: String?
     var value: T?

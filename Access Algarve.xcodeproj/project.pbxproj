@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		659AC37B2067F81200C3535B /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659AC37A2067F81200C3535B /* NotificationsViewController.swift */; };
+		659AC37F2068119300C3535B /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659AC37E2068119300C3535B /* NotificationsTableViewCell.swift */; };
 		BF388F7C205783F400117674 /* RedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF388F7B205783F400117674 /* RedeemViewController.swift */; };
 		BF388F7E20579FB900117674 /* RedeemPinUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF388F7D20579FB900117674 /* RedeemPinUserViewController.swift */; };
 		BF388F802057BBDD00117674 /* RedeemPinOutletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF388F7F2057BBDD00117674 /* RedeemPinOutletViewController.swift */; };
@@ -79,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		659AC37A2067F81200C3535B /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		659AC37E2068119300C3535B /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
 		BF388F7B205783F400117674 /* RedeemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemViewController.swift; sourceTree = "<group>"; };
 		BF388F7D20579FB900117674 /* RedeemPinUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemPinUserViewController.swift; sourceTree = "<group>"; };
 		BF388F7F2057BBDD00117674 /* RedeemPinOutletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemPinOutletViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				659AC37A2067F81200C3535B /* NotificationsViewController.swift */,
 				BFB7FC2E204895ED000522E8 /* ViewControllerTableViewCell.swift */,
 				BFA5190C206175EA0098859B /* LocationsTableViewCell.swift */,
+				659AC37E2068119300C3535B /* NotificationsTableViewCell.swift */,
 				BF75159E204E497A003591C0 /* DatabaseExtension.swift */,
 				BFFA8955205C592100FC55B2 /* Extensions.swift */,
 				BFB7FBD7204832BC000522E8 /* Main.storyboard */,
@@ -456,6 +459,7 @@
 				BFF6263E205AFBF7000F9CAE /* RedeemSuccessViewController.swift in Sources */,
 				BF388F802057BBDD00117674 /* RedeemPinOutletViewController.swift in Sources */,
 				BFFA8956205C592100FC55B2 /* Extensions.swift in Sources */,
+				659AC37F2068119300C3535B /* NotificationsTableViewCell.swift in Sources */,
 				BFC2E590206766F50031836C /* FavouritesViewController.swift in Sources */,
 				BF85BB922063DF990089A9ED /* ViewSavingsViewController.swift in Sources */,
 			);
