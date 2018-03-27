@@ -3729,97 +3729,117 @@
         <!--History-->
         <scene sceneID="DUB-fC-QUG">
             <objects>
-                <viewController id="JJT-A3-MeB" userLabel="History" sceneMemberID="viewController">
+                <viewController id="JJT-A3-MeB" userLabel="History" customClass="PurchaseHistoryViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SL8-Md-efk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENd-Gz-GFa">
-                                <rect key="frame" x="20" y="20" width="12" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K47-ik-2eM">
+                                <rect key="frame" x="10" y="37" width="42" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="4zJ-6k-EL6"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <state key="normal" image="back"/>
                                 <connections>
-                                    <segue destination="kQ1-cD-qlj" kind="unwind" unwindAction="unwindToSettingsViewController:" id="Djo-Wg-I3v"/>
+                                    <segue destination="kQ1-cD-qlj" kind="unwind" unwindAction="unwindToSettingsViewController:" id="fuw-kQ-nSt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31I-ib-U7c">
-                                <rect key="frame" x="0.0" y="20" width="320" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlo-qX-ejG">
+                                <rect key="frame" x="70" y="40" width="180.5" height="18"/>
                                 <fontDescription key="fontDescription" name="SinkinSans-500Medium" family="Sinkin Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017 APP SUBSCRIPTION" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-68-jKy">
-                                <rect key="frame" x="161" y="81" width="159" height="30"/>
-                                <fontDescription key="fontDescription" name="SinkinSans-700Bold" family="Sinkin Sans" pointSize="15"/>
-                                <color key="textColor" red="0.8980392157" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All vouchers are valid until 30th Dec 2017" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xan-ut-BEH">
-                                <rect key="frame" x="161" y="119" width="159" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="sXU-ml-ouk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="11"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buy-app-image" translatesAutoresizingMaskIntoConstraints="NO" id="lJA-rE-ddF">
-                                <rect key="frame" x="17" y="71" width="136" height="84"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="8QE-Eu-GQW"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grey-line" translatesAutoresizingMaskIntoConstraints="NO" id="Z03-NZ-VDR">
-                                <rect key="frame" x="15" y="162" width="288" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="23" id="WcD-so-puR"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase Date: 12/01/2017" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wT1-DA-Ha3">
-                                <rect key="frame" x="15" y="193" width="305" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="rfc-Hd-IpS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10€" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDG-VY-7o6">
-                                <rect key="frame" x="274" y="196" width="42" height="15"/>
-                                <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xoh-nz-lTb">
+                                <rect key="frame" x="0.0" y="78" width="320" height="490"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="purchaseCell" focusStyle="custom" rowHeight="105" id="QY3-ji-iku" customClass="PurchaseHistoryTableViewCell" customModule="Access_Algarve" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="105"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QY3-ji-iku" id="o37-7A-zWy">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="104.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buy-app-image" translatesAutoresizingMaskIntoConstraints="NO" id="lJA-rE-ddF">
+                                                    <rect key="frame" x="10" y="5" width="127.5" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="lJA-rE-ddF" secondAttribute="height" multiplier="369:203" id="fkt-cX-DCE"/>
+                                                        <constraint firstAttribute="height" constant="70" id="gr2-nb-EQG"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017 APP SUBSCRIPTION" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-68-jKy">
+                                                    <rect key="frame" x="147.5" y="5" width="162.5" height="30"/>
+                                                    <fontDescription key="fontDescription" name="SinkinSans-700Bold" family="Sinkin Sans" pointSize="15"/>
+                                                    <color key="textColor" red="0.8980392157" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All vouchers are valid until 30th Dec 2017" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xan-ut-BEH">
+                                                    <rect key="frame" x="147" y="40" width="163" height="22"/>
+                                                    <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase Date: 12/01/2017" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wT1-DA-Ha3">
+                                                    <rect key="frame" x="10" y="85.5" width="300" height="14"/>
+                                                    <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10€" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDG-VY-7o6" userLabel="Product Price">
+                                                    <rect key="frame" x="10" y="84.5" width="300" height="15"/>
+                                                    <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ic1-68-jKy" firstAttribute="leading" secondItem="lJA-rE-ddF" secondAttribute="trailing" constant="10" id="0e7-im-7Nz"/>
+                                                <constraint firstItem="ic1-68-jKy" firstAttribute="top" secondItem="o37-7A-zWy" secondAttribute="top" constant="5" id="9EO-qH-Qq8"/>
+                                                <constraint firstAttribute="trailing" secondItem="tDG-VY-7o6" secondAttribute="trailing" constant="10" id="CcU-Qw-a3M"/>
+                                                <constraint firstItem="wT1-DA-Ha3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lJA-rE-ddF" secondAttribute="bottom" constant="8" id="D7N-Va-s1k"/>
+                                                <constraint firstItem="lJA-rE-ddF" firstAttribute="leading" secondItem="o37-7A-zWy" secondAttribute="leading" constant="10" id="FhQ-N5-AxF"/>
+                                                <constraint firstItem="wT1-DA-Ha3" firstAttribute="leading" secondItem="o37-7A-zWy" secondAttribute="leading" constant="10" id="IF0-G7-q5U"/>
+                                                <constraint firstItem="xan-ut-BEH" firstAttribute="top" secondItem="ic1-68-jKy" secondAttribute="bottom" constant="5" id="JsB-4c-p6M"/>
+                                                <constraint firstAttribute="trailing" secondItem="ic1-68-jKy" secondAttribute="trailing" constant="10" id="K42-Wa-Ywu"/>
+                                                <constraint firstAttribute="bottom" secondItem="tDG-VY-7o6" secondAttribute="bottom" constant="5" id="TjU-Li-BwM"/>
+                                                <constraint firstItem="xan-ut-BEH" firstAttribute="leading" secondItem="lJA-rE-ddF" secondAttribute="trailing" constant="10" id="WAb-rx-imf"/>
+                                                <constraint firstAttribute="trailing" secondItem="wT1-DA-Ha3" secondAttribute="trailing" constant="10" id="eGS-bj-2nS"/>
+                                                <constraint firstAttribute="trailing" secondItem="xan-ut-BEH" secondAttribute="trailing" constant="10" id="k1Y-8n-wfZ"/>
+                                                <constraint firstItem="lJA-rE-ddF" firstAttribute="top" secondItem="o37-7A-zWy" secondAttribute="top" constant="5" id="mya-Kh-TKX"/>
+                                                <constraint firstAttribute="bottom" secondItem="wT1-DA-Ha3" secondAttribute="bottom" constant="5" id="p1T-Tq-AB8"/>
+                                                <constraint firstItem="tDG-VY-7o6" firstAttribute="leading" secondItem="o37-7A-zWy" secondAttribute="leading" constant="10" id="zj3-5g-f4y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="productExpiry" destination="xan-ut-BEH" id="GhD-pJ-1oL"/>
+                                            <outlet property="productImage" destination="lJA-rE-ddF" id="MMz-zI-CWG"/>
+                                            <outlet property="productName" destination="ic1-68-jKy" id="IrM-Zz-dJ8"/>
+                                            <outlet property="productPrice" destination="tDG-VY-7o6" id="wtX-ud-7BZ"/>
+                                            <outlet property="purchaseDate" destination="wT1-DA-Ha3" id="3jD-YQ-1Y1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="e1s-5o-yFn" firstAttribute="trailing" secondItem="tDG-VY-7o6" secondAttribute="trailing" constant="4" id="3Br-I3-C26"/>
-                            <constraint firstAttribute="trailing" secondItem="31I-ib-U7c" secondAttribute="trailing" id="3Ht-L3-Aet"/>
-                            <constraint firstItem="wT1-DA-Ha3" firstAttribute="top" secondItem="Z03-NZ-VDR" secondAttribute="bottom" constant="8" symbolic="YES" id="3fZ-WW-1ZD"/>
-                            <constraint firstItem="tDG-VY-7o6" firstAttribute="leading" secondItem="e1s-5o-yFn" secondAttribute="leading" constant="274" id="7qW-sr-hLd"/>
-                            <constraint firstItem="31I-ib-U7c" firstAttribute="leading" secondItem="SL8-Md-efk" secondAttribute="leading" id="8xz-Dw-DHc"/>
-                            <constraint firstItem="ic1-68-jKy" firstAttribute="leading" secondItem="e1s-5o-yFn" secondAttribute="leading" constant="161" id="A9l-Z1-Osa"/>
-                            <constraint firstItem="ic1-68-jKy" firstAttribute="trailing" secondItem="xan-ut-BEH" secondAttribute="trailing" id="Iyx-Qa-ifh"/>
-                            <constraint firstItem="31I-ib-U7c" firstAttribute="bottom" secondItem="ENd-Gz-GFa" secondAttribute="bottom" id="Q6q-7Q-Bga"/>
-                            <constraint firstItem="lJA-rE-ddF" firstAttribute="bottom" secondItem="xan-ut-BEH" secondAttribute="bottom" id="QPl-pN-fPG"/>
-                            <constraint firstItem="31I-ib-U7c" firstAttribute="trailing" secondItem="ic1-68-jKy" secondAttribute="trailing" id="QRA-Am-4e1"/>
-                            <constraint firstItem="xan-ut-BEH" firstAttribute="top" secondItem="ic1-68-jKy" secondAttribute="bottom" constant="8" symbolic="YES" id="QTM-TU-gDp"/>
-                            <constraint firstItem="Z03-NZ-VDR" firstAttribute="leading" secondItem="e1s-5o-yFn" secondAttribute="leading" constant="15" id="Rkg-to-CQZ"/>
-                            <constraint firstItem="Z03-NZ-VDR" firstAttribute="top" secondItem="xan-ut-BEH" secondAttribute="bottom" constant="7" id="Vo0-GI-6qD"/>
-                            <constraint firstItem="ic1-68-jKy" firstAttribute="leading" secondItem="lJA-rE-ddF" secondAttribute="trailing" constant="8" symbolic="YES" id="WS4-5g-263"/>
-                            <constraint firstItem="wT1-DA-Ha3" firstAttribute="trailing" secondItem="xan-ut-BEH" secondAttribute="trailing" id="Z6F-QV-AI1"/>
-                            <constraint firstItem="wT1-DA-Ha3" firstAttribute="leading" secondItem="Z03-NZ-VDR" secondAttribute="leading" id="aSU-T9-Ukl"/>
-                            <constraint firstItem="31I-ib-U7c" firstAttribute="top" secondItem="ENd-Gz-GFa" secondAttribute="top" id="asW-t8-GKv"/>
-                            <constraint firstItem="31I-ib-U7c" firstAttribute="top" secondItem="e1s-5o-yFn" secondAttribute="top" id="dXQ-2T-N6a"/>
-                            <constraint firstItem="ic1-68-jKy" firstAttribute="top" secondItem="31I-ib-U7c" secondAttribute="bottom" constant="39" id="eas-kW-sUr"/>
-                            <constraint firstItem="e1s-5o-yFn" firstAttribute="trailing" secondItem="Z03-NZ-VDR" secondAttribute="trailing" constant="17" id="kuo-4c-laS"/>
-                            <constraint firstItem="tDG-VY-7o6" firstAttribute="top" secondItem="Z03-NZ-VDR" secondAttribute="bottom" constant="11" id="npk-SG-fxn"/>
-                            <constraint firstItem="lJA-rE-ddF" firstAttribute="leading" secondItem="e1s-5o-yFn" secondAttribute="leading" constant="17" id="sc2-em-8cm"/>
-                            <constraint firstItem="xan-ut-BEH" firstAttribute="top" secondItem="ic1-68-jKy" secondAttribute="bottom" constant="8" id="ven-UK-Nwc"/>
-                            <constraint firstItem="ENd-Gz-GFa" firstAttribute="leading" secondItem="e1s-5o-yFn" secondAttribute="leading" constant="20" id="yPW-LI-1rR"/>
-                            <constraint firstItem="ic1-68-jKy" firstAttribute="leading" secondItem="xan-ut-BEH" secondAttribute="leading" id="zFC-IH-ZQu"/>
+                            <constraint firstItem="Rlo-qX-ejG" firstAttribute="centerX" secondItem="SL8-Md-efk" secondAttribute="centerX" id="0zd-6D-o51"/>
+                            <constraint firstItem="Xoh-nz-lTb" firstAttribute="leading" secondItem="e1s-5o-yFn" secondAttribute="leading" id="7l7-ou-LIX"/>
+                            <constraint firstItem="e1s-5o-yFn" firstAttribute="trailing" secondItem="Xoh-nz-lTb" secondAttribute="trailing" id="R3Y-4T-eDh"/>
+                            <constraint firstItem="Rlo-qX-ejG" firstAttribute="top" secondItem="e1s-5o-yFn" secondAttribute="top" constant="20" id="ahQ-hw-I6l"/>
+                            <constraint firstItem="K47-ik-2eM" firstAttribute="top" secondItem="e1s-5o-yFn" secondAttribute="top" constant="17" id="d77-ik-fC6"/>
+                            <constraint firstItem="K47-ik-2eM" firstAttribute="leading" secondItem="e1s-5o-yFn" secondAttribute="leading" constant="10" id="daX-cj-Goe"/>
+                            <constraint firstItem="Xoh-nz-lTb" firstAttribute="top" secondItem="Rlo-qX-ejG" secondAttribute="bottom" constant="20" id="min-i9-cfh"/>
+                            <constraint firstItem="e1s-5o-yFn" firstAttribute="bottom" secondItem="Xoh-nz-lTb" secondAttribute="bottom" id="oBD-oD-bQ0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e1s-5o-yFn"/>
                     </view>
+                    <connections>
+                        <outlet property="purchasesTableView" destination="Xoh-nz-lTb" id="xmP-5W-dgx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Vi-5L-Dyq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kQ1-cD-qlj" userLabel="Exit" sceneMemberID="exit"/>

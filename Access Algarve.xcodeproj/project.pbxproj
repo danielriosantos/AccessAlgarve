@@ -15,6 +15,8 @@
 		BF3C80F5205D7DF1000FBCF8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C80F4205D7DF1000FBCF8 /* LoginViewController.swift */; };
 		BF75159F204E497A003591C0 /* DatabaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75159E204E497A003591C0 /* DatabaseExtension.swift */; };
 		BF7515A5204F127C003591C0 /* OutletDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7515A4204F127C003591C0 /* OutletDetailsViewController.swift */; };
+		BF834FA1206AAB4B00A1556D /* PurchaseHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF834FA0206AAB4B00A1556D /* PurchaseHistoryTableViewCell.swift */; };
+		BF834FA3206AAC8C00A1556D /* PurchaseHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF834FA2206AAC8C00A1556D /* PurchaseHistoryViewController.swift */; };
 		BF837076205E13A9003B8D21 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF837075205E13A9003B8D21 /* SettingsViewController.swift */; };
 		BF85BB902062BFBA0089A9ED /* SelectInitialOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85BB8F2062BFBA0089A9ED /* SelectInitialOffersViewController.swift */; };
 		BF85BB922063DF990089A9ED /* ViewSavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85BB912063DF990089A9ED /* ViewSavingsViewController.swift */; };
@@ -89,6 +91,8 @@
 		BF3C80F4205D7DF1000FBCF8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF75159E204E497A003591C0 /* DatabaseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseExtension.swift; sourceTree = "<group>"; };
 		BF7515A4204F127C003591C0 /* OutletDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletDetailsViewController.swift; sourceTree = "<group>"; };
+		BF834FA0206AAB4B00A1556D /* PurchaseHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		BF834FA2206AAC8C00A1556D /* PurchaseHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryViewController.swift; sourceTree = "<group>"; };
 		BF837075205E13A9003B8D21 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BF85BB8F2062BFBA0089A9ED /* SelectInitialOffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectInitialOffersViewController.swift; sourceTree = "<group>"; };
 		BF85BB912063DF990089A9ED /* ViewSavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSavingsViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 				BF85BB97206422FB0089A9ED /* UserProfileViewController.swift */,
 				BF837075205E13A9003B8D21 /* SettingsViewController.swift */,
 				BFCAD90F206A0518004F6742 /* UsedOffersViewController.swift */,
+				BF834FA2206AAC8C00A1556D /* PurchaseHistoryViewController.swift */,
 				BF85BB95206411610089A9ED /* ResetPinViewController.swift */,
 				BF85BB93206401540089A9ED /* ForgotPasswordViewController.swift */,
 				BFC2E58F206766F50031836C /* FavouritesViewController.swift */,
@@ -221,6 +226,7 @@
 				BFB7FC2E204895ED000522E8 /* ViewControllerTableViewCell.swift */,
 				BFA5190C206175EA0098859B /* LocationsTableViewCell.swift */,
 				659AC37E2068119300C3535B /* NotificationsTableViewCell.swift */,
+				BF834FA0206AAB4B00A1556D /* PurchaseHistoryTableViewCell.swift */,
 				BF75159E204E497A003591C0 /* DatabaseExtension.swift */,
 				BFFA8955205C592100FC55B2 /* Extensions.swift */,
 				BFB7FBD7204832BC000522E8 /* Main.storyboard */,
@@ -446,6 +452,7 @@
 				BF388F7E20579FB900117674 /* RedeemPinUserViewController.swift in Sources */,
 				659AC37B2067F81200C3535B /* NotificationsViewController.swift in Sources */,
 				BF75159F204E497A003591C0 /* DatabaseExtension.swift in Sources */,
+				BF834FA3206AAC8C00A1556D /* PurchaseHistoryViewController.swift in Sources */,
 				BFDC2B1C20697FF400F22300 /* SearchResultsViewController.swift in Sources */,
 				BF85BB9A206440530089A9ED /* CartViewController.swift in Sources */,
 				BF85BB98206422FB0089A9ED /* UserProfileViewController.swift in Sources */,
@@ -460,6 +467,7 @@
 				BF837076205E13A9003B8D21 /* SettingsViewController.swift in Sources */,
 				BFB7FBD4204832BC000522E8 /* AppDelegate.swift in Sources */,
 				BFB7FC2F204895ED000522E8 /* ViewControllerTableViewCell.swift in Sources */,
+				BF834FA1206AAB4B00A1556D /* PurchaseHistoryTableViewCell.swift in Sources */,
 				BF388F7C205783F400117674 /* RedeemViewController.swift in Sources */,
 				BFA5190B206088440098859B /* SetUserPinViewController.swift in Sources */,
 				BF7515A5204F127C003591C0 /* OutletDetailsViewController.swift in Sources */,

@@ -30,7 +30,7 @@ class UsedOffersViewController: UIViewController, UITableViewDelegate, UITableVi
         // set up cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "voucherCell", for: indexPath) as! ViewControllerTableViewCell
         DispatchQueue.main.async() {
-            switch self.user.favourites[indexPath.row].outlet.offers[0].offer_category_id {
+            switch self.user.redemptions[indexPath.row].offer.offer_category_id {
             case 1:
                 cell.voucherOfferName.textColor = self.pink
                 cell.voucherOfferType.textColor = self.pink
