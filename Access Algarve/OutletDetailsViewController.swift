@@ -188,7 +188,7 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
                 let selectedRow = indexPath.row
                 guard let redeemViewController = segue.destination as? RedeemViewController else {return}
                 redeemViewController.outlet = outlet
-                redeemViewController.offer = outlet.offers[selectedRow]
+                redeemViewController.offer = outletOffers[selectedRow]
             }
         } else if segue.identifier == "showFavourites" {
             guard let favouritesViewController = segue.destination as? FavouritesViewController else {return}

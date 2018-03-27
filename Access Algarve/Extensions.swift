@@ -11,6 +11,19 @@ import UIKit
 
 extension UIViewController {
     
+    public func loadUser(user_id: Int, completion: @escaping (User)->()) {
+        getAPIResults(endpoint: "users/" + String(user_id), parameters: [:]) { userData in
+            do {
+                let defaults = UserDefaults.standard
+                defaults.set(userData, forKey: "SavedUser")
+                let user: User = try User.decode(data: userData)
+                completion(user)
+            } catch {
+                print("Error decoding user from database")
+            }
+        }
+    }
+    
     public func getAPIResults(endpoint: String, parameters: [String:Any]?, completion: @escaping (Data)->()) {
         var querystring = "?"
         for (index, value) in parameters! {

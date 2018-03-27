@@ -67,6 +67,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         } else if segueidentifier == "showSearchResultsSegue" {
             guard let searchResultsViewController = segue.destination as? SearchResultsViewController else {return}
             let searchTerm = searchBar.text
+            searchResultsViewController.currentLocation = currentLocation
             searchResultsViewController.searchTerm = searchTerm
         } else {
             guard let outletsViewController = segue.destination as? OutletsViewController else {return}

@@ -42,6 +42,9 @@ class UserProfileViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
         
+        //: Get user from database and update defaults
+        loadUser(user_id: user.id) {dbUser in self.user = dbUser}
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

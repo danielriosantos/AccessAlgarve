@@ -56,6 +56,7 @@
 		BFB7FC2F204895ED000522E8 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FC2E204895ED000522E8 /* ViewControllerTableViewCell.swift */; };
 		BFB7FC3520490101000522E8 /* OutletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FC3420490101000522E8 /* OutletsViewController.swift */; };
 		BFC2E590206766F50031836C /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2E58F206766F50031836C /* FavouritesViewController.swift */; };
+		BFCAD910206A0518004F6742 /* UsedOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCAD90F206A0518004F6742 /* UsedOffersViewController.swift */; };
 		BFDC2B1C20697FF400F22300 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDC2B1B20697FF400F22300 /* SearchResultsViewController.swift */; };
 		BFF6263E205AFBF7000F9CAE /* RedeemSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF6263D205AFBF7000F9CAE /* RedeemSuccessViewController.swift */; };
 		BFF62642205B8FD8000F9CAE /* OutletLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF62641205B8FD8000F9CAE /* OutletLocationViewController.swift */; };
@@ -135,6 +136,7 @@
 		BFB7FC2E204895ED000522E8 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		BFB7FC3420490101000522E8 /* OutletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletsViewController.swift; sourceTree = "<group>"; };
 		BFC2E58F206766F50031836C /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		BFCAD90F206A0518004F6742 /* UsedOffersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedOffersViewController.swift; sourceTree = "<group>"; };
 		BFDC2B1B20697FF400F22300 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		BFF6263D205AFBF7000F9CAE /* RedeemSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemSuccessViewController.swift; sourceTree = "<group>"; };
 		BFF62641205B8FD8000F9CAE /* OutletLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletLocationViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				BF85BB912063DF990089A9ED /* ViewSavingsViewController.swift */,
 				BF85BB97206422FB0089A9ED /* UserProfileViewController.swift */,
 				BF837075205E13A9003B8D21 /* SettingsViewController.swift */,
+				BFCAD90F206A0518004F6742 /* UsedOffersViewController.swift */,
 				BF85BB95206411610089A9ED /* ResetPinViewController.swift */,
 				BF85BB93206401540089A9ED /* ForgotPasswordViewController.swift */,
 				BFC2E58F206766F50031836C /* FavouritesViewController.swift */,
@@ -448,6 +451,7 @@
 				BF85BB98206422FB0089A9ED /* UserProfileViewController.swift in Sources */,
 				BF85BB96206411620089A9ED /* ResetPinViewController.swift in Sources */,
 				BF3C80F5205D7DF1000FBCF8 /* LoginViewController.swift in Sources */,
+				BFCAD910206A0518004F6742 /* UsedOffersViewController.swift in Sources */,
 				BFB7FBD6204832BC000522E8 /* ViewController.swift in Sources */,
 				BFB7FC3520490101000522E8 /* OutletsViewController.swift in Sources */,
 				BFA5190D206175EA0098859B /* LocationsTableViewCell.swift in Sources */,

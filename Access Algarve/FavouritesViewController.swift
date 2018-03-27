@@ -60,7 +60,7 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
                 distanceMeters = outletLocation.distance(from: self.currentLocation)
             }
             
-            if (self.user.favourites[indexPath.row].outlet.merchant != nil) {cell.voucherCompanyLogo.downloadedFrom(link: "https://www.accessalgarve.com/images/logos/\(self.user.favourites[indexPath.row].outlet_id)-logo.png")}
+            if (self.user.favourites[indexPath.row].outlet.merchant != nil) {cell.voucherCompanyLogo.downloadedFrom(link: "https://www.accessalgarve.com/images/logos/\(self.user.favourites[indexPath.row].outlet.merchant.id)-logo.png")}
             cell.voucherOfferName.text = self.user.favourites[indexPath.row].outlet.name
             if (self.user.favourites[indexPath.row].outlet.offers[0].type != nil) {cell.voucherOfferType.text =  self.user.favourites[indexPath.row].outlet.offers[0].type.name} else {cell.voucherOfferType.text = ""}
             if distance >= 1 {cell.voucherLocation.text = self.user.favourites[indexPath.row].outlet.city + " " + String(Int(distance.rounded(.toNearestOrEven))) + "km"} else {cell.voucherLocation.text = self.user.favourites[indexPath.row].outlet.city + " " + String(Int(distanceMeters.rounded(.toNearestOrEven))) + "m"}
@@ -124,7 +124,23 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func unwindToFavouritesViewController(_ segue: UIStoryboardSegue) {
-        
+        let defaults = UserDefaults.standard
+        if let savedUser = defaults.object(forKey: "SavedUser") as? Data {
+            do {
+                user = try User.decode(data: savedUser)
+            } catch {
+                print("Error decoding user data from defaults")
+            }
+        }
+        outletsTableView.reloadData()
+        //: Calculate total possible savings
+        var totalSavings: Double = 0
+        for userFavourite: UserFavourite in user.favourites {
+            for offer: Offer in userFavourite.outlet.offers {
+                totalSavings += Double(offer.max_savings)! * Double(offer.quantity)
+            }
+        }
+        totalSavingsLabel.text = "TOTAL SAVINGS: €" + String(Int(totalSavings.rounded(.up)))
     }
     
 }

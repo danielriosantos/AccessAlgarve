@@ -8,6 +8,40 @@
 
 import Foundation
 
+struct Redemption: Codable {
+    let id: Int
+    let user_id: Int
+    let offer_id: Int
+    let subscription_id: Int
+    let created_at: String
+    let updated_at: String
+    let offer: Offer!
+}
+
+struct Subscription: Codable {
+    let id: Int
+    let user_id: Int
+    let product_id: Int
+    let start_date: String!
+    let end_date: String!
+    let status: Int
+    let created_at: String
+    let updated_at: String
+    let product: Product!
+}
+
+struct Product: Codable {
+    let id: Int
+    let code: String
+    let name: String
+    let price: String
+    let start_date: String
+    let end_date: String
+    let status: Int
+    let created_at: String
+    let updated_at: String
+}
+
 struct UserFavourite: Codable {
     let id: Int
     let user_id: Int
@@ -17,7 +51,7 @@ struct UserFavourite: Codable {
     var outlet: Outlet!
 }
 
-struct User: Codable {
+public struct User: Codable {
     let id: Int
     var name: String
     var email: String
@@ -28,6 +62,8 @@ struct User: Codable {
     var excluded_locations: [String]!
     let created_at: String
     let updated_at: String
+    let subscriptions: [Subscription]!
+    let redemptions: [Redemption]!
     var favourites: [UserFavourite]!
 }
 
@@ -73,6 +109,7 @@ struct Offer: Codable {
     let created_at: String
     let updated_at: String
     let deleted_at: String!
+    let outlet: Outlet!
     let category: Category!
     let type: Type!
     

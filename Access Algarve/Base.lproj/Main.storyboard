@@ -2501,225 +2501,127 @@
         <!--Used Vouchers-->
         <scene sceneID="jpw-1s-pZ5">
             <objects>
-                <viewController id="Xgg-Ag-RfG" userLabel="Used Vouchers" sceneMemberID="viewController">
+                <viewController id="Xgg-Ag-RfG" userLabel="Used Vouchers" customClass="UsedOffersViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xj9-Mn-5mO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOC-Eh-iEl">
-                                <rect key="frame" x="20" y="20" width="12" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOC-Eh-iEl">
+                                <rect key="frame" x="10" y="37" width="42" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="12" id="qCi-BA-sbN"/>
+                                    <constraint firstAttribute="width" constant="42" id="qCi-BA-sbN"/>
                                 </constraints>
+                                <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <state key="normal" image="back"/>
                                 <connections>
-                                    <segue destination="6La-L3-hDQ" kind="unwind" unwindAction="unwindToSettingsViewController:" id="pnt-d8-7jI"/>
+                                    <segue destination="6La-L3-hDQ" kind="unwind" unwindAction="unwindToSettingsViewController:" id="yYc-WU-VoN"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skydive-logo" translatesAutoresizingMaskIntoConstraints="NO" id="N26-nQ-UaG">
-                                <rect key="frame" x="17" y="94" width="86" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="Ydf-iY-9KR"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Redeemed on 12/11/2017 - Alvor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BA-u0-m47">
-                                <rect key="frame" x="111" y="150" width="199" height="11"/>
-                                <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="11"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tandem Skydive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpf-Rl-c2o">
-                                <rect key="frame" x="109" y="110" width="199" height="29"/>
-                                <fontDescription key="fontDescription" name="SinkinSans-800Black" family="Sinkin Sans" pointSize="15"/>
-                                <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy 1 get 1 free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KY-JC-FG8">
-                                <rect key="frame" x="111" y="132" width="199" height="19"/>
-                                <fontDescription key="fontDescription" name="SinkinSans-500Medium" family="Sinkin Sans" pointSize="15"/>
-                                <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fq-px-8hU">
-                                <rect key="frame" x="288" y="117" width="14" height="25"/>
-                                <state key="normal" image="blue-arrow"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€100 SAVED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYa-0d-aoX">
-                                <rect key="frame" x="111" y="166" width="199" height="13"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="13" id="w4o-4G-Qyn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SinkinSans-800Black" family="Sinkin Sans" pointSize="13"/>
-                                <color key="textColor" red="0.8980392157" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-line" translatesAutoresizingMaskIntoConstraints="NO" id="MIV-85-hvW">
-                                <rect key="frame" x="13" y="188" width="287" height="3"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Used vouchers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cW-JH-hTA">
-                                <rect key="frame" x="0.0" y="20" width="320" height="22"/>
+                                <rect key="frame" x="81" y="40" width="157" height="18"/>
                                 <fontDescription key="fontDescription" name="SinkinSans-500Medium" family="Sinkin Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAK-C4-vxB">
-                                <rect key="frame" x="286" y="219" width="14" height="25"/>
-                                <state key="normal" image="blue-arrow"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tandem Skydive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vug-3s-g5u">
-                                <rect key="frame" x="107" y="212" width="199" height="29"/>
-                                <fontDescription key="fontDescription" name="SinkinSans-800Black" family="Sinkin Sans" pointSize="15"/>
-                                <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-line" translatesAutoresizingMaskIntoConstraints="NO" id="cwl-cl-x6z">
-                                <rect key="frame" x="11" y="290" width="287" height="3"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€100 SAVED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlE-Tn-MRQ">
-                                <rect key="frame" x="109" y="268" width="199" height="13"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="13" id="jyU-N2-oBN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SinkinSans-800Black" family="Sinkin Sans" pointSize="13"/>
-                                <color key="textColor" red="0.8980392157" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skydive-logo" translatesAutoresizingMaskIntoConstraints="NO" id="sVs-7g-30L">
-                                <rect key="frame" x="15" y="196" width="86" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="zkt-n8-91B"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy 1 get 1 free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TV7-FK-SE8">
-                                <rect key="frame" x="109" y="234" width="199" height="19"/>
-                                <fontDescription key="fontDescription" name="SinkinSans-500Medium" family="Sinkin Sans" pointSize="15"/>
-                                <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Redeemed on 12/11/2017 - Alvor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyG-re-Egm">
-                                <rect key="frame" x="109" y="252" width="199" height="11"/>
-                                <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="11"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBg-rz-8Zw">
-                                <rect key="frame" x="283" y="322" width="14" height="25"/>
-                                <state key="normal" image="blue-arrow"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tandem Skydive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3e-Gn-gu8">
-                                <rect key="frame" x="104" y="315" width="199" height="29"/>
-                                <fontDescription key="fontDescription" name="SinkinSans-800Black" family="Sinkin Sans" pointSize="15"/>
-                                <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-line" translatesAutoresizingMaskIntoConstraints="NO" id="VXS-20-yQp">
-                                <rect key="frame" x="8" y="393" width="287" height="3"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€100 SAVED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQZ-Je-9Hu">
-                                <rect key="frame" x="106" y="371" width="199" height="13"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="13" id="lQf-Ni-PcZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SinkinSans-800Black" family="Sinkin Sans" pointSize="13"/>
-                                <color key="textColor" red="0.8980392157" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skydive-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Pcw-5u-yl9">
-                                <rect key="frame" x="12" y="299" width="86" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="Box-dp-CQo"/>
-                                    <constraint firstAttribute="height" constant="85" id="l7o-qd-nIj"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy 1 get 1 free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4R-6W-HfC">
-                                <rect key="frame" x="106" y="337" width="199" height="19"/>
-                                <fontDescription key="fontDescription" name="SinkinSans-500Medium" family="Sinkin Sans" pointSize="15"/>
-                                <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Redeemed on 12/11/2017 - Alvor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hd9-I3-CuP">
-                                <rect key="frame" x="106" y="355" width="199" height="11"/>
-                                <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="11"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DvW-Ow-AhH">
+                                <rect key="frame" x="0.0" y="78" width="320" height="490"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="voucherCell" focusStyle="custom" rowHeight="110" id="rnz-45-NeG" customClass="ViewControllerTableViewCell" customModule="Access_Algarve" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="110"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rnz-45-NeG" id="6th-8c-EUS">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="109.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-1T-eoH">
+                                                    <rect key="frame" x="10" y="5" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="AlE-gE-HkR"/>
+                                                        <constraint firstAttribute="height" constant="100" id="TKd-nm-Dzx"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tandem Skydive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIE-v0-bcx">
+                                                    <rect key="frame" x="120" y="10" width="190" height="23"/>
+                                                    <fontDescription key="fontDescription" name="SinkinSans-600SemiBold" family="Sinkin Sans" pointSize="15"/>
+                                                    <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy 1 get 1 free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqv-b9-iDF">
+                                                    <rect key="frame" x="120" y="43" width="175" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="Wfs-dp-gsK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="SinkinSans-500Medium" family="Sinkin Sans" pointSize="15"/>
+                                                    <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Redeemed on 01/01/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cf6-q7-EP9">
+                                                    <rect key="frame" x="120" y="67" width="190" height="13"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="13" id="6r4-SM-PcK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€50 SAVED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="q9a-Gr-vO4">
+                                                    <rect key="frame" x="120" y="89" width="175" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="gar-fk-xlO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="SinkinSans-800Black" family="Sinkin Sans" pointSize="11"/>
+                                                    <color key="textColor" red="0.8980392157" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cf6-q7-EP9" firstAttribute="top" secondItem="Nqv-b9-iDF" secondAttribute="bottom" constant="9" id="JWB-Ef-UBP"/>
+                                                <constraint firstItem="q9a-Gr-vO4" firstAttribute="top" secondItem="cf6-q7-EP9" secondAttribute="bottom" constant="9" id="MjP-06-rNh"/>
+                                                <constraint firstAttribute="trailing" secondItem="fIE-v0-bcx" secondAttribute="trailing" constant="10" id="Nkw-As-0lR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="q9a-Gr-vO4" secondAttribute="trailing" constant="10" id="OBk-0l-u2I"/>
+                                                <constraint firstItem="q9a-Gr-vO4" firstAttribute="leading" secondItem="ghV-1T-eoH" secondAttribute="trailing" constant="10" id="OUv-l1-YJO"/>
+                                                <constraint firstItem="ghV-1T-eoH" firstAttribute="centerY" secondItem="6th-8c-EUS" secondAttribute="centerY" id="THh-iD-cEa"/>
+                                                <constraint firstItem="cf6-q7-EP9" firstAttribute="leading" secondItem="ghV-1T-eoH" secondAttribute="trailing" constant="10" id="XhL-Ib-KF0"/>
+                                                <constraint firstItem="fIE-v0-bcx" firstAttribute="leading" secondItem="ghV-1T-eoH" secondAttribute="trailing" constant="10" id="cb7-5G-oxw"/>
+                                                <constraint firstItem="q9a-Gr-vO4" firstAttribute="bottom" secondItem="6th-8c-EUS" secondAttribute="bottomMargin" constant="10" id="fdz-CZ-0Il"/>
+                                                <constraint firstItem="fIE-v0-bcx" firstAttribute="top" secondItem="6th-8c-EUS" secondAttribute="top" constant="10" id="jW5-6s-qmJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="cf6-q7-EP9" secondAttribute="trailing" constant="10" id="le6-QF-wRq"/>
+                                                <constraint firstItem="Nqv-b9-iDF" firstAttribute="top" secondItem="fIE-v0-bcx" secondAttribute="bottom" constant="10" id="tbb-Wi-Edi"/>
+                                                <constraint firstItem="Nqv-b9-iDF" firstAttribute="leading" secondItem="ghV-1T-eoH" secondAttribute="trailing" constant="10" id="vNZ-ae-rAu"/>
+                                                <constraint firstItem="ghV-1T-eoH" firstAttribute="leading" secondItem="6th-8c-EUS" secondAttribute="leading" constant="10" id="xA3-PW-2At"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Nqv-b9-iDF" secondAttribute="trailing" constant="10" id="yHo-4I-nvq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="voucherCompanyLogo" destination="ghV-1T-eoH" id="3sf-Rb-YA2"/>
+                                            <outlet property="voucherEstimatedSavings" destination="q9a-Gr-vO4" id="hVZ-eo-qSP"/>
+                                            <outlet property="voucherLocation" destination="cf6-q7-EP9" id="ngD-aU-Kk1"/>
+                                            <outlet property="voucherOfferName" destination="fIE-v0-bcx" id="Ssd-wL-YMm"/>
+                                            <outlet property="voucherOfferType" destination="Nqv-b9-iDF" id="GI6-wH-W3j"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="uYa-0d-aoX" firstAttribute="top" secondItem="4KY-JC-FG8" secondAttribute="bottom" constant="15" id="1CR-JX-z6C"/>
-                            <constraint firstItem="3BA-u0-m47" firstAttribute="top" secondItem="mpf-Rl-c2o" secondAttribute="bottom" constant="11" id="1QX-6O-9fK"/>
-                            <constraint firstItem="mpf-Rl-c2o" firstAttribute="leading" secondItem="4KY-JC-FG8" secondAttribute="leading" constant="-2" id="23u-Vs-g4F"/>
-                            <constraint firstItem="2cW-JH-hTA" firstAttribute="leading" secondItem="gOC-Eh-iEl" secondAttribute="trailing" constant="-32" id="2LI-Q3-6j4"/>
-                            <constraint firstItem="3BA-u0-m47" firstAttribute="leading" secondItem="uYa-0d-aoX" secondAttribute="leading" id="3us-vg-kmk"/>
-                            <constraint firstItem="uYa-0d-aoX" firstAttribute="top" secondItem="3BA-u0-m47" secondAttribute="bottom" constant="5" id="4ME-aB-lYo"/>
-                            <constraint firstItem="MIV-85-hvW" firstAttribute="leading" secondItem="xj9-Mn-5mO" secondAttribute="leadingMargin" constant="-3" id="5IE-y5-DHq"/>
-                            <constraint firstItem="TV7-FK-SE8" firstAttribute="trailing" secondItem="eyG-re-Egm" secondAttribute="trailing" id="71R-gR-VUb"/>
-                            <constraint firstItem="Hd9-I3-CuP" firstAttribute="top" secondItem="VBg-rz-8Zw" secondAttribute="bottom" constant="8" symbolic="YES" id="7Hi-2i-LSA"/>
-                            <constraint firstItem="TV7-FK-SE8" firstAttribute="trailing" secondItem="mpf-Rl-c2o" secondAttribute="trailing" id="8vw-ab-Jsu"/>
-                            <constraint firstItem="Vug-3s-g5u" firstAttribute="leading" secondItem="TV7-FK-SE8" secondAttribute="leading" constant="-2" id="A0Z-BT-Ob2"/>
-                            <constraint firstItem="VXS-20-yQp" firstAttribute="top" secondItem="Pcw-5u-yl9" secondAttribute="bottom" constant="9" id="Am5-T2-Anp"/>
-                            <constraint firstItem="eyG-re-Egm" firstAttribute="leading" secondItem="XlE-Tn-MRQ" secondAttribute="leading" id="DRL-EB-keY"/>
-                            <constraint firstItem="4KY-JC-FG8" firstAttribute="top" secondItem="mpf-Rl-c2o" secondAttribute="bottom" constant="-7" id="ELd-eY-UuI"/>
-                            <constraint firstItem="4KY-JC-FG8" firstAttribute="trailing" secondItem="3BA-u0-m47" secondAttribute="trailing" id="EbQ-nw-uYr"/>
-                            <constraint firstItem="XSZ-Jr-ZFp" firstAttribute="trailing" secondItem="N26-nQ-UaG" secondAttribute="trailing" constant="217" id="FHS-Zr-tw7"/>
-                            <constraint firstItem="eyG-re-Egm" firstAttribute="top" secondItem="Vug-3s-g5u" secondAttribute="bottom" constant="11" id="Fuo-mz-yKg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="MIV-85-hvW" secondAttribute="trailing" constant="4" id="G1W-1I-9De"/>
-                            <constraint firstItem="XSZ-Jr-ZFp" firstAttribute="trailing" secondItem="7Fq-px-8hU" secondAttribute="trailing" constant="18" id="HCx-jg-UQx"/>
-                            <constraint firstItem="sVs-7g-30L" firstAttribute="leading" secondItem="XSZ-Jr-ZFp" secondAttribute="leading" constant="15" id="Hwr-ER-oW0"/>
-                            <constraint firstItem="TV7-FK-SE8" firstAttribute="top" secondItem="Vug-3s-g5u" secondAttribute="bottom" constant="-7" id="JLg-Td-SNp"/>
-                            <constraint firstItem="XlE-Tn-MRQ" firstAttribute="top" secondItem="eyG-re-Egm" secondAttribute="bottom" constant="5" id="JUr-SP-OBH"/>
-                            <constraint firstItem="Vug-3s-g5u" firstAttribute="top" secondItem="MIV-85-hvW" secondAttribute="bottom" constant="21" id="JbD-n3-hqD"/>
-                            <constraint firstItem="mpf-Rl-c2o" firstAttribute="trailing" secondItem="4KY-JC-FG8" secondAttribute="trailing" constant="-2" id="JbW-Dc-r1W"/>
-                            <constraint firstItem="CAK-C4-vxB" firstAttribute="trailing" secondItem="MIV-85-hvW" secondAttribute="trailing" id="KUB-6Z-WMO"/>
-                            <constraint firstItem="u4R-6W-HfC" firstAttribute="top" secondItem="k3e-Gn-gu8" secondAttribute="bottom" constant="-7" id="Klb-XQ-Wub"/>
-                            <constraint firstItem="u4R-6W-HfC" firstAttribute="leading" secondItem="Hd9-I3-CuP" secondAttribute="leading" id="LiH-z9-2hD"/>
-                            <constraint firstItem="iQZ-Je-9Hu" firstAttribute="top" secondItem="Hd9-I3-CuP" secondAttribute="bottom" constant="5" id="PEN-u2-dqe"/>
-                            <constraint firstItem="MIV-85-hvW" firstAttribute="top" secondItem="N26-nQ-UaG" secondAttribute="bottom" constant="9" id="RVe-qS-YOU"/>
-                            <constraint firstItem="Hd9-I3-CuP" firstAttribute="trailing" secondItem="iQZ-Je-9Hu" secondAttribute="trailing" id="RdY-gY-lWr"/>
-                            <constraint firstItem="k3e-Gn-gu8" firstAttribute="leading" secondItem="Pcw-5u-yl9" secondAttribute="trailing" constant="6" id="RrZ-Qk-QVy"/>
-                            <constraint firstItem="gOC-Eh-iEl" firstAttribute="centerY" secondItem="2cW-JH-hTA" secondAttribute="centerY" id="SW6-eD-2JC"/>
-                            <constraint firstItem="eyG-re-Egm" firstAttribute="trailing" secondItem="XlE-Tn-MRQ" secondAttribute="trailing" id="UeX-NU-e6l"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cwl-cl-x6z" secondAttribute="trailing" constant="6" id="UqN-HZ-q34"/>
-                            <constraint firstItem="TV7-FK-SE8" firstAttribute="leading" secondItem="mpf-Rl-c2o" secondAttribute="leading" id="WZA-wL-Vz7"/>
-                            <constraint firstItem="iQZ-Je-9Hu" firstAttribute="top" secondItem="u4R-6W-HfC" secondAttribute="bottom" constant="15" id="Xtq-6y-Ihu"/>
-                            <constraint firstItem="Hd9-I3-CuP" firstAttribute="top" secondItem="k3e-Gn-gu8" secondAttribute="bottom" constant="11" id="ZFh-OD-lF0"/>
-                            <constraint firstItem="gOC-Eh-iEl" firstAttribute="bottom" secondItem="2cW-JH-hTA" secondAttribute="bottom" id="Zj2-5Y-sjy"/>
-                            <constraint firstItem="Pcw-5u-yl9" firstAttribute="top" secondItem="cwl-cl-x6z" secondAttribute="bottom" constant="6" id="aAM-9g-LWZ"/>
-                            <constraint firstItem="mpf-Rl-c2o" firstAttribute="leading" secondItem="N26-nQ-UaG" secondAttribute="trailing" constant="6" id="aHA-Gf-3Sx"/>
-                            <constraint firstItem="cwl-cl-x6z" firstAttribute="leading" secondItem="xj9-Mn-5mO" secondAttribute="leadingMargin" constant="-5" id="agZ-d9-GpP"/>
-                            <constraint firstItem="2cW-JH-hTA" firstAttribute="leading" secondItem="xj9-Mn-5mO" secondAttribute="leading" id="bBQ-Sv-bOE"/>
-                            <constraint firstItem="eyG-re-Egm" firstAttribute="top" secondItem="CAK-C4-vxB" secondAttribute="bottom" constant="8" symbolic="YES" id="cG9-9t-6jw"/>
-                            <constraint firstItem="N26-nQ-UaG" firstAttribute="top" secondItem="2cW-JH-hTA" secondAttribute="bottom" constant="52" id="cTe-cs-x4S"/>
-                            <constraint firstItem="4KY-JC-FG8" firstAttribute="leading" secondItem="3BA-u0-m47" secondAttribute="leading" id="d23-wz-Qy5"/>
-                            <constraint firstItem="3BA-u0-m47" firstAttribute="trailing" secondItem="uYa-0d-aoX" secondAttribute="trailing" id="d97-lC-gIl"/>
-                            <constraint firstAttribute="trailing" secondItem="2cW-JH-hTA" secondAttribute="trailing" id="dCA-sW-iSW"/>
-                            <constraint firstItem="2cW-JH-hTA" firstAttribute="top" secondItem="XSZ-Jr-ZFp" secondAttribute="top" id="fA9-sd-irq"/>
-                            <constraint firstItem="Vug-3s-g5u" firstAttribute="leading" secondItem="sVs-7g-30L" secondAttribute="trailing" constant="6" id="g0b-Hz-pLF"/>
-                            <constraint firstItem="Hd9-I3-CuP" firstAttribute="leading" secondItem="iQZ-Je-9Hu" secondAttribute="leading" id="gF8-WL-Hkj"/>
-                            <constraint firstItem="k3e-Gn-gu8" firstAttribute="trailing" secondItem="u4R-6W-HfC" secondAttribute="trailing" constant="-2" id="gFL-de-Kvr"/>
-                            <constraint firstItem="Vug-3s-g5u" firstAttribute="trailing" secondItem="TV7-FK-SE8" secondAttribute="trailing" constant="-2" id="jUb-1r-RJ6"/>
-                            <constraint firstItem="VXS-20-yQp" firstAttribute="leading" secondItem="xj9-Mn-5mO" secondAttribute="leadingMargin" constant="-8" id="kqa-9x-E6Z"/>
-                            <constraint firstItem="cwl-cl-x6z" firstAttribute="top" secondItem="sVs-7g-30L" secondAttribute="bottom" constant="9" id="nZh-z9-lO7"/>
-                            <constraint firstItem="XSZ-Jr-ZFp" firstAttribute="trailing" secondItem="u4R-6W-HfC" secondAttribute="trailing" constant="15" id="okN-dG-elU"/>
-                            <constraint firstItem="N26-nQ-UaG" firstAttribute="leading" secondItem="XSZ-Jr-ZFp" secondAttribute="leading" constant="17" id="otL-xa-k1d"/>
-                            <constraint firstItem="TV7-FK-SE8" firstAttribute="leading" secondItem="eyG-re-Egm" secondAttribute="leading" id="pBX-9p-dxr"/>
-                            <constraint firstItem="Pcw-5u-yl9" firstAttribute="leading" secondItem="XSZ-Jr-ZFp" secondAttribute="leading" constant="12" id="pPy-AP-WbW"/>
-                            <constraint firstItem="XSZ-Jr-ZFp" firstAttribute="trailing" secondItem="VBg-rz-8Zw" secondAttribute="trailing" constant="23" id="pvK-dR-58Q"/>
-                            <constraint firstItem="iQZ-Je-9Hu" firstAttribute="bottom" secondItem="Pcw-5u-yl9" secondAttribute="bottom" id="q0b-hs-Xwe"/>
-                            <constraint firstItem="u4R-6W-HfC" firstAttribute="trailing" secondItem="Hd9-I3-CuP" secondAttribute="trailing" id="qQf-4g-IDE"/>
-                            <constraint firstItem="k3e-Gn-gu8" firstAttribute="leading" secondItem="u4R-6W-HfC" secondAttribute="leading" constant="-2" id="qcw-2Q-azq"/>
-                            <constraint firstItem="sVs-7g-30L" firstAttribute="top" secondItem="MIV-85-hvW" secondAttribute="bottom" constant="5" id="rkm-DP-oTV"/>
-                            <constraint firstItem="k3e-Gn-gu8" firstAttribute="top" secondItem="cwl-cl-x6z" secondAttribute="bottom" constant="22" id="ryz-1E-68M"/>
-                            <constraint firstItem="3BA-u0-m47" firstAttribute="top" secondItem="7Fq-px-8hU" secondAttribute="bottom" constant="8" symbolic="YES" id="sAY-XC-teD"/>
-                            <constraint firstItem="uYa-0d-aoX" firstAttribute="bottom" secondItem="N26-nQ-UaG" secondAttribute="bottom" id="wcF-nH-OMA"/>
-                            <constraint firstItem="XlE-Tn-MRQ" firstAttribute="bottom" secondItem="sVs-7g-30L" secondAttribute="bottom" id="xSh-bk-x8c"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="VXS-20-yQp" secondAttribute="trailing" constant="9" id="xXR-rf-1iJ"/>
-                            <constraint firstItem="XlE-Tn-MRQ" firstAttribute="top" secondItem="TV7-FK-SE8" secondAttribute="bottom" constant="15" id="xYx-at-amG"/>
-                            <constraint firstItem="mpf-Rl-c2o" firstAttribute="top" secondItem="2cW-JH-hTA" secondAttribute="bottom" constant="68" id="xhs-fU-7vR"/>
-                            <constraint firstItem="mpf-Rl-c2o" firstAttribute="trailing" secondItem="2cW-JH-hTA" secondAttribute="trailing" constant="-12" id="yeW-wT-fW2"/>
+                            <constraint firstItem="DvW-Ow-AhH" firstAttribute="leading" secondItem="XSZ-Jr-ZFp" secondAttribute="leading" id="7rd-aG-eB5"/>
+                            <constraint firstItem="gOC-Eh-iEl" firstAttribute="top" secondItem="XSZ-Jr-ZFp" secondAttribute="top" constant="17" id="7t2-9h-fsG"/>
+                            <constraint firstItem="DvW-Ow-AhH" firstAttribute="top" secondItem="2cW-JH-hTA" secondAttribute="bottom" constant="20" id="J4Z-kR-lhi"/>
+                            <constraint firstItem="2cW-JH-hTA" firstAttribute="centerX" secondItem="xj9-Mn-5mO" secondAttribute="centerX" id="P5s-vd-RfF"/>
+                            <constraint firstItem="XSZ-Jr-ZFp" firstAttribute="bottom" secondItem="DvW-Ow-AhH" secondAttribute="bottom" id="PlY-qN-TZN"/>
+                            <constraint firstItem="XSZ-Jr-ZFp" firstAttribute="trailing" secondItem="DvW-Ow-AhH" secondAttribute="trailing" id="W5l-BZ-Q0l"/>
+                            <constraint firstItem="2cW-JH-hTA" firstAttribute="top" secondItem="XSZ-Jr-ZFp" secondAttribute="top" constant="20" id="X69-Vy-eRi"/>
+                            <constraint firstItem="gOC-Eh-iEl" firstAttribute="leading" secondItem="XSZ-Jr-ZFp" secondAttribute="leading" constant="10" id="YTh-HA-2Xm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XSZ-Jr-ZFp"/>
                     </view>
+                    <connections>
+                        <outlet property="outletsTableView" destination="DvW-Ow-AhH" id="lpJ-zk-hz1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9C1-OX-1ho" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6La-L3-hDQ" userLabel="Exit" sceneMemberID="exit"/>
@@ -3033,7 +2935,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save over 5000€ " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqp-kw-DCx">
-                                <rect key="frame" x="71" y="384" width="179" height="21"/>
+                                <rect key="frame" x="70.5" y="384" width="179" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="E9l-hC-nAx"/>
                                 </constraints>
@@ -3042,7 +2944,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJm-qG-INk">
-                                <rect key="frame" x="58.5" y="410" width="204.5" height="18"/>
+                                <rect key="frame" x="58" y="410" width="204.5" height="18"/>
                                 <string key="text">with 400+ vouchers. 
 </string>
                                 <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="18"/>
@@ -3623,7 +3525,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset User PIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3Q-p9-cev">
-                                <rect key="frame" x="81" y="36" width="158" height="18"/>
+                                <rect key="frame" x="81.5" y="36" width="158" height="18"/>
                                 <fontDescription key="fontDescription" name="SinkinSans-500Medium" family="Sinkin Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -5565,7 +5467,7 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="WQm-hT-75S"/>
                                     <barButtonItem image="heart-button-unselected" width="50" style="plain" id="oVm-aR-r25" userLabel="Favourites Button">
                                         <connections>
-                                            <segue destination="NAC-T3-ILt" kind="show" id="gmr-W2-WAR"/>
+                                            <segue destination="NAC-T3-ILt" kind="show" identifier="showFavourites" id="gmr-W2-WAR"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7tc-YW-Afs"/>
@@ -5734,7 +5636,6 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <image name="settings-icon" width="29" height="28"/>
         <image name="share-button" width="395" height="76"/>
         <image name="share-link-box" width="368" height="55"/>
-        <image name="skydive-logo" width="170" height="140"/>
         <image name="small-voucher-box-blue" width="344" height="490"/>
         <image name="smile-voucher-box-blue" width="344" height="489"/>
         <image name="sms-button" width="326" height="57"/>
@@ -5753,14 +5654,14 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <image name="zoomarine-whats-hot" width="415" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hNu-dQ-vrL"/>
-        <segue reference="gmr-W2-WAR"/>
-        <segue reference="nWK-rk-F1c"/>
+        <segue reference="4y4-6D-VDw"/>
+        <segue reference="z0G-Cf-ReL"/>
+        <segue reference="SQ9-5K-9yA"/>
         <segue reference="nz3-f1-fUy"/>
-        <segue reference="7Es-ya-ZPd"/>
+        <segue reference="a8I-2Y-CXa"/>
         <segue reference="eep-6i-Jq9"/>
-        <segue reference="2EC-Li-H3Q"/>
+        <segue reference="NOF-zz-TqB"/>
         <segue reference="bhB-Co-xUU"/>
-        <segue reference="DDI-bk-CoP"/>
+        <segue reference="OIr-v2-u10"/>
     </inferredMetricsTieBreakers>
 </document>
