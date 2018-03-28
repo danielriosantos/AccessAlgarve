@@ -11,6 +11,19 @@ import UIKit
 
 extension UIViewController {
     
+    public func loadUser() {
+        var user: User!
+        let defaults = UserDefaults.standard
+        if let savedUser = defaults.object(forKey: "SavedUser") as? Data {
+            do {
+                user = try User.decode(data: savedUser)
+            } catch {
+                print("Error decoding user data from defaults")
+            }
+        }
+        loadUser(user_id: user.id) {_ in}
+    }
+    
     public func loadUser(user_id: Int, completion: @escaping (User)->()) {
         getAPIResults(endpoint: "users/" + String(user_id), parameters: [:]) { userData in
             do {
@@ -22,6 +35,32 @@ extension UIViewController {
                 print("Error decoding user from database")
             }
         }
+    }
+    
+    public func hasValidSubscription(forUser: User) -> Bool {
+        var validSubscription = false
+        let date = Date()
+        for subscription in forUser.subscriptions {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let subscriptionFromDate = formatter.date(from: subscription.start_date)!
+            let subscriptionToDate = formatter.date(from: subscription.end_date)!
+            if date >= subscriptionFromDate && date <= subscriptionToDate && subscription.status == 1 {validSubscription = true}
+        }
+        return validSubscription
+    }
+    
+    public func countValidSubscription(forUser: User) -> Int {
+        var validSubscriptionCounter: Int = 0
+        let date = Date()
+        for subscription in forUser.subscriptions {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let subscriptionFromDate = formatter.date(from: subscription.start_date)!
+            let subscriptionToDate = formatter.date(from: subscription.end_date)!
+            if date >= subscriptionFromDate && date <= subscriptionToDate && subscription.status == 1 {validSubscriptionCounter += 1}
+        }
+        return validSubscriptionCounter
     }
     
     public func getAPIResults(endpoint: String, parameters: [String:Any]?, completion: @escaping (Data)->()) {

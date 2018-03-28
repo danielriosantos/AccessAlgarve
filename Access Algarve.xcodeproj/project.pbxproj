@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		659AC37B2067F81200C3535B /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659AC37A2067F81200C3535B /* NotificationsViewController.swift */; };
 		659AC37F2068119300C3535B /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659AC37E2068119300C3535B /* NotificationsTableViewCell.swift */; };
+		BF34B567206BE16C0064C184 /* BlockedOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF34B566206BE16C0064C184 /* BlockedOfferViewController.swift */; };
 		BF388F7C205783F400117674 /* RedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF388F7B205783F400117674 /* RedeemViewController.swift */; };
 		BF388F7E20579FB900117674 /* RedeemPinUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF388F7D20579FB900117674 /* RedeemPinUserViewController.swift */; };
 		BF388F802057BBDD00117674 /* RedeemPinOutletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF388F7F2057BBDD00117674 /* RedeemPinOutletViewController.swift */; };
@@ -85,6 +86,7 @@
 /* Begin PBXFileReference section */
 		659AC37A2067F81200C3535B /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		659AC37E2068119300C3535B /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
+		BF34B566206BE16C0064C184 /* BlockedOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedOfferViewController.swift; sourceTree = "<group>"; };
 		BF388F7B205783F400117674 /* RedeemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemViewController.swift; sourceTree = "<group>"; };
 		BF388F7D20579FB900117674 /* RedeemPinUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemPinUserViewController.swift; sourceTree = "<group>"; };
 		BF388F7F2057BBDD00117674 /* RedeemPinOutletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemPinOutletViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				BF388F7D20579FB900117674 /* RedeemPinUserViewController.swift */,
 				BF388F7F2057BBDD00117674 /* RedeemPinOutletViewController.swift */,
 				BFF6263D205AFBF7000F9CAE /* RedeemSuccessViewController.swift */,
+				BF34B566206BE16C0064C184 /* BlockedOfferViewController.swift */,
 				BFDC2B1B20697FF400F22300 /* SearchResultsViewController.swift */,
 				BFA519082060757A0098859B /* CreateAccountViewController.swift */,
 				BFA5190A206088440098859B /* SetUserPinViewController.swift */,
@@ -447,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF34B567206BE16C0064C184 /* BlockedOfferViewController.swift in Sources */,
 				BFA519092060757A0098859B /* CreateAccountViewController.swift in Sources */,
 				BF85BB902062BFBA0089A9ED /* SelectInitialOffersViewController.swift in Sources */,
 				BF388F7E20579FB900117674 /* RedeemPinUserViewController.swift in Sources */,

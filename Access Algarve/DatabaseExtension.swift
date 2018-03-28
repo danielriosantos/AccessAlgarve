@@ -103,8 +103,8 @@ struct Offer: Codable {
     let offer_type: String!
     let start_date: String
     let end_date: String
-    let max_savings: String
-    let quantity: Int
+    var max_savings: String
+    var quantity: Int
     let status: Int
     let created_at: String
     let updated_at: String

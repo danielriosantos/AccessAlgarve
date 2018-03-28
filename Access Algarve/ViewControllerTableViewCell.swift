@@ -16,6 +16,7 @@ class ViewControllerTableViewCell: UITableViewCell {
     @IBOutlet weak var voucherLocation: UILabel!
     @IBOutlet weak var voucherEstimatedSavings: UILabel!
     @IBOutlet weak var voucherArrow: UIButton!
+    @IBOutlet weak var voucherLock: UIImageView!
     @IBOutlet var voucherSelected: UISwitch!
     
     override func awakeFromNib() {
@@ -31,7 +32,12 @@ class ViewControllerTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        self.voucherCompanyLogo.image = UIImage(named: "appicon")
         self.voucherSelected?.isOn = false
+        self.voucherLock?.isHidden = false
+        self.voucherOfferName?.textColor = UIColor(red: 146.0/255.0, green: 146.0/255.0, blue: 146.0/255.0, alpha: 1.0)
+        self.voucherOfferType?.textColor = UIColor(red: 146.0/255.0, green: 146.0/255.0, blue: 146.0/255.0, alpha: 1.0)
+        self.voucherArrow?.setImage(UIImage(named: "next-arrow-black"), for: .normal)
     }
 
 }

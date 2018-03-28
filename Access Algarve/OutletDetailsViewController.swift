@@ -28,6 +28,7 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     var outlet: Outlet!
     var outletOffers: [Offer] = []
     var user: User!
+    var hasValidSubscription: Bool = false
     
     let locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
@@ -44,7 +45,11 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "voucherCell", for: indexPath) as! ViewControllerTableViewCell
-        DispatchQueue.main.async() {
+        
+        var unlockedCell = false
+        if self.outletOffers[indexPath.row].quantity > 0 {unlockedCell = true}
+        
+        if self.hasValidSubscription && unlockedCell {
             switch self.outletOffers[indexPath.row].offer_category_id {
             case 1:
                 cell.voucherOfferName.textColor = self.pink
@@ -59,42 +64,42 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
                 cell.voucherOfferType.textColor = self.blue
                 cell.voucherArrow.setImage(UIImage(named: "blue-arrow"), for: .normal)
             }
-            
-            //: Handle distance
-            /*
-            let coordstring = self.outlet.gps.replacingOccurrences(of: " ", with: "")
-            var outletLocation: CLLocation!
-            var distance: CLLocationDistance = 0
-            var distanceMeters: CLLocationDistance = 0
-            if  coordstring != "" {
-                let coordsArr = coordstring.components(separatedBy: ",")
-                outletLocation = CLLocation(latitude: CLLocationDegrees(coordsArr[0])!, longitude: CLLocationDegrees(coordsArr[1])!)
-            }
-            if outletLocation != nil {
-                distance = outletLocation.distance(from: self.currentLocation) / 1000
-                distanceMeters = outletLocation.distance(from: self.currentLocation)
-            }
-            */
-            
-            if (self.outlet.merchant != nil) {cell.voucherCompanyLogo.downloadedFrom(link: "https://www.accessalgarve.com/images/logos/\(self.outlet.merchant.id)-logo.png")}
-            if (self.outletOffers[indexPath.row].offer_heading != nil) {cell.voucherOfferName.text = self.outletOffers[indexPath.row].offer_heading}  else {cell.voucherOfferName.text = ""}
-            if (self.outletOffers[indexPath.row].offer_type != nil) {cell.voucherOfferType.text = self.outletOffers[indexPath.row].name} else {cell.voucherOfferType.text = ""}
-            //if distance >= 1 {cell.voucherLocation.text = self.outlet.city + " " + String(Int(distance.rounded(.toNearestOrEven))) + "km"} else {cell.voucherLocation.text = self.outlet.city + " " + String(Int(distanceMeters.rounded(.toNearestOrEven))) + "m"}
-            var offersavings: Double = 0
-            offersavings = Double(self.outletOffers[indexPath.row].max_savings)! / Double(self.outletOffers[indexPath.row].quantity)
-            cell.voucherEstimatedSavings.text = "ESTIMATED SAVINGS €" + String(offersavings)
+            cell.voucherLock.isHidden = true
         }
+        
+        //: Handle distance
+        /*
+        let coordstring = self.outlet.gps.replacingOccurrences(of: " ", with: "")
+        var outletLocation: CLLocation!
+        var distance: CLLocationDistance = 0
+        var distanceMeters: CLLocationDistance = 0
+        if  coordstring != "" {
+            let coordsArr = coordstring.components(separatedBy: ",")
+            outletLocation = CLLocation(latitude: CLLocationDegrees(coordsArr[0])!, longitude: CLLocationDegrees(coordsArr[1])!)
+        }
+        if outletLocation != nil {
+            distance = outletLocation.distance(from: self.currentLocation) / 1000
+            distanceMeters = outletLocation.distance(from: self.currentLocation)
+        }
+        if distance >= 1 {cell.voucherLocation.text = self.outlet.city + " " + String(Int(distance.rounded(.toNearestOrEven))) + "km"} else {cell.voucherLocation.text = self.outlet.city + " " + String(Int(distanceMeters.rounded(.toNearestOrEven))) + "m"}
+        */
+        
+        if (self.outlet.merchant != nil) {cell.voucherCompanyLogo.downloadedFrom(link: "https://www.accessalgarve.com/images/logos/\(self.outlet.merchant.id)-logo.png")}
+        if (self.outletOffers[indexPath.row].offer_heading != nil) {cell.voucherOfferName.text = self.outletOffers[indexPath.row].offer_heading}  else {cell.voucherOfferName.text = ""}
+        if (self.outletOffers[indexPath.row].offer_type != nil) {cell.voucherOfferType.text = self.outletOffers[indexPath.row].name} else {cell.voucherOfferType.text = ""}
+        var offersavings: Double = 0
+        offersavings = Double(self.outletOffers[indexPath.row].max_savings)!
+        cell.voucherEstimatedSavings.text = "ESTIMATED SAVINGS €" + String(offersavings)
+        
         return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if self.hasValidSubscription && outletOffers[indexPath.row].quantity > 0 {self.performSegue(withIdentifier: "redeemOfferSegue", sender: self)} else {self.performSegue(withIdentifier: "blockedOfferSegue", sender: self)}
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //: Create the offers array based on quantity
-        for offer in outlet.offers {
-            outletOffers.append(contentsOf: Array(repeatElement(offer, count: offer.quantity)))
-            print("got here")
-        }
         
         //: Load User
         let defaults = UserDefaults.standard
@@ -103,6 +108,32 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
                 user = try User.decode(data: savedUser)
             } catch {
                 print("Error decoding user data from defaults")
+            }
+        }
+        
+        //: Cache validSubscription
+        hasValidSubscription = hasValidSubscription(forUser: user)
+        var numberOfValidSubscriptions = countValidSubscription(forUser: user)
+        if numberOfValidSubscriptions == 0 {numberOfValidSubscriptions = 1} //Otherwise free user cannot browse offers
+        
+        //: Create the offers array based on quantity
+        for offer in outlet.offers {
+            var currentOffer: Offer!
+            var coms: Double = 0
+            coms = Double(offer.max_savings)!
+            currentOffer = offer
+            currentOffer.max_savings = String((coms / Double(offer.quantity)).rounded())
+            currentOffer.quantity = 1
+            outletOffers.append(contentsOf: Array(repeatElement(currentOffer, count: offer.quantity * numberOfValidSubscriptions)))
+        }
+        
+        //: Lock already used vouchers
+        for redemption in user.redemptions {
+            for (index, offer) in outletOffers.enumerated() {
+                if redemption.offer_id == offer.id && offer.quantity > 0 {
+                    outletOffers[index].quantity = 0
+                    break
+                }
             }
         }
         
@@ -160,6 +191,7 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         
         let tableHeight = Double(outletOffers.count * 111)
         self.vouchersTableView.heightAnchor.constraint(equalToConstant: CGFloat(tableHeight)).isActive = true
+        self.vouchersTableView.translatesAutoresizingMaskIntoConstraints = true
         
         let imageLink = "https://www.accessalgarve.com/images/logos/\(outlet.merchant.id)-image.jpg"
         merchantImage.downloadedFrom(link: imageLink)
@@ -189,6 +221,13 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
                 guard let redeemViewController = segue.destination as? RedeemViewController else {return}
                 redeemViewController.outlet = outlet
                 redeemViewController.offer = outletOffers[selectedRow]
+            }
+        } else if segue.identifier == "blockedOfferSegue" {
+            if let indexPath = vouchersTableView.indexPathForSelectedRow {
+                let selectedRow = indexPath.row
+                guard let blockedOfferViewController = segue.destination as? BlockedOfferViewController else {return}
+                blockedOfferViewController.outlet = outlet
+                blockedOfferViewController.offer = outletOffers[selectedRow]
             }
         } else if segue.identifier == "showFavourites" {
             guard let favouritesViewController = segue.destination as? FavouritesViewController else {return}

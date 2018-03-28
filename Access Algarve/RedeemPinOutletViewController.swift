@@ -25,6 +25,7 @@ class RedeemPinOutletViewController: UIViewController, UITextFieldDelegate {
     
     var outlet: Outlet!
     var offer: Offer!
+    var user: User!
     
     var max = 1
     
@@ -94,11 +95,45 @@ class RedeemPinOutletViewController: UIViewController, UITextFieldDelegate {
     @IBAction func checkOutletPin(_ sender: UIButton) {
         let enteredPIN = pin1.text! + pin2.text! + pin3.text! + pin4.text!
         if enteredPIN.count == 4 && (enteredPIN == outlet.pin || enteredPIN == outlet.merchant.pin) {
-            self.performSegue(withIdentifier: "correctOutletPinSegue", sender: self)
+            
+            //: Load user from defaults
+            let defaults = UserDefaults.standard
+            if let savedUser = defaults.object(forKey: "SavedUser") as? Data {
+                do {
+                    self.user = try User.decode(data: savedUser)
+                } catch {
+                    print("Error decoding user from defaults")
+                }
+            }
+            
+            //: Prepare parameters for API post parameters
+            let params = ["user_id": self.user.id]
+            let encoder = JSONEncoder()
+            do {
+                let jsonData = try encoder.encode(params)
+                postAPIResults(endpoint: "offers/redeem/" + String(self.offer.id), parameters: jsonData) {redemption in
+                    do {
+                        self.user = try User.decode(data: redemption)
+                        let encodedUser = try self.user.encode()
+                        let defaults = UserDefaults.standard
+                        defaults.set(encodedUser, forKey: "SavedUser")
+                        self.performSegue(withIdentifier: "correctOutletPinSegue", sender: self)
+                    } catch {
+                        let alert = UIAlertController(title: "Error", message: "There was an error redeeming the voucher", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }
+            } catch {
+                print("Error encoding parameters")
+            }
+            
         } else {
+            
             let alert = UIAlertController(title: "Error", message: "The PIN is incorrect", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            
         }
     }
 

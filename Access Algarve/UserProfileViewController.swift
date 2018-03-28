@@ -43,7 +43,17 @@ class UserProfileViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         //: Get user from database and update defaults
-        loadUser(user_id: user.id) {dbUser in self.user = dbUser}
+        loadUser(user_id: user.id) {dbUser in
+            DispatchQueue.main.async {
+                self.user = dbUser
+                var savedAmount: Double = 0
+                for redemption in self.user.redemptions {
+                    savedAmount += Double(redemption.offer.max_savings)! / Double(redemption.offer.quantity)
+                }
+                self.amountSaved.text = String(Int(savedAmount.rounded(.up)))
+                self.offersUsed.text = String(self.user.redemptions.count)
+            }
+        }
         
     }
     

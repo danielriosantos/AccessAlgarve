@@ -53,7 +53,7 @@ class UsedOffersViewController: UIViewController, UITableViewDelegate, UITableVi
             let redeemDateString = formatter.string(from: redeemDate!)
             
             cell.voucherLocation.text = "Redeemed on " + redeemDateString
-            cell.voucherEstimatedSavings.text = "SAVED €" + String((Double(self.user.redemptions[indexPath.row].offer.max_savings)!/2))
+            cell.voucherEstimatedSavings.text = "SAVED €" + String((Double(self.user.redemptions[indexPath.row].offer.max_savings)!/Double(self.user.redemptions[indexPath.row].offer.quantity)))
         }
         
         return cell

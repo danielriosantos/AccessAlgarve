@@ -41,6 +41,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         locationManager.startUpdatingLocation()
         locationManager.distanceFilter = 100
         
+        //: Get user from database and update defaults
+        loadUser()
+        
     }
     
     @objc func dismissSearchBar() {
