@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class OutletsLocationViewController: UIViewController, CLLocationManagerDelegate {
+class OutletsLocationViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var map: MKMapView!
     
@@ -19,6 +19,7 @@ class OutletsLocationViewController: UIViewController, CLLocationManagerDelegate
     var currentColor: UIColor!
     let locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
+    var pin: AnnotationPin!
     
     //: Define Colors
     let pink = UIColor(red: 221.0/255.0, green: 78.0/255.0, blue: 149.0/255.0, alpha: 1.0)
@@ -32,6 +33,7 @@ class OutletsLocationViewController: UIViewController, CLLocationManagerDelegate
         super.viewDidLoad()
 
         self.locationManager.delegate = self
+        self.map.delegate = self
         
         //: Handle location
         locationManager.startUpdatingLocation()
@@ -42,13 +44,12 @@ class OutletsLocationViewController: UIViewController, CLLocationManagerDelegate
         
         //: Add pinpoint
         for outlet in outlets {
-            let annotation = MKPointAnnotation()
             let coordstring = outlet.gps.replacingOccurrences(of: " ", with: "")
             if  coordstring != "" {
                 let coordsArr = coordstring.components(separatedBy: ",")
                 let outletLocation = CLLocationCoordinate2DMake(CLLocationDegrees(coordsArr[0])!, CLLocationDegrees(coordsArr[1])!)
-                annotation.coordinate = outletLocation
-                map.addAnnotation(annotation)
+                pin = AnnotationPin(Title: outlet.name, Subtitle: outlet.city, Coordinate: outletLocation)
+                map.addAnnotation(pin)
             }
         }
         
@@ -65,5 +66,13 @@ class OutletsLocationViewController: UIViewController, CLLocationManagerDelegate
             currentLocation = location
         }
     }
+    
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        let annotationView = MKAnnotationView(annotation: pin, reuseIdentifier: "OutletPin")
+//        annotationView.image = UIImage(named: "pin")
+//        let transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+//        annotationView.transform = transform
+//        return annotationView
+//    }
 
 }

@@ -17,6 +17,7 @@ class OutletLocationViewController: UIViewController, CLLocationManagerDelegate 
     var outlet: Outlet!
     let locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
+    var pin: AnnotationPin!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +32,12 @@ class OutletLocationViewController: UIViewController, CLLocationManagerDelegate 
         self.navigationItem.title = outlet.name + " Location"
         
         //: Add pinpoint
-        let annotation = MKPointAnnotation()
         let coordstring = outlet.gps.replacingOccurrences(of: " ", with: "")
         if  coordstring != "" {
             let coordsArr = coordstring.components(separatedBy: ",")
             let outletLocation = CLLocationCoordinate2DMake(CLLocationDegrees(coordsArr[0])!, CLLocationDegrees(coordsArr[1])!)
-            annotation.coordinate = outletLocation
-            map.addAnnotation(annotation)
+            pin = AnnotationPin(Title: outlet.name, Subtitle: outlet.city, Coordinate: outletLocation)
+            map.addAnnotation(pin)
         }
         
         //: Show user location and center

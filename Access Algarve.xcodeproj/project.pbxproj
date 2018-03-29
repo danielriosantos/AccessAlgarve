@@ -31,6 +31,7 @@
 		BFA5190B206088440098859B /* SetUserPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5190A206088440098859B /* SetUserPinViewController.swift */; };
 		BFA5190D206175EA0098859B /* LocationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5190C206175EA0098859B /* LocationsTableViewCell.swift */; };
 		BFA5190F2061774E0098859B /* SelectLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5190E2061774E0098859B /* SelectLocationsViewController.swift */; };
+		BFAB4FDF206C9BC00056E364 /* AnnotationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAB4FDE206C9BC00056E364 /* AnnotationPin.swift */; };
 		BFB7FBD4204832BC000522E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FBD3204832BC000522E8 /* AppDelegate.swift */; };
 		BFB7FBD6204832BC000522E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FBD5204832BC000522E8 /* ViewController.swift */; };
 		BFB7FBD9204832BC000522E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB7FBD7204832BC000522E8 /* Main.storyboard */; };
@@ -110,6 +111,7 @@
 		BFA5190A206088440098859B /* SetUserPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUserPinViewController.swift; sourceTree = "<group>"; };
 		BFA5190C206175EA0098859B /* LocationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewCell.swift; sourceTree = "<group>"; };
 		BFA5190E2061774E0098859B /* SelectLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationsViewController.swift; sourceTree = "<group>"; };
+		BFAB4FDE206C9BC00056E364 /* AnnotationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPin.swift; sourceTree = "<group>"; };
 		BFB7FBD0204832BC000522E8 /* Access Algarve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Access Algarve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB7FBD3204832BC000522E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB7FBD5204832BC000522E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				659AC37E2068119300C3535B /* NotificationsTableViewCell.swift */,
 				BF834FA0206AAB4B00A1556D /* PurchaseHistoryTableViewCell.swift */,
 				BF32B639206C3A670054E5C2 /* AmenityCollectionViewCell.swift */,
+				BFAB4FDE206C9BC00056E364 /* AnnotationPin.swift */,
 				BF75159E204E497A003591C0 /* DatabaseExtension.swift */,
 				BFFA8955205C592100FC55B2 /* Extensions.swift */,
 				BFB7FBD7204832BC000522E8 /* Main.storyboard */,
@@ -482,6 +485,7 @@
 				BF388F7C205783F400117674 /* RedeemViewController.swift in Sources */,
 				BFA5190B206088440098859B /* SetUserPinViewController.swift in Sources */,
 				BF7515A5204F127C003591C0 /* OutletDetailsViewController.swift in Sources */,
+				BFAB4FDF206C9BC00056E364 /* AnnotationPin.swift in Sources */,
 				BF32B63C206C64B00054E5C2 /* OutletsLocationViewController.swift in Sources */,
 				BFF62642205B8FD8000F9CAE /* OutletLocationViewController.swift in Sources */,
 				BFF6263E205AFBF7000F9CAE /* RedeemSuccessViewController.swift in Sources */,

@@ -16,6 +16,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
     var outletresultscontainer: OutletResults!
     var currentColor: UIColor!
     var currentPage = 1
+    var pin: AnnotationPin!
     
     let locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
@@ -163,13 +164,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
                 DispatchQueue.main.async {
                     for outlet in self.outlets {
                         //: Add pinpoint
-                        let annotation = MKPointAnnotation()
                         let coordstring = outlet.gps.replacingOccurrences(of: " ", with: "")
                         if  coordstring != "" {
                             let coordsArr = coordstring.components(separatedBy: ",")
                             let outletLocation = CLLocationCoordinate2DMake(CLLocationDegrees(coordsArr[0])!, CLLocationDegrees(coordsArr[1])!)
-                            annotation.coordinate = outletLocation
-                            self.map.addAnnotation(annotation)
+                            self.pin = AnnotationPin(Title: outlet.name, Subtitle: outlet.city, Coordinate: outletLocation)
+                            self.map.addAnnotation(self.pin)
                         }
                     }
                     self.loadMoreResults()
