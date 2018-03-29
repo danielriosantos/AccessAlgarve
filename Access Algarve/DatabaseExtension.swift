@@ -160,6 +160,11 @@ struct Location: Codable {
     var status: Bool!
 }
 
+struct Amenity: Codable {
+    let id: Int
+    let name: String
+}
+
 struct AppNotification: Codable {
     let id: Int
     let user_id: Int!

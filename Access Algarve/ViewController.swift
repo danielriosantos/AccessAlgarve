@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, MKMapViewDelegate {
+    
+    var outlets = [Outlet]()
+    var outletresultscontainer: OutletResults!
+    var currentColor: UIColor!
+    var currentPage = 1
     
     let locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
     
+    @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var linkbutton: UIButton!
     @IBOutlet var searchBar: UISearchBar!
     
@@ -35,6 +42,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         
         self.locationManager.delegate = self
         self.searchBar.delegate = self
+        self.map.delegate = self
         
         //: Handle location
         locationManager.requestWhenInUseAuthorization()
@@ -43,6 +51,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
         
         //: Get user from database and update defaults
         loadUser()
+        
+        //: Proload Amenities
+        getAPIResults(endpoint: "amenities", parameters: [:]) {data in
+            let defaults = UserDefaults.standard
+            defaults.set(data, forKey: "SavedAmenities")
+        }
+        
+        map.showsUserLocation = true
         
     }
     
@@ -53,8 +69,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for location in locations {
-            currentLocation = location
+            self.currentLocation = location
+            let userLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+            let viewRegion = MKCoordinateRegionMakeWithDistance(userLocation, 30000, 30000)
+            map.setRegion(viewRegion, animated: true)
+            let circle = MKCircle(center: userLocation, radius: Double(10000))
+            map.add(circle)
+            //: Load first set of results
+            loadResults(page: 1)
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        guard let circelOverLay = overlay as? MKCircle else {return MKOverlayRenderer()}
+        
+        let circleRenderer = MKCircleRenderer(circle: circelOverLay)
+        //circleRenderer.strokeColor = .blue
+        circleRenderer.fillColor = .blue
+        circleRenderer.alpha = 0.05
+        return circleRenderer
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -112,6 +145,49 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
 //        if let url = URL(string: "https://www.zoomarine.pt") {
 //            UIApplication.shared.open(url, options: [:])
 //        }
+    }
+    
+    private func loadResults(page: Int) -> Void {
+        
+        var params = ["page": String(page)]
+        if currentLocation != nil {
+            params["location"] = String(currentLocation.coordinate.latitude) + "," + String(currentLocation.coordinate.longitude)
+            params["distance"] = String(10)
+        }
+        getAPIResults(endpoint: "outlets", parameters: params) { data in
+            do {
+                //: Load the results
+                let outletresults = try OutletResults.decode(data: data)
+                self.outlets.append(contentsOf: outletresults.data)
+                self.outletresultscontainer = outletresults
+                DispatchQueue.main.async {
+                    for outlet in self.outlets {
+                        //: Add pinpoint
+                        let annotation = MKPointAnnotation()
+                        let coordstring = outlet.gps.replacingOccurrences(of: " ", with: "")
+                        if  coordstring != "" {
+                            let coordsArr = coordstring.components(separatedBy: ",")
+                            let outletLocation = CLLocationCoordinate2DMake(CLLocationDegrees(coordsArr[0])!, CLLocationDegrees(coordsArr[1])!)
+                            annotation.coordinate = outletLocation
+                            self.map.addAnnotation(annotation)
+                        }
+                    }
+                    self.loadMoreResults()
+                }
+            } catch {
+                print("Error decoding Outlet Results data")
+            }
+        }
+        
+    }
+    
+    private func loadMoreResults() {
+        
+        if currentPage < outletresultscontainer.last_page {
+            currentPage = outletresultscontainer.current_page + 1
+            loadResults(page: currentPage)
+        }
+        
     }
 
 

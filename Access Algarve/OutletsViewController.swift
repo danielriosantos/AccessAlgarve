@@ -69,7 +69,13 @@ class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 distanceMeters = outletLocation.distance(from: self.currentLocation)
             }
             
-            if (self.outlets[indexPath.row].merchant != nil) {cell.voucherCompanyLogo.downloadedFrom(link: "https://www.accessalgarve.com/images/logos/\(self.outlets[indexPath.row].merchant.id)-logo.png")}
+            cell.voucherCompanyLogo.image = nil
+            cell.tag = indexPath.row
+            if (self.outlets[indexPath.row].merchant != nil) {
+                if cell.tag == indexPath.row {
+                    cell.voucherCompanyLogo.downloadedFrom(link: "https://www.accessalgarve.com/images/logos/\(self.outlets[indexPath.row].merchant.id)-logo.png")
+                }
+            }
             cell.voucherOfferName.text = self.outlets[indexPath.row].name
             if (self.outlets[indexPath.row].offers[0].type != nil) {cell.voucherOfferType.text = self.outlets[indexPath.row].offers[0].type.name} else {cell.voucherOfferType.text = ""}
             if distance >= 1 {cell.voucherLocation.text = self.outlets[indexPath.row].city + " " + String(Int(distance.rounded(.toNearestOrEven))) + "km"} else {cell.voucherLocation.text = self.outlets[indexPath.row].city + " " + String(Int(distanceMeters.rounded(.toNearestOrEven))) + "m"}
@@ -142,6 +148,12 @@ class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 voucherDetailsViewController.currentLocation = currentLocation
                 voucherDetailsViewController.previousVC = "vouchers"
             }
+        } else if segue.identifier == "viewOutletsLocationSegue" {
+            guard let outletsLocationNavigationViewController = segue.destination as? UINavigationController else {return}
+            guard let outletsLocationViewController = outletsLocationNavigationViewController.topViewController as? OutletsLocationViewController else {return}
+            outletsLocationViewController.outlets = self.outlets
+            outletsLocationViewController.outletresultscontainer = self.outletresultscontainer
+            outletsLocationViewController.currentLocation = self.currentLocation
         } else if segue.identifier == "showFavourites" {
             guard let favouritesViewController = segue.destination as? FavouritesViewController else {return}
             favouritesViewController.currentLocation = currentLocation

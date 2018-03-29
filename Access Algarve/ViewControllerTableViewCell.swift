@@ -32,7 +32,6 @@ class ViewControllerTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.voucherCompanyLogo.image = UIImage(named: "appicon")
         self.voucherSelected?.isOn = false
         self.voucherLock?.isHidden = false
         self.voucherOfferName?.textColor = UIColor(red: 146.0/255.0, green: 146.0/255.0, blue: 146.0/255.0, alpha: 1.0)

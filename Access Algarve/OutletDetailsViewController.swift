@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate {
     
     @IBOutlet weak var merchantImage: UIImageView!
     @IBOutlet weak var merchantName: UILabel!
@@ -24,9 +24,11 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var iconsView: UIView!
     @IBOutlet weak var vouchersTableView: UITableView!
+    @IBOutlet weak var amenitiesTableView: UICollectionView!
     
     var outlet: Outlet!
     var outletOffers: [Offer] = []
+    var amenities: [Amenity] = []
     var user: User!
     var hasValidSubscription: Bool = false
     
@@ -98,16 +100,65 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         if self.hasValidSubscription && outletOffers[indexPath.row].quantity > 0 {self.performSegue(withIdentifier: "redeemOfferSegue", sender: self)} else {self.performSegue(withIdentifier: "blockedOfferSegue", sender: self)}
     }
     
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.outlet.amenities.count
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "amenityCell", for: indexPath) as! AmenityCollectionViewCell
+        var amenitysafename = ""
+        var amenityname = ""
+        for amenity in amenities {
+            if amenity.id == self.outlet.amenities[indexPath.row] {
+                amenitysafename = amenity.name.lowercased().replacingOccurrences(of: " ", with: "-")
+                amenityname = amenity.name
+            }
+        }
+        switch Int(outlet.offers[0].offer_category_id) {
+        case 1:
+            cell.amenityLogo.downloadedFrom(link: "https://admin.accessalgarve.com/images/amenities/\(amenitysafename)-pink.png")
+        case 3:
+            cell.amenityLogo.downloadedFrom(link: "https://admin.accessalgarve.com/images/amenities/\(amenitysafename)-orange.png")
+        default:
+            cell.amenityLogo.downloadedFrom(link: "https://admin.accessalgarve.com/images/amenities/\(amenitysafename)-blue.png")
+        }
+        cell.amenityName.text = amenityname
+        return cell
+    }
+    
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        
+        let tableHeightConstraint = self.vouchersTableView.constraints.filter { $0.identifier == "tableHeightConstraint" }.first
+        let tableHeight = Double(outletOffers.count * 121)
+        tableHeightConstraint?.constant = CGFloat(tableHeight)
+        
+        let collectionHeightConstraint = self.amenitiesTableView.constraints.filter { $0.identifier == "collectionHeightConstraint"}.first
+        let amenitiesrows = Int(ceil(Double(outlet.amenities.count) / Double(5)))
+        let collectionHeight = amenitiesrows * 80 + (amenitiesrows - 1) * 10
+        collectionHeightConstraint?.constant = CGFloat(collectionHeight)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //: Load User
         let defaults = UserDefaults.standard
+        
+        //: Load User
         if let savedUser = defaults.object(forKey: "SavedUser") as? Data {
             do {
                 user = try User.decode(data: savedUser)
             } catch {
                 print("Error decoding user data from defaults")
+            }
+        }
+        
+        //: Load amenities from dafaults
+        if let savedAmenities = defaults.object(forKey: "SavedAmenities") as? Data {
+            do {
+                amenities = try [Amenity].decode(data: savedAmenities)
+            } catch {
+                print("Error decoding amenities data from defaults")
             }
         }
         
@@ -144,6 +195,8 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         
         self.vouchersTableView.delegate = self
         self.vouchersTableView.dataSource = self
+        self.amenitiesTableView.delegate = self
+        self.amenitiesTableView.dataSource = self
         self.locationManager.delegate = self
         
         //: Handle location
@@ -189,10 +242,6 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             outletGPS.setImage(UIImage(named: "adress-blue"), for: .normal)
         }
         
-        let tableHeight = Double(outletOffers.count * 111)
-        self.vouchersTableView.heightAnchor.constraint(equalToConstant: CGFloat(tableHeight)).isActive = true
-        self.vouchersTableView.translatesAutoresizingMaskIntoConstraints = true
-        
         let imageLink = "https://www.accessalgarve.com/images/logos/\(outlet.merchant.id)-image.jpg"
         merchantImage.downloadedFrom(link: imageLink)
         merchantImage.contentMode = UIViewContentMode.scaleAspectFill;
@@ -236,6 +285,7 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
             guard let outletLocationNavigationViewController = segue.destination as? UINavigationController else {return}
             guard let outletLocationViewController = outletLocationNavigationViewController.topViewController as? OutletLocationViewController else {return}
             outletLocationViewController.outlet = outlet
+            outletLocationViewController.currentLocation = currentLocation
         }
     }
     
