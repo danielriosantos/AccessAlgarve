@@ -1123,7 +1123,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdM-8B-c17">
-                                <rect key="frame" x="29" y="387" width="262" height="174"/>
+                                <rect key="frame" x="29" y="479" width="262" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YdM-8B-c17" secondAttribute="height" multiplier="766:240" id="ncn-eT-VkK"/>
+                                </constraints>
                                 <state key="normal" image="blue-redeem-button"/>
                                 <connections>
                                     <segue destination="kHZ-n6-U4J" kind="show" identifier="redeemOfferSegue2" id="eep-6i-Jq9"/>
