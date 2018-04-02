@@ -57,8 +57,12 @@ public struct User: Codable {
     var email: String
     var password: String!
     var pin: String!
+    var mobile: String!
     var country: String!
+    var nationality: String!
+    var birthday: String!
     var status: Int!
+    var notifications: Int!
     var excluded_locations: [String]!
     let created_at: String
     let updated_at: String

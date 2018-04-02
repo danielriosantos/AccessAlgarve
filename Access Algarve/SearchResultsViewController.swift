@@ -147,6 +147,9 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
                 voucherDetailsViewController.currentLocation = currentLocation
                 voucherDetailsViewController.previousVC = "searchresults"
             }
+        } else if segueidentifier == "showLocationsSegue" {
+            guard let selectLocationsViewController = segue.destination as? SelectLocationsViewController else {return}
+            selectLocationsViewController.previousVC = "searchresults"
         } else if segue.identifier == "showFavourites" {
             guard let favouritesViewController = segue.destination as? FavouritesViewController else {return}
             favouritesViewController.currentLocation = currentLocation

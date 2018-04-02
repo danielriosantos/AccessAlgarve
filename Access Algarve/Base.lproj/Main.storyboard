@@ -1604,10 +1604,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-circle" translatesAutoresizingMaskIntoConstraints="NO" id="H9b-1c-E6K">
-                                <rect key="frame" x="68.5" y="20" width="183" height="183"/>
+                                <rect key="frame" x="110" y="20" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="H9b-1c-E6K" secondAttribute="height" multiplier="1:1" id="DfF-Fe-YwZ"/>
+                                    <constraint firstAttribute="height" constant="100" id="S0p-v3-AN7"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save money, enjoy living" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDf-Xk-cVp">
-                                <rect key="frame" x="19" y="203" width="282" height="65"/>
+                                <rect key="frame" x="19" y="120" width="282" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="nan-l8-ufY"/>
                                 </constraints>
@@ -1616,7 +1620,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rR7-WD-aQt">
-                                <rect key="frame" x="8" y="276" width="304" height="43"/>
+                                <rect key="frame" x="8" y="193" width="304" height="43"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Hundreds of offers with something for everyone">
                                         <attributes>
@@ -1629,13 +1633,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="text-fields" translatesAutoresizingMaskIntoConstraints="NO" id="hhj-ma-z3u">
-                                <rect key="frame" x="8" y="327" width="304" height="33"/>
+                                <rect key="frame" x="8" y="244" width="304" height="33"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="text-fields" translatesAutoresizingMaskIntoConstraints="NO" id="DNq-27-a0C">
-                                <rect key="frame" x="8" y="368" width="304" height="33"/>
+                                <rect key="frame" x="8" y="285" width="304" height="33"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Og3-pZ-weo">
-                                <rect key="frame" x="15" y="338" width="80" height="13"/>
+                                <rect key="frame" x="15" y="255" width="80" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="TpT-ES-DEZ"/>
                                 </constraints>
@@ -1644,7 +1648,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="BL1-7M-o7B">
-                                <rect key="frame" x="100" y="332" width="205" height="25"/>
+                                <rect key="frame" x="100" y="249" width="205" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="fKY-Ao-Qox"/>
                                 </constraints>
@@ -1656,7 +1660,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOE-xD-Fnl">
-                                <rect key="frame" x="15" y="379" width="80" height="13"/>
+                                <rect key="frame" x="15" y="296" width="80" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Ltw-Ph-OZK"/>
                                 </constraints>
@@ -1665,7 +1669,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="iXa-27-T6Z" userLabel="Password">
-                                <rect key="frame" x="100" y="371" width="205" height="25"/>
+                                <rect key="frame" x="100" y="288" width="205" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="9oO-oT-uvt"/>
                                 </constraints>
@@ -1674,18 +1678,18 @@
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkI-gh-tuU" userLabel="Log in Button">
-                                <rect key="frame" x="61" y="396" width="198" height="59"/>
+                                <rect key="frame" x="61" y="338" width="198" height="59"/>
                                 <state key="normal" image="login-button"/>
                                 <connections>
                                     <action selector="checkLoginCredentials:" destination="bJU-h1-1J1" eventType="touchUpInside" id="IcH-a1-6el"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGN-L7-ZIJ" userLabel="Log in with Facebook Button">
-                                <rect key="frame" x="58.5" y="438" width="203" height="64"/>
+                                <rect key="frame" x="58.5" y="397" width="203" height="64"/>
                                 <state key="normal" image="facebook-login-button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mjj-MA-6fQ">
-                                <rect key="frame" x="77.5" y="514.5" width="165" height="27.5"/>
+                                <rect key="frame" x="77.5" y="498.5" width="165" height="27.5"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Don’t have an account yet?">
@@ -1703,7 +1707,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xhq-F3-No1">
-                                <rect key="frame" x="104" y="492" width="112" height="27.5"/>
+                                <rect key="frame" x="104" y="471" width="112" height="27.5"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Forgot password? ">
@@ -1743,6 +1747,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <segue destination="DRJ-HR-Egh" kind="show" id="f9U-MS-4Nv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1761,8 +1768,8 @@
                             <constraint firstItem="rR7-WD-aQt" firstAttribute="leading" secondItem="EG5-77-iHL" secondAttribute="leading" constant="8" id="FML-Ts-Uu5"/>
                             <constraint firstItem="HY3-Q1-2jL" firstAttribute="trailing" secondItem="EG5-77-iHL" secondAttribute="trailing" id="H3G-3i-nMt"/>
                             <constraint firstItem="EG5-77-iHL" firstAttribute="trailing" secondItem="rR7-WD-aQt" secondAttribute="trailing" constant="8" id="IJr-mR-eM8"/>
-                            <constraint firstItem="mjj-MA-6fQ" firstAttribute="top" secondItem="Xhq-F3-No1" secondAttribute="bottom" constant="-5" id="Iet-Pf-3LZ"/>
-                            <constraint firstItem="XkI-gh-tuU" firstAttribute="top" secondItem="DNq-27-a0C" secondAttribute="bottom" constant="-5" id="Io0-Q5-dcv"/>
+                            <constraint firstItem="mjj-MA-6fQ" firstAttribute="top" secondItem="Xhq-F3-No1" secondAttribute="bottom" id="Iet-Pf-3LZ"/>
+                            <constraint firstItem="XkI-gh-tuU" firstAttribute="top" secondItem="DNq-27-a0C" secondAttribute="bottom" constant="20" id="Io0-Q5-dcv"/>
                             <constraint firstItem="Og3-pZ-weo" firstAttribute="top" secondItem="rR7-WD-aQt" secondAttribute="bottom" constant="19" id="MIJ-za-3Iz"/>
                             <constraint firstItem="HY3-Q1-2jL" firstAttribute="leading" secondItem="EG5-77-iHL" secondAttribute="leading" id="Q0f-FH-BCc"/>
                             <constraint firstItem="rR7-WD-aQt" firstAttribute="top" secondItem="rDf-Xk-cVp" secondAttribute="bottom" constant="8" id="R91-pF-5tz"/>
@@ -1774,10 +1781,10 @@
                             <constraint firstItem="H9b-1c-E6K" firstAttribute="top" secondItem="EG5-77-iHL" secondAttribute="top" id="eOB-9e-ekG"/>
                             <constraint firstItem="rDf-Xk-cVp" firstAttribute="top" secondItem="H9b-1c-E6K" secondAttribute="bottom" id="f5O-JT-f60"/>
                             <constraint firstItem="EG5-77-iHL" firstAttribute="bottom" secondItem="ga9-rf-Wlv" secondAttribute="bottom" constant="3" id="ktx-Zg-qNT"/>
-                            <constraint firstItem="EGN-L7-ZIJ" firstAttribute="top" secondItem="XkI-gh-tuU" secondAttribute="bottom" constant="-17" id="myz-0J-mCc"/>
+                            <constraint firstItem="EGN-L7-ZIJ" firstAttribute="top" secondItem="XkI-gh-tuU" secondAttribute="bottom" id="myz-0J-mCc"/>
                             <constraint firstItem="EG5-77-iHL" firstAttribute="trailing" secondItem="BL1-7M-o7B" secondAttribute="trailing" constant="15" id="nX1-p4-3fr"/>
                             <constraint firstItem="BOE-xD-Fnl" firstAttribute="top" secondItem="Og3-pZ-weo" secondAttribute="bottom" constant="28" id="ndc-UG-RYt"/>
-                            <constraint firstItem="Xhq-F3-No1" firstAttribute="top" secondItem="EGN-L7-ZIJ" secondAttribute="bottom" constant="-10" id="neI-lF-fV4"/>
+                            <constraint firstItem="Xhq-F3-No1" firstAttribute="top" secondItem="EGN-L7-ZIJ" secondAttribute="bottom" constant="10" id="neI-lF-fV4"/>
                             <constraint firstItem="Xhq-F3-No1" firstAttribute="centerX" secondItem="Y9s-YY-u3F" secondAttribute="centerX" id="pgQ-gj-V6O"/>
                             <constraint firstItem="Og3-pZ-weo" firstAttribute="leading" secondItem="EG5-77-iHL" secondAttribute="leading" constant="15" id="sI8-Nb-nZb"/>
                             <constraint firstItem="ga9-rf-Wlv" firstAttribute="centerX" secondItem="Y9s-YY-u3F" secondAttribute="centerX" id="sLY-Bc-vu8"/>
@@ -2260,6 +2267,9 @@
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backButtonClicked:" destination="d8f-XJ-gyf" eventType="touchUpInside" id="HhF-Bm-Hxu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTF-fz-XvV">
                                 <rect key="frame" x="82" y="40" width="156.5" height="18"/>
@@ -2374,7 +2384,6 @@
                         <viewLayoutGuide key="safeArea" id="mzD-xn-6gh"/>
                     </view>
                     <connections>
-                        <outlet property="backButtonClicked" destination="N1i-eg-qFe" id="ZB6-Fz-isM"/>
                         <outlet property="userBirthday" destination="mgC-ry-suX" id="Kvs-xa-ZIz"/>
                         <outlet property="userCountry" destination="ESn-a0-l8f" id="sOv-IO-dVi"/>
                         <outlet property="userEmail" destination="3sn-vp-CWd" id="XEy-8j-Vd2"/>
@@ -2382,7 +2391,7 @@
                         <outlet property="userName" destination="WP7-Fn-d2e" id="yL0-iz-vEU"/>
                         <outlet property="userNationality" destination="JrB-4M-4RN" id="jkx-MB-Rfk"/>
                         <outlet property="userNotifications" destination="bqe-yz-0mP" id="xpF-zm-rv3"/>
-                        <segue destination="uPv-eP-MTG" kind="unwind" identifier="unwindToSettingsSegue" unwindAction="unwindToSettingsViewController:" id="scD-8m-Mo4"/>
+                        <segue destination="uPv-eP-MTG" kind="unwind" identifier="unwindToSettingsSegue" unwindAction="unwindToSettingsViewController:" id="0iC-52-JxI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1r-qP-CBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3263,11 +3272,6 @@
                                     <constraint firstAttribute="height" constant="69" id="uTn-pa-7RS"/>
                                 </constraints>
                                 <state key="normal" image="next-button"/>
-                                <connections>
-                                    <segue destination="CCv-Xg-qX7" kind="show" id="Tl7-tg-QOz">
-                                        <nil key="action"/>
-                                    </segue>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3296,9 +3300,14 @@
                     </view>
                     <connections>
                         <outlet property="locationsTable" destination="lI7-Pv-BjM" id="ioz-RP-lsy"/>
+                        <segue destination="CCv-Xg-qX7" kind="show" identifier="chooseVouchersSegue" id="ZbL-Dh-hhA"/>
+                        <segue destination="QS5-Ax-8iu" kind="unwind" identifier="unwindToHome" unwindAction="didUnwindFromVouchersController:" id="RiR-H9-ovJ"/>
+                        <segue destination="QS5-Ax-8iu" kind="unwind" identifier="unwindToOutlets" unwindAction="didUnwindFromVoucherDetailsController:" id="VV9-MM-wqP"/>
+                        <segue destination="QS5-Ax-8iu" kind="unwind" identifier="unwindToSearchResults" unwindAction="didUnwindToSearchResultsViewController:" id="y83-dX-Qs8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2q-UV-g4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QS5-Ax-8iu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-2923" y="1368"/>
         </scene>
@@ -5772,11 +5781,12 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <segue reference="biZ-ES-U94"/>
         <segue reference="kUS-8y-cRe"/>
         <segue reference="ECt-b3-LJ9"/>
-        <segue reference="0ah-TP-HME"/>
+        <segue reference="f9U-MS-4Nv"/>
+        <segue reference="nz3-f1-fUy"/>
         <segue reference="Q4S-wx-ln1"/>
         <segue reference="eep-6i-Jq9"/>
         <segue reference="NOF-zz-TqB"/>
         <segue reference="bhB-Co-xUU"/>
-        <segue reference="peR-1u-djb"/>
+        <segue reference="dnG-iW-dBU"/>
     </inferredMetricsTieBreakers>
 </document>

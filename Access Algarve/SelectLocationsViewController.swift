@@ -15,6 +15,7 @@ class SelectLocationsViewController: UIViewController, UITableViewDelegate, UITa
     
     var user: User!
     var locations: [Location]! = []
+    var previousVC: String!
     let currentColor = UIColor(red: 186.0/255.0, green: 186.0/255.0, blue: 186.0/255.0, alpha: 1.0)
     let invisible = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0)
     
