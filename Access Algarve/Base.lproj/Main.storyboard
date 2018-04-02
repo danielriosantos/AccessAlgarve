@@ -993,19 +993,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfQ-fx-3bP">
-                                <rect key="frame" x="5" y="30" width="310" height="528"/>
+                                <rect key="frame" x="10" y="30" width="300" height="528"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="access-algarve-logo-white" translatesAutoresizingMaskIntoConstraints="NO" id="fgG-Aa-yJH">
+                                        <rect key="frame" x="101.5" y="10" width="96" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="noO-Ns-PBP"/>
+                                        </constraints>
+                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13p-iy-IhL">
-                                        <rect key="frame" x="20" y="70" width="270" height="388"/>
+                                        <rect key="frame" x="20" y="75" width="260" height="378"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I4K-uQ-iZd">
-                                                <rect key="frame" x="10" y="20" width="250" height="110"/>
+                                                <rect key="frame" x="10" y="20" width="240" height="110"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="110" id="Z33-w6-9sJ"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tandem Skydive" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcU-9E-bZX">
-                                                <rect key="frame" x="10" y="145" width="250" height="25"/>
+                                                <rect key="frame" x="10" y="145" width="240" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="XIl-Cj-0ph"/>
                                                 </constraints>
@@ -1014,25 +1020,25 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy 1 Get 1 Free" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hm-Fo-qVH">
-                                                <rect key="frame" x="10" y="190" width="250" height="15"/>
+                                                <rect key="frame" x="10" y="210" width="240" height="15"/>
                                                 <fontDescription key="fontDescription" name="SinkinSans-500Medium" family="Sinkin Sans" pointSize="15"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Savings: €50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1y-8w-Pth">
-                                                <rect key="frame" x="10" y="225" width="250" height="15"/>
+                                                <rect key="frame" x="10" y="255" width="240" height="15"/>
                                                 <fontDescription key="fontDescription" name="SinkinSans-800Black" family="Sinkin Sans" pointSize="15"/>
                                                 <color key="textColor" red="0.8980392157" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When dinning Seasonal rating apply" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="du5-wQ-O1b">
-                                                <rect key="frame" x="10" y="335" width="250" height="12"/>
+                                                <rect key="frame" x="10" y="325" width="240" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qAP-ML-0nE">
-                                                <rect key="frame" x="65" y="362" width="139.5" height="18"/>
+                                                <rect key="frame" x="60" y="352" width="139.5" height="18"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-calendar-icon" translatesAutoresizingMaskIntoConstraints="NO" id="eFW-K4-Wet">
                                                         <rect key="frame" x="0.0" y="0.0" width="17" height="18"/>
@@ -1050,8 +1056,8 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="5Hm-Fo-qVH" secondAttribute="trailing" constant="10" id="12g-E7-CcD"/>
                                             <constraint firstAttribute="trailing" secondItem="UcU-9E-bZX" secondAttribute="trailing" constant="10" id="6sQ-DY-tyD"/>
+                                            <constraint firstItem="Y1y-8w-Pth" firstAttribute="top" secondItem="5Hm-Fo-qVH" secondAttribute="bottom" constant="30" id="7uR-lK-naw"/>
                                             <constraint firstItem="Y1y-8w-Pth" firstAttribute="leading" secondItem="13p-iy-IhL" secondAttribute="leading" constant="10" id="B62-Mc-onf"/>
-                                            <constraint firstItem="Y1y-8w-Pth" firstAttribute="top" secondItem="5Hm-Fo-qVH" secondAttribute="bottom" constant="20" id="Eql-pb-H1C"/>
                                             <constraint firstItem="qAP-ML-0nE" firstAttribute="centerX" secondItem="13p-iy-IhL" secondAttribute="centerX" id="H5v-yB-FDi"/>
                                             <constraint firstItem="qAP-ML-0nE" firstAttribute="top" secondItem="du5-wQ-O1b" secondAttribute="bottom" constant="15" id="Kld-8z-81r"/>
                                             <constraint firstAttribute="trailing" secondItem="I4K-uQ-iZd" secondAttribute="trailing" constant="10" id="NHZ-r0-dDw"/>
@@ -1059,7 +1065,7 @@
                                             <constraint firstItem="du5-wQ-O1b" firstAttribute="leading" secondItem="13p-iy-IhL" secondAttribute="leading" constant="10" id="T0s-Ii-tGE"/>
                                             <constraint firstItem="5Hm-Fo-qVH" firstAttribute="leading" secondItem="13p-iy-IhL" secondAttribute="leading" constant="10" id="Wbi-Hd-Ta2"/>
                                             <constraint firstAttribute="trailing" secondItem="du5-wQ-O1b" secondAttribute="trailing" constant="10" id="age-hJ-eW2"/>
-                                            <constraint firstItem="5Hm-Fo-qVH" firstAttribute="top" secondItem="UcU-9E-bZX" secondAttribute="bottom" constant="20" id="fAk-C3-UHw"/>
+                                            <constraint firstItem="5Hm-Fo-qVH" firstAttribute="top" secondItem="UcU-9E-bZX" secondAttribute="bottom" constant="40" id="fAk-C3-UHw"/>
                                             <constraint firstItem="I4K-uQ-iZd" firstAttribute="leading" secondItem="13p-iy-IhL" secondAttribute="leading" constant="10" id="iBk-c9-zmS"/>
                                             <constraint firstItem="UcU-9E-bZX" firstAttribute="top" secondItem="I4K-uQ-iZd" secondAttribute="bottom" constant="15" id="l3y-F8-3Q3"/>
                                             <constraint firstItem="UcU-9E-bZX" firstAttribute="leading" secondItem="13p-iy-IhL" secondAttribute="leading" constant="10" id="udJ-UX-AST"/>
@@ -1072,12 +1078,23 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgf-ug-1E6">
+                                        <rect key="frame" x="254" y="20" width="26" height="26"/>
+                                        <state key="normal" image="white-x-icon"/>
+                                        <connections>
+                                            <segue destination="Qha-T1-Wkj" kind="unwind" unwindAction="didUnwindFromRedeemController:" id="V4c-wZ-Nlq"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="13p-iy-IhL" firstAttribute="top" secondItem="tfQ-fx-3bP" secondAttribute="top" constant="70" id="8vz-sC-ys2"/>
+                                    <constraint firstItem="13p-iy-IhL" firstAttribute="top" secondItem="tfQ-fx-3bP" secondAttribute="top" constant="75" id="8vz-sC-ys2"/>
+                                    <constraint firstItem="fgG-Aa-yJH" firstAttribute="centerX" secondItem="tfQ-fx-3bP" secondAttribute="centerX" id="I4X-zE-JTk"/>
                                     <constraint firstItem="13p-iy-IhL" firstAttribute="leading" secondItem="tfQ-fx-3bP" secondAttribute="leading" constant="20" id="L59-kx-pOh"/>
-                                    <constraint firstAttribute="bottom" secondItem="13p-iy-IhL" secondAttribute="bottom" constant="70" id="mZA-Hu-uoj"/>
+                                    <constraint firstItem="fgG-Aa-yJH" firstAttribute="top" secondItem="tfQ-fx-3bP" secondAttribute="top" constant="10" id="UsM-4g-0a6"/>
+                                    <constraint firstAttribute="trailing" secondItem="zgf-ug-1E6" secondAttribute="trailing" constant="20" id="Y8Y-qf-wKF"/>
+                                    <constraint firstAttribute="bottom" secondItem="13p-iy-IhL" secondAttribute="bottom" constant="75" id="mZA-Hu-uoj"/>
+                                    <constraint firstItem="zgf-ug-1E6" firstAttribute="centerY" secondItem="fgG-Aa-yJH" secondAttribute="centerY" id="oIn-CM-Pr6"/>
                                     <constraint firstAttribute="trailing" secondItem="13p-iy-IhL" secondAttribute="trailing" constant="20" id="yLj-Yz-smq"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -1086,15 +1103,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgf-ug-1E6">
-                                <rect key="frame" x="274" y="50" width="26" height="26"/>
-                                <state key="normal" image="white-x-icon"/>
-                                <connections>
-                                    <segue destination="Qha-T1-Wkj" kind="unwind" unwindAction="didUnwindFromRedeemController:" id="V4c-wZ-Nlq"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dkt-Lf-SX0">
-                                <rect key="frame" x="106" y="75" width="107" height="25"/>
+                                <rect key="frame" x="106" y="80" width="107" height="25"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Review Rules of Use">
@@ -1108,9 +1118,12 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <segue destination="nBA-CW-ueb" kind="show" id="gEQ-E2-t6O"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdM-8B-c17">
-                                <rect key="frame" x="29" y="483" width="262" height="82"/>
+                                <rect key="frame" x="29" y="387" width="262" height="174"/>
                                 <state key="normal" image="blue-redeem-button"/>
                                 <connections>
                                     <segue destination="kHZ-n6-U4J" kind="show" identifier="redeemOfferSegue2" id="eep-6i-Jq9"/>
@@ -1119,17 +1132,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tfQ-fx-3bP" firstAttribute="leading" secondItem="b2H-OD-9Ki" secondAttribute="leading" constant="5" id="8Ng-eb-LNt"/>
+                            <constraint firstItem="tfQ-fx-3bP" firstAttribute="leading" secondItem="b2H-OD-9Ki" secondAttribute="leading" constant="10" id="8Ng-eb-LNt"/>
                             <constraint firstItem="Dkt-Lf-SX0" firstAttribute="centerX" secondItem="74w-v7-2Lp" secondAttribute="centerX" id="9aH-2s-vu8"/>
                             <constraint firstItem="b2H-OD-9Ki" firstAttribute="bottom" secondItem="tfQ-fx-3bP" secondAttribute="bottom" constant="10" id="PkN-Xh-IDx"/>
                             <constraint firstItem="YdM-8B-c17" firstAttribute="leading" secondItem="b2H-OD-9Ki" secondAttribute="leading" constant="29" id="U6z-kv-SSN"/>
                             <constraint firstItem="b2H-OD-9Ki" firstAttribute="trailing" secondItem="YdM-8B-c17" secondAttribute="trailing" constant="29" id="Uwf-iu-Cj4"/>
-                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="bottom" secondItem="YdM-8B-c17" secondAttribute="bottom" constant="3" id="Ysz-gK-e4I"/>
-                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="trailing" secondItem="tfQ-fx-3bP" secondAttribute="trailing" constant="5" id="Zee-AD-1kN"/>
-                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="trailing" secondItem="zgf-ug-1E6" secondAttribute="trailing" constant="20" id="gYi-es-7YD"/>
-                            <constraint firstItem="zgf-ug-1E6" firstAttribute="top" secondItem="b2H-OD-9Ki" secondAttribute="top" constant="30" id="hvH-tn-V7K"/>
+                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="bottom" secondItem="YdM-8B-c17" secondAttribute="bottom" constant="7" id="Ysz-gK-e4I"/>
+                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="trailing" secondItem="tfQ-fx-3bP" secondAttribute="trailing" constant="10" id="Zee-AD-1kN"/>
                             <constraint firstItem="tfQ-fx-3bP" firstAttribute="top" secondItem="b2H-OD-9Ki" secondAttribute="top" constant="10" id="nhm-QT-0qT"/>
-                            <constraint firstItem="Dkt-Lf-SX0" firstAttribute="top" secondItem="b2H-OD-9Ki" secondAttribute="top" constant="55" id="zVR-it-5l2"/>
+                            <constraint firstItem="Dkt-Lf-SX0" firstAttribute="top" secondItem="b2H-OD-9Ki" secondAttribute="top" constant="60" id="zVR-it-5l2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b2H-OD-9Ki"/>
                     </view>
@@ -5688,6 +5699,7 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
     </scenes>
     <resources>
         <image name="458dpi" width="395" height="76"/>
+        <image name="access-algarve-logo-white" width="96" height="45"/>
         <image name="activities-button" width="861" height="191"/>
         <image name="activities-button-small" width="617" height="114"/>
         <image name="adress-blue" width="140" height="131"/>
@@ -5696,7 +5708,7 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <image name="blue-button" width="182" height="47"/>
         <image name="blue-calendar-icon" width="17" height="18"/>
         <image name="blue-line" width="370" height="3"/>
-        <image name="blue-redeem-button" width="262" height="82"/>
+        <image name="blue-redeem-button" width="555" height="174"/>
         <image name="blue-smile-face" width="123" height="123"/>
         <image name="buy-app-image" width="369" height="203"/>
         <image name="buy-button-unselected" width="24" height="24"/>
@@ -5783,6 +5795,7 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <segue reference="biZ-ES-U94"/>
         <segue reference="kUS-8y-cRe"/>
         <segue reference="ECt-b3-LJ9"/>
+        <segue reference="gEQ-E2-t6O"/>
         <segue reference="f9U-MS-4Nv"/>
         <segue reference="nz3-f1-fUy"/>
         <segue reference="Q4S-wx-ln1"/>
