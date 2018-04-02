@@ -15,6 +15,7 @@ class CartDetailsViewController: UIViewController, CLLocationManagerDelegate, UI
 
     var product: Product!
     var subscription: Subscription!
+    var user: User!
     
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
@@ -30,6 +31,16 @@ class CartDetailsViewController: UIViewController, CLLocationManagerDelegate, UI
         
         self.promoCode.delegate = self
         self.locationManager.delegate = self
+        
+        //: Load user from defaults
+        let defaults = UserDefaults.standard
+        if let savedUser = defaults.object(forKey: "SavedUser") as? Data {
+            do {
+                self.user = try User.decode(data: savedUser)
+            } catch {
+                print("Error decoding user data from defaults")
+            }
+        }
         
         //: Handle location
         locationManager.requestWhenInUseAuthorization()
@@ -99,7 +110,7 @@ class CartDetailsViewController: UIViewController, CLLocationManagerDelegate, UI
 
     @IBAction func purchaseButtonClicked(_ sender: UIButton) {
         checkCode() {coupon in
-            var params = ["user_id": 2, "product_id": self.product.id, "start_date": self.product.start_date, "end_date": self.product.end_date ] as [String : Any]
+            var params = ["user_id": self.user.id, "product_id": self.product.id, "start_date": self.product.start_date, "end_date": self.product.end_date ] as [String : Any]
             var requestPayment = true
             if Double(self.product.price) == 0 {
                 params["status"] = 1
