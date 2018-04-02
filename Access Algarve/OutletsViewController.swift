@@ -179,7 +179,7 @@ class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewD
             let searchTerm = searchBar.text
             searchResultsViewController.currentLocation = currentLocation
             searchResultsViewController.searchTerm = searchTerm
-        } else if segueidentifier == "showLocationsSegue" {
+        } else if segue.identifier == "showLocationsSegue" {
             guard let selectLocationsViewController = segue.destination as? SelectLocationsViewController else {return}
             selectLocationsViewController.previousVC = "outlets"
         } else if segue.identifier == "showFavourites" {
