@@ -103,9 +103,9 @@ class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         super.viewDidLoad()
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissSearchBar))
+        //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissSearchBar))
         
-        view.addGestureRecognizer(tap)
+        //view.addGestureRecognizer(tap)
         
         self.outletsTableView.delegate = self
         self.outletsTableView.dataSource = self
@@ -142,6 +142,10 @@ class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewD
         //: Load first set of results
         loadResults(page: 1)
         
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.dismissSearchBar()
     }
     
     @objc func dismissSearchBar() {

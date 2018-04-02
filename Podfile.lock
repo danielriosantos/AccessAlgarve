@@ -1,0 +1,34 @@
+PODS:
+  - ImageSlideshow (1.5.1):
+    - ImageSlideshow/Core (= 1.5.1)
+  - ImageSlideshow/Core (1.5.1)
+  - SVProgressHUD (2.2.5)
+  - SwiftyXMLParser (4.1.0)
+
+DEPENDENCIES:
+  - ImageSlideshow (~> 1.5)
+  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
+  - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
+
+EXTERNAL SOURCES:
+  SVProgressHUD:
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+  SwiftyXMLParser:
+    :git: https://github.com/yahoojapan/SwiftyXMLParser.git
+
+CHECKOUT OPTIONS:
+  SVProgressHUD:
+    :commit: 7f676d51905ede045ca5dcaf82d4ba0d9f96addf
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+  SwiftyXMLParser:
+    :commit: 1ddcad0a09efb85f2325d994c2169cd9ba116ae3
+    :git: https://github.com/yahoojapan/SwiftyXMLParser.git
+
+SPEC CHECKSUMS:
+  ImageSlideshow: ae3de479b8c70dc751142d21573f5a28dbb97d4d
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyXMLParser: b5a79fb8a730903703d0a92d30752a0b05158967
+
+PODFILE CHECKSUM: c18a258de11268afee04b4f6bf11d5786ba0873d
+
+COCOAPODS: 1.4.0
