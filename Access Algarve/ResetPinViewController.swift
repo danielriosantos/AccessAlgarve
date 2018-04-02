@@ -50,14 +50,8 @@ class ResetPinViewController: UIViewController, UITextFieldDelegate {
                 user.pin = newPIN
                 let encodedUser = try user.encode()
                 defaults.set(encodedUser, forKey: "SavedUser")
-                let parameters = ["pin": newPIN]
-                let encoder = JSONEncoder()
-                do {
-                    let jsonData = try encoder.encode(parameters)
-                    self.putAPIResults(endpoint: "users/" + String(self.user.id), parameters: jsonData) {_ in}
-                } catch {
-                    print(error)
-                }
+                let params = ["pin": newPIN]
+                self.putAPIResults(endpoint: "users/" + String(self.user.id), parameters: params) {_ in}
             }
         } catch {
             print("Problem encoding user")

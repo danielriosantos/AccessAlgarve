@@ -34,10 +34,10 @@ struct Product: Codable {
     let id: Int
     let code: String
     let name: String
-    let price: String
+    var price: String
     let start_date: String
     let end_date: String
-    let status: Int
+    let status: Int!
     let created_at: String
     let updated_at: String
 }
@@ -180,9 +180,35 @@ struct AppNotification: Codable {
     let updated_at: String
 }
 
-struct KeyValuePair<T: Codable>: Codable {
-    var key: String?
-    var value: T?
+struct Coupon: Codable {
+    let id: Int
+    let code: String
+    let name: String
+    let discount_percentage: Int!
+    let discount_value: String!
+    let status: Int
+    let start_date: String!
+    let end_date: String!
+    let created_at: String
+    let updated_at: String
+}
+
+struct EasyPayPaymentIdentifier: Codable {
+    var getautoMB: EPPI
+}
+struct EPPI: Codable {
+    var ep_status: String
+    var ep_message: String
+    var ep_cin: Int
+    var ep_user: String
+    var ep_entity: Int
+    var ep_reference: String
+    var ep_value: Double
+    var t_key: String
+    var ep_link: String
+    var ep_boleto: String!
+    var ep_currency: String!
+    var ep_original_value: Double!
 }
 
 //: Decodable Extension
@@ -201,6 +227,48 @@ extension Encodable {
         return try encoder.encode(self)
     }
 }
+
+enum StringifyError: Error {
+    case isNotValidJSONObject
+}
+
+struct JSONStringify {
+    
+    let value: Any
+    
+    func stringify(prettyPrinted: Bool = false) throws -> String {
+        let options: JSONSerialization.WritingOptions = prettyPrinted ? .prettyPrinted : .init(rawValue: 0)
+        if JSONSerialization.isValidJSONObject(self.value) {
+            let data = try JSONSerialization.data(withJSONObject: self.value, options: options)
+            if let string = String(data: data, encoding: .utf8) {
+                return string
+                
+            }
+        }
+        throw StringifyError.isNotValidJSONObject
+    }
+    
+    func datify(prettyPrinted: Bool = false) throws -> Data {
+        let options: JSONSerialization.WritingOptions = prettyPrinted ? .prettyPrinted : .init(rawValue: 0)
+        if JSONSerialization.isValidJSONObject(self.value) {
+            let data = try JSONSerialization.data(withJSONObject: self.value, options: options)
+            return data
+        }
+        throw StringifyError.isNotValidJSONObject
+    }
+}
+protocol Stringifiable {
+    func stringify(prettyPrinted: Bool) throws -> String
+}
+
+extension Stringifiable {
+    func stringify(prettyPrinted: Bool = false) throws -> String {
+        return try JSONStringify(value: self).stringify(prettyPrinted: prettyPrinted)
+    }
+}
+
+extension Dictionary: Stringifiable {}
+extension Array: Stringifiable {}
 
 /*
 extension JSONEncoder {

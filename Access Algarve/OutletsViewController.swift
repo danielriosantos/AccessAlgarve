@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreLocation
+import SVProgressHUD
 
-class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, CLLocationManagerDelegate {
     
     var outlets = [Outlet]()
     var outletresultscontainer: OutletResults!
@@ -20,12 +21,10 @@ class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewD
     var currentLocation: CLLocation!
     
     @IBOutlet weak var outletsTableView: UITableView!
-    let loadingView = UIView()
-    let spinner = UIActivityIndicatorView()
-    let loadingLabel = UILabel()
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var currentButton: UIButton!
+    @IBOutlet var searchBar: UISearchBar!
     
     //: Define Colors
     let pink = UIColor(red: 221.0/255.0, green: 78.0/255.0, blue: 149.0/255.0, alpha: 1.0)
@@ -94,28 +93,36 @@ class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    // When button "Search" pressed
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+        self.dismissSearchBar()
+        self.performSegue(withIdentifier: "showSearchResultsSegue", sender: self)
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissSearchBar))
+        
+        view.addGestureRecognizer(tap)
+        
         self.outletsTableView.delegate = self
         self.outletsTableView.dataSource = self
+        self.searchBar.delegate = self
         self.locationManager.delegate = self
         
         //: Change button collours depending on button pressed
         switch Int(filterCategory) {
             case 1:
-                backButton.setImage(UIImage(named: "back-arrow-pink"), for: .normal)
                 currentButton.setImage(UIImage(named: "food&drink-button-small"), for: .normal)
                 outletsTableView.separatorColor = pink
                 currentColor = pink
             case 3:
-                backButton.setImage(UIImage(named: "back-arrow-orange"), for: .normal)
                 currentButton.setImage(UIImage(named: "lifestyle-button-small"), for: .normal)
                 outletsTableView.separatorColor = orange
                 currentColor = orange
             default:
-                backButton.setImage(UIImage(named: "back-arrow-blue"), for: .normal)
                 currentButton.setImage(UIImage(named: "activities-button-small"), for: .normal)
                 outletsTableView.separatorColor = blue
                 currentColor = blue
@@ -126,11 +133,20 @@ class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewD
         locationManager.distanceFilter = 100
         
         //: Initiate loader
-        setLoadingScreen()
+        //setLoadingScreen()
+        DispatchQueue.main.async {
+            self.outletsTableView.separatorColor = self.invisible
+            SVProgressHUD.show(withStatus: "Loading")
+        }
         
         //: Load first set of results
         loadResults(page: 1)
         
+    }
+    
+    @objc func dismissSearchBar() {
+        self.searchBar.endEditing(true)
+        self.searchBar.isHidden = true
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -154,6 +170,11 @@ class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewD
             outletsLocationViewController.outlets = self.outlets
             outletsLocationViewController.outletresultscontainer = self.outletresultscontainer
             outletsLocationViewController.currentLocation = self.currentLocation
+        } else if segue.identifier == "showSearchResultsSegue" {
+            guard let searchResultsViewController = segue.destination as? SearchResultsViewController else {return}
+            let searchTerm = searchBar.text
+            searchResultsViewController.currentLocation = currentLocation
+            searchResultsViewController.searchTerm = searchTerm
         } else if segue.identifier == "showFavourites" {
             guard let favouritesViewController = segue.destination as? FavouritesViewController else {return}
             favouritesViewController.currentLocation = currentLocation
@@ -164,10 +185,15 @@ class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
+    @IBAction func searchButtonClicked(_ sender: UIButton) {
+        searchBar.isHidden = false
+        self.searchBar.becomeFirstResponder()
+    }
+    
     private func loadResults(page: Int) -> Void {
         
         let selectedcategory = String(filterCategory)
-        var params = ["category_id": selectedcategory, "page": String(page)]
+        var params = ["category_id": selectedcategory, "page": page] as [String:Any]
         if currentLocation != nil {
             params["location"] = String(currentLocation.coordinate.latitude) + "," + String(currentLocation.coordinate.longitude)
         }
@@ -179,7 +205,9 @@ class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.outletresultscontainer = outletresults
                 DispatchQueue.main.async {
                     self.outletsTableView.reloadData()
-                    self.removeLoadingScreen()
+                    //self.removeLoadingScreen()
+                    self.outletsTableView.separatorColor = self.currentColor
+                    SVProgressHUD.dismiss()
                 }
             } catch {
                 print("Error decoding Outlet Results data")
@@ -194,49 +222,6 @@ class OutletsViewController: UIViewController, UITableViewDelegate, UITableViewD
             currentPage = outletresultscontainer.current_page + 1
             loadResults(page: currentPage)
         }
-        
-    }
-    
-    // Set the activity indicator into the main view
-    private func setLoadingScreen() {
-        
-        //Hide the tableView
-        outletsTableView.separatorColor = invisible
-        
-        // Sets the view which contains the loading text and the spinner
-        let width: CGFloat = 120
-        let height: CGFloat = 30
-        let x = (outletsTableView.frame.width / 2) - (width / 2)
-        let y = (outletsTableView.frame.height / 2) - (height / 2)
-        loadingView.frame = CGRect(x: x, y: y, width: width, height: height)
-        
-        // Sets loading text
-        loadingLabel.textColor = .gray
-        loadingLabel.textAlignment = .center
-        loadingLabel.text = "Loading..."
-        loadingLabel.frame = CGRect(x: 0, y: 0, width: 140, height: 30)
-        
-        // Sets spinner
-        spinner.activityIndicatorViewStyle = .gray
-        spinner.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        spinner.startAnimating()
-        
-        // Adds text and spinner to the view
-        loadingView.addSubview(spinner)
-        loadingView.addSubview(loadingLabel)
-        
-        outletsTableView.addSubview(loadingView)
-        
-    }
-    
-    // Remove the activity indicator from the main view
-    private func removeLoadingScreen() {
-        
-        // Hides and stops the text and the spinner
-        spinner.stopAnimating()
-        spinner.isHidden = true
-        loadingLabel.isHidden = true
-        outletsTableView.separatorColor = currentColor
         
     }
     

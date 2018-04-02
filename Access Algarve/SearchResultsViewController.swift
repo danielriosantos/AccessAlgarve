@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import SVProgressHUD
 
 class SearchResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UISearchBarDelegate {
 
@@ -21,9 +22,6 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var outletsTableView: UITableView!
-    let loadingView = UIView()
-    let spinner = UIActivityIndicatorView()
-    let loadingLabel = UILabel()
     
     //: Define Colors
     let pink = UIColor(red: 221.0/255.0, green: 78.0/255.0, blue: 149.0/255.0, alpha: 1.0)
@@ -94,7 +92,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         outlets.removeAll()
         outletsTableView.reloadData()
         //: Initiate loader
-        setLoadingScreen()
+        DispatchQueue.main.async {SVProgressHUD.show(withStatus: "Loading")}
         //: Load first set of results
         loadResults(page: 1)
         
@@ -123,7 +121,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         locationManager.distanceFilter = 100
         
         //: Initiate loader
-        setLoadingScreen()
+        DispatchQueue.main.async {SVProgressHUD.show(withStatus: "Loading")}
         
         //: Load first set of results
         loadResults(page: 1)
@@ -167,7 +165,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
     private func loadResults(page: Int) -> Void {
         
         let searchterm = String(searchTerm)
-        var params = ["search": searchterm, "page": String(page)]
+        var params = ["search": searchterm, "page": page] as [String:Any]
         if currentLocation != nil {
             params["location"] = String(currentLocation.coordinate.latitude) + "," + String(currentLocation.coordinate.longitude)
         }
@@ -179,7 +177,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
                 self.outletresultscontainer = outletresults
                 DispatchQueue.main.async {
                     self.outletsTableView.reloadData()
-                    self.removeLoadingScreen()
+                    SVProgressHUD.dismiss()
                 }
             } catch {
                 print("Error decoding Outlet Results data")
@@ -196,48 +194,4 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         }
         
     }
-    
-    // Set the activity indicator into the main view
-    private func setLoadingScreen() {
-        
-        //Hide the tableView
-        outletsTableView.separatorColor = invisible
-        
-        // Sets the view which contains the loading text and the spinner
-        let width: CGFloat = 120
-        let height: CGFloat = 30
-        let x = (outletsTableView.frame.width / 2) - (width / 2)
-        let y = (outletsTableView.frame.height / 2) - (height / 2)
-        loadingView.frame = CGRect(x: x, y: y, width: width, height: height)
-        
-        // Sets loading text
-        loadingLabel.textColor = .gray
-        loadingLabel.textAlignment = .center
-        loadingLabel.text = "Loading..."
-        loadingLabel.frame = CGRect(x: 0, y: 0, width: 140, height: 30)
-        
-        // Sets spinner
-        spinner.activityIndicatorViewStyle = .gray
-        spinner.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        spinner.startAnimating()
-        
-        // Adds text and spinner to the view
-        loadingView.addSubview(spinner)
-        loadingView.addSubview(loadingLabel)
-        
-        outletsTableView.addSubview(loadingView)
-        
-    }
-    
-    // Remove the activity indicator from the main view
-    private func removeLoadingScreen() {
-        
-        // Hides and stops the text and the spinner
-        spinner.stopAnimating()
-        spinner.isHidden = true
-        loadingLabel.isHidden = true
-        outletsTableView.separatorColor = currentColor
-        
-    }
-
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class RedeemPinOutletViewController: UIViewController, UITextFieldDelegate {
 
@@ -107,29 +108,25 @@ class RedeemPinOutletViewController: UIViewController, UITextFieldDelegate {
             }
             
             //: Prepare parameters for API post parameters
+            DispatchQueue.main.async {SVProgressHUD.show(withStatus: "Validating Offer")}
             let params = ["user_id": self.user.id]
-            let encoder = JSONEncoder()
-            do {
-                let jsonData = try encoder.encode(params)
-                postAPIResults(endpoint: "offers/redeem/" + String(self.offer.id), parameters: jsonData) {redemption in
-                    do {
-                        self.user = try User.decode(data: redemption)
-                        let encodedUser = try self.user.encode()
-                        let defaults = UserDefaults.standard
-                        defaults.set(encodedUser, forKey: "SavedUser")
-                        self.performSegue(withIdentifier: "correctOutletPinSegue", sender: self)
-                    } catch {
-                        let alert = UIAlertController(title: "Error", message: "There was an error redeeming the voucher", preferredStyle: UIAlertControllerStyle.alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                    }
+            postAPIResults(endpoint: "offers/redeem/" + String(self.offer.id), parameters: params) {redemption in
+                do {
+                    self.user = try User.decode(data: redemption)
+                    let encodedUser = try self.user.encode()
+                    let defaults = UserDefaults.standard
+                    defaults.set(encodedUser, forKey: "SavedUser")
+                    DispatchQueue.main.async {SVProgressHUD.dismiss()}
+                    self.performSegue(withIdentifier: "correctOutletPinSegue", sender: self)
+                } catch {
+                    DispatchQueue.main.async {SVProgressHUD.dismiss()}
+                    let alert = UIAlertController(title: "Error", message: "There was an error redeeming the voucher", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
-            } catch {
-                print("Error encoding parameters")
             }
-            
         } else {
-            
+            DispatchQueue.main.async {SVProgressHUD.dismiss()}
             let alert = UIAlertController(title: "Error", message: "The PIN is incorrect", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)

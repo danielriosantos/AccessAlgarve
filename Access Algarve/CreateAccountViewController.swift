@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class CreateAccountViewController: UIViewController, UITextFieldDelegate {
 
@@ -51,36 +52,33 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         //self.performSegue(withIdentifier: "createAccountSegue", sender: self)
         if password.text!.count > 7 {
             if password.text == confirmpassword.text {
-                let parameters = [
+                DispatchQueue.main.async {SVProgressHUD.show(withStatus: "Loading")}
+                let params = [
                     "name": name.text!,
                     "email": email.text!,
                     "password": password.text!,
                     "country": country.text!
-                    ]
-                let encoder = JSONEncoder()
-                do {
-                    let jsonData = try encoder.encode(parameters)
-                    postAPIResults(endpoint: "users", parameters: jsonData) { data in
-                        DispatchQueue.main.async {
-                            do {
-                                //: Save user in app defaults
-                                self.user = try User.decode(data: data)
-                                //self.user.status = 0
-                                //self.user.country = self.country.text
-                                let defaults = UserDefaults.standard
-                                let encodedUser = try self.user.encode()
-                                defaults.set(encodedUser, forKey: "SavedUser")
-                                self.performSegue(withIdentifier: "createAccountSegue", sender: self)
-                            } catch {
-                                //: Alert wrong user pass message
-                                let alert = UIAlertController(title: "Error", message: "Error Creating Your Account. The account you're trying to create might already exist or please try again.", preferredStyle: UIAlertControllerStyle.alert)
-                                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                                self.present(alert, animated: true, completion: nil)
-                            }
+                ]
+                postAPIResults(endpoint: "users", parameters: params) { data in
+                    DispatchQueue.main.async {
+                        do {
+                            //: Save user in app defaults
+                            self.user = try User.decode(data: data)
+                            //self.user.status = 0
+                            //self.user.country = self.country.text
+                            let defaults = UserDefaults.standard
+                            let encodedUser = try self.user.encode()
+                            defaults.set(encodedUser, forKey: "SavedUser")
+                            SVProgressHUD.dismiss()
+                            self.performSegue(withIdentifier: "createAccountSegue", sender: self)
+                        } catch {
+                            //: Alert wrong user pass message
+                            SVProgressHUD.dismiss()
+                            let alert = UIAlertController(title: "Error", message: "Error Creating Your Account. The account you're trying to create might already exist or please try again.", preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
                         }
                     }
-                } catch {
-                    print(error)
                 }
             } else {
                 let alert = UIAlertController(title: "Error", message: "The passwords do not match", preferredStyle: UIAlertControllerStyle.alert)

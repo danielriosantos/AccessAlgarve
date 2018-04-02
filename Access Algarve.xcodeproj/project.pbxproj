@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		659AC37B2067F81200C3535B /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659AC37A2067F81200C3535B /* NotificationsViewController.swift */; };
 		659AC37F2068119300C3535B /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659AC37E2068119300C3535B /* NotificationsTableViewCell.swift */; };
+		BF0FCB98206F2C0600B938F4 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FCB97206F2C0600B938F4 /* CartTableViewCell.swift */; };
+		BF0FCB9A206F3E4F00B938F4 /* CartDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FCB99206F3E4F00B938F4 /* CartDetailsViewController.swift */; };
 		BF32B63A206C3A670054E5C2 /* AmenityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32B639206C3A670054E5C2 /* AmenityCollectionViewCell.swift */; };
 		BF32B63C206C64B00054E5C2 /* OutletsLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF32B63B206C64B00054E5C2 /* OutletsLocationViewController.swift */; };
 		BF34B567206BE16C0064C184 /* BlockedOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF34B566206BE16C0064C184 /* BlockedOfferViewController.swift */; };
@@ -16,6 +18,7 @@
 		BF388F7E20579FB900117674 /* RedeemPinUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF388F7D20579FB900117674 /* RedeemPinUserViewController.swift */; };
 		BF388F802057BBDD00117674 /* RedeemPinOutletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF388F7F2057BBDD00117674 /* RedeemPinOutletViewController.swift */; };
 		BF3C80F5205D7DF1000FBCF8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C80F4205D7DF1000FBCF8 /* LoginViewController.swift */; };
+		BF6AAE7B20726D1F0067F7EA /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAE7A20726D1F0067F7EA /* ProfileSettingsViewController.swift */; };
 		BF75159F204E497A003591C0 /* DatabaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75159E204E497A003591C0 /* DatabaseExtension.swift */; };
 		BF7515A5204F127C003591C0 /* OutletDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7515A4204F127C003591C0 /* OutletDetailsViewController.swift */; };
 		BF834FA1206AAB4B00A1556D /* PurchaseHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF834FA0206AAB4B00A1556D /* PurchaseHistoryTableViewCell.swift */; };
@@ -67,6 +70,7 @@
 		BFF6263E205AFBF7000F9CAE /* RedeemSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF6263D205AFBF7000F9CAE /* RedeemSuccessViewController.swift */; };
 		BFF62642205B8FD8000F9CAE /* OutletLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF62641205B8FD8000F9CAE /* OutletLocationViewController.swift */; };
 		BFFA8956205C592100FC55B2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA8955205C592100FC55B2 /* Extensions.swift */; };
+		EAB5162B31FBE4B4F73AE6CF /* Pods_Access_Algarve.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11AE73995C290C6EFB3BE91B /* Pods_Access_Algarve.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,8 +91,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11AE73995C290C6EFB3BE91B /* Pods_Access_Algarve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Access_Algarve.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		659AC37A2067F81200C3535B /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		659AC37E2068119300C3535B /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
+		6D307C9E89763A6EB2ED68B3 /* Pods-Access Algarve.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Access Algarve.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Access Algarve/Pods-Access Algarve.debug.xcconfig"; sourceTree = "<group>"; };
+		BF0FCB97206F2C0600B938F4 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		BF0FCB99206F3E4F00B938F4 /* CartDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailsViewController.swift; sourceTree = "<group>"; };
 		BF32B639206C3A670054E5C2 /* AmenityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmenityCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF32B63B206C64B00054E5C2 /* OutletsLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletsLocationViewController.swift; sourceTree = "<group>"; };
 		BF34B566206BE16C0064C184 /* BlockedOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedOfferViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +104,7 @@
 		BF388F7D20579FB900117674 /* RedeemPinUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemPinUserViewController.swift; sourceTree = "<group>"; };
 		BF388F7F2057BBDD00117674 /* RedeemPinOutletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemPinOutletViewController.swift; sourceTree = "<group>"; };
 		BF3C80F4205D7DF1000FBCF8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BF6AAE7A20726D1F0067F7EA /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		BF75159E204E497A003591C0 /* DatabaseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseExtension.swift; sourceTree = "<group>"; };
 		BF7515A4204F127C003591C0 /* OutletDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletDetailsViewController.swift; sourceTree = "<group>"; };
 		BF834FA0206AAB4B00A1556D /* PurchaseHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -153,6 +162,7 @@
 		BFF6263D205AFBF7000F9CAE /* RedeemSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemSuccessViewController.swift; sourceTree = "<group>"; };
 		BFF62641205B8FD8000F9CAE /* OutletLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletLocationViewController.swift; sourceTree = "<group>"; };
 		BFFA8955205C592100FC55B2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F0FB42A1985D36A034169A8C /* Pods-Access Algarve.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Access Algarve.release.xcconfig"; path = "Pods/Target Support Files/Pods-Access Algarve/Pods-Access Algarve.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFB7FC032048350B000522E8 /* MapKit.framework in Frameworks */,
+				EAB5162B31FBE4B4F73AE6CF /* Pods_Access_Algarve.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +201,7 @@
 				BFB7FBF2204832BC000522E8 /* Access AlgarveUITests */,
 				BFB7FBD1204832BC000522E8 /* Products */,
 				BFB7FC012048350B000522E8 /* Frameworks */,
+				D7866806031118BF9039A8FE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,18 +238,21 @@
 				BF85BB912063DF990089A9ED /* ViewSavingsViewController.swift */,
 				BF85BB97206422FB0089A9ED /* UserProfileViewController.swift */,
 				BF837075205E13A9003B8D21 /* SettingsViewController.swift */,
+				BF6AAE7A20726D1F0067F7EA /* ProfileSettingsViewController.swift */,
 				BFCAD90F206A0518004F6742 /* UsedOffersViewController.swift */,
 				BF834FA2206AAC8C00A1556D /* PurchaseHistoryViewController.swift */,
 				BF85BB95206411610089A9ED /* ResetPinViewController.swift */,
 				BF85BB93206401540089A9ED /* ForgotPasswordViewController.swift */,
 				BFC2E58F206766F50031836C /* FavouritesViewController.swift */,
 				BF85BB99206440530089A9ED /* CartViewController.swift */,
+				BF0FCB99206F3E4F00B938F4 /* CartDetailsViewController.swift */,
 				659AC37A2067F81200C3535B /* NotificationsViewController.swift */,
 				BFB7FC2E204895ED000522E8 /* ViewControllerTableViewCell.swift */,
 				BFA5190C206175EA0098859B /* LocationsTableViewCell.swift */,
 				659AC37E2068119300C3535B /* NotificationsTableViewCell.swift */,
 				BF834FA0206AAB4B00A1556D /* PurchaseHistoryTableViewCell.swift */,
 				BF32B639206C3A670054E5C2 /* AmenityCollectionViewCell.swift */,
+				BF0FCB97206F2C0600B938F4 /* CartTableViewCell.swift */,
 				BFAB4FDE206C9BC00056E364 /* AnnotationPin.swift */,
 				BF75159E204E497A003591C0 /* DatabaseExtension.swift */,
 				BFFA8955205C592100FC55B2 /* Extensions.swift */,
@@ -271,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				BFB7FC022048350B000522E8 /* MapKit.framework */,
+				11AE73995C290C6EFB3BE91B /* Pods_Access_Algarve.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -301,6 +317,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		D7866806031118BF9039A8FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D307C9E89763A6EB2ED68B3 /* Pods-Access Algarve.debug.xcconfig */,
+				F0FB42A1985D36A034169A8C /* Pods-Access Algarve.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -308,9 +333,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFB7FBF8204832BC000522E8 /* Build configuration list for PBXNativeTarget "Access Algarve" */;
 			buildPhases = (
+				B844EE1E77AF838767402C15 /* [CP] Check Pods Manifest.lock */,
 				BFB7FBCC204832BC000522E8 /* Sources */,
 				BFB7FBCD204832BC000522E8 /* Frameworks */,
 				BFB7FBCE204832BC000522E8 /* Resources */,
+				0AA0C9E5BD52A60382F67543 /* [CP] Embed Pods Frameworks */,
+				6AB327CBA615800993AC3053 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -454,6 +482,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0AA0C9E5BD52A60382F67543 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Access Algarve/Pods-Access Algarve-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyXMLParser.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Access Algarve/Pods-Access Algarve-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AB327CBA615800993AC3053 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Access Algarve/Pods-Access Algarve-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B844EE1E77AF838767402C15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Access Algarve-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BFB7FBCC204832BC000522E8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -462,6 +548,8 @@
 				BF34B567206BE16C0064C184 /* BlockedOfferViewController.swift in Sources */,
 				BFA519092060757A0098859B /* CreateAccountViewController.swift in Sources */,
 				BF85BB902062BFBA0089A9ED /* SelectInitialOffersViewController.swift in Sources */,
+				BF0FCB98206F2C0600B938F4 /* CartTableViewCell.swift in Sources */,
+				BF0FCB9A206F3E4F00B938F4 /* CartDetailsViewController.swift in Sources */,
 				BF388F7E20579FB900117674 /* RedeemPinUserViewController.swift in Sources */,
 				659AC37B2067F81200C3535B /* NotificationsViewController.swift in Sources */,
 				BF75159F204E497A003591C0 /* DatabaseExtension.swift in Sources */,
@@ -474,6 +562,7 @@
 				BF3C80F5205D7DF1000FBCF8 /* LoginViewController.swift in Sources */,
 				BFCAD910206A0518004F6742 /* UsedOffersViewController.swift in Sources */,
 				BFB7FBD6204832BC000522E8 /* ViewController.swift in Sources */,
+				BF6AAE7B20726D1F0067F7EA /* ProfileSettingsViewController.swift in Sources */,
 				BFB7FC3520490101000522E8 /* OutletsViewController.swift in Sources */,
 				BFA5190D206175EA0098859B /* LocationsTableViewCell.swift in Sources */,
 				BF85BB94206401540089A9ED /* ForgotPasswordViewController.swift in Sources */,
@@ -657,31 +746,35 @@
 		};
 		BFB7FBF9204832BC000522E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D307C9E89763A6EB2ED68B3 /* Pods-Access Algarve.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62DFZMQT4A;
 				INFOPLIST_FILE = "$(SRCROOT)/Access Algarve/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.danielriosantos.AccessAlgarve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		BFB7FBFA204832BC000522E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0FB42A1985D36A034169A8C /* Pods-Access Algarve.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62DFZMQT4A;
 				INFOPLIST_FILE = "$(SRCROOT)/Access Algarve/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.danielriosantos.AccessAlgarve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

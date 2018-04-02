@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
@@ -32,41 +33,33 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func checkLoginCredentials(_ sender: UIButton) {
-        let parameters = ["email": email.text!, "password": password.text!]
-        let encoder = JSONEncoder()
-        do {
-            let jsonData = try encoder.encode(parameters)
-            postAPIResults(endpoint: "users/authenticate", parameters: jsonData) { data in
-                do {
-                    //: Try to decode user if authentication is correct
-                    self.user = try User.decode(data: data)
-                    self.user.status = 1
-                    //: Save user status on UserDefaults
-                    let encodedUser = try self.user.encode()
-                    let defaults = UserDefaults.standard
-                    defaults.set(encodedUser, forKey: "SavedUser")
-                    DispatchQueue.main.async {
-                        let parameters = ["status": 1]
-                        let encoder = JSONEncoder()
-                        do {
-                            let jsonData = try encoder.encode(parameters)
-                            self.putAPIResults(endpoint: "users/" + String(self.user.id), parameters: jsonData) {_ in}
-                        } catch {
-                            print(error)
-                        }
-                        self.performSegue(withIdentifier: "correctCredentialsSegue", sender: self)
-                    }
-                } catch {
-                    //: Authentication was wrong, alert user
-                    DispatchQueue.main.async {
-                        let alert = UIAlertController(title: "Error", message: "The email and password provided were not recognized", preferredStyle: UIAlertControllerStyle.alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                    }
+        DispatchQueue.main.async {SVProgressHUD.show(withStatus: "Loading")}
+        let params = ["email": email.text!, "password": password.text!]
+        postAPIResults(endpoint: "users/authenticate", parameters: params) { data in
+            do {
+                //: Try to decode user if authentication is correct
+                print(String(data: data, encoding: .utf8)!)
+                self.user = try User.decode(data: data)
+                self.user.status = 1
+                //: Save user status on UserDefaults
+                let encodedUser = try self.user.encode()
+                let defaults = UserDefaults.standard
+                defaults.set(encodedUser, forKey: "SavedUser")
+                DispatchQueue.main.async {
+                    SVProgressHUD.dismiss()
+                    let params = ["status": 1]
+                    self.putAPIResults(endpoint: "users/" + String(self.user.id), parameters: params) {_ in}
+                    self.performSegue(withIdentifier: "correctCredentialsSegue", sender: self)
+                }
+            } catch {
+                //: Authentication was wrong, alert user
+                DispatchQueue.main.async {
+                    SVProgressHUD.dismiss()
+                    let alert = UIAlertController(title: "Error", message: "The email and password provided were not recognized", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
-        } catch {
-            print("Error encoding json data")
         }
     }
     

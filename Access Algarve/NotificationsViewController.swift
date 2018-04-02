@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import SVProgressHUD
 
 class NotificationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
 
@@ -19,9 +20,6 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet var notificationsTableView: UITableView!
     @IBOutlet var noNotificationsMessage: UILabel!
-    let loadingView = UIView()
-    let spinner = UIActivityIndicatorView()
-    let loadingLabel = UILabel()
     
     //: Define Colors
     let invisible = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0)
@@ -57,7 +55,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         locationManager.distanceFilter = 100
         
         //: Initiate loader
-        setLoadingScreen()
+        DispatchQueue.main.async {SVProgressHUD.show(withStatus: "Loading")}
         
         //: Load first set of results
         loadResults()
@@ -92,62 +90,19 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     private func loadResults() -> Void {
         
         //let params = ["user_id": 1]
-        getAPIResults(endpoint: "notifications", parameters:[:]) { data in
+        getAPIResults(endpoint: "notifications", parameters: nil) { data in
             do {
                 //: Load the results
                 self.appnotifications = try [AppNotification].decode(data: data)
                 DispatchQueue.main.async {
                     self.notificationsTableView.reloadData()
-                    self.removeLoadingScreen()
+                    SVProgressHUD.dismiss()
                     if self.appnotifications.count == 0 {self.noNotificationsMessage.isHidden = false}
                 }
             } catch {
                 print("Error decoding Notifications data")
             }
         }
-        
-    }
-    
-    // Set the activity indicator into the main view
-    private func setLoadingScreen() {
-        
-        //Hide the tableView
-        notificationsTableView.separatorColor = invisible
-        
-        // Sets the view which contains the loading text and the spinner
-        let width: CGFloat = 120
-        let height: CGFloat = 30
-        let x = (notificationsTableView.frame.width / 2) - (width / 2)
-        let y = (notificationsTableView.frame.height / 2) - (height / 2)
-        loadingView.frame = CGRect(x: x, y: y, width: width, height: height)
-        
-        // Sets loading text
-        loadingLabel.textColor = .gray
-        loadingLabel.textAlignment = .center
-        loadingLabel.text = "Loading..."
-        loadingLabel.frame = CGRect(x: 0, y: 0, width: 140, height: 30)
-        
-        // Sets spinner
-        spinner.activityIndicatorViewStyle = .gray
-        spinner.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        spinner.startAnimating()
-        
-        // Adds text and spinner to the view
-        loadingView.addSubview(spinner)
-        loadingView.addSubview(loadingLabel)
-        
-        notificationsTableView.addSubview(loadingView)
-        
-    }
-    
-    // Remove the activity indicator from the main view
-    private func removeLoadingScreen() {
-        
-        // Hides and stops the text and the spinner
-        spinner.stopAnimating()
-        spinner.isHidden = true
-        loadingLabel.isHidden = true
-        notificationsTableView.separatorColor = currentColor
         
     }
 

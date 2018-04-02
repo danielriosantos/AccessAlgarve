@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import SVProgressHUD
 
 class UserProfileViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -43,6 +44,7 @@ class UserProfileViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         //: Get user from database and update defaults
+        DispatchQueue.main.async {SVProgressHUD.show(withStatus: "Loading")}
         loadUser(user_id: user.id) {dbUser in
             DispatchQueue.main.async {
                 self.user = dbUser
@@ -52,6 +54,7 @@ class UserProfileViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 self.amountSaved.text = String(Int(savedAmount.rounded(.up)))
                 self.offersUsed.text = String(self.user.redemptions.count)
+                SVProgressHUD.dismiss()
             }
         }
         

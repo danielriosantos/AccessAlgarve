@@ -322,24 +322,18 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBAction func favouriteButtonClicked(_ sender: Any) {
         if favoutiteButton.image(for: .normal) == UIImage(named: "favourites-heart-icon-unselected") {favoutiteButton.setImage(UIImage(named: "favourites-heart-icon-selected"), for: .normal)} else {favoutiteButton.setImage(UIImage(named: "favourites-heart-icon-unselected"), for: .normal)}
-        let parameters = ["user_id": user.id, "outlet_id": outlet.id]
-        let encoder = JSONEncoder()
-        do {
-            let jsonData = try encoder.encode(parameters)
-            self.postAPIResults(endpoint: "users/togglefavourite", parameters: jsonData) { userData in
-                do {
-                    //: Save API call returned user to self
-                    self.user = try User.decode(data: userData)
-                    //: Encode self user and save in defaults
-                    let defaults = UserDefaults.standard
-                    let encodedUser = try self.user.encode()
-                    defaults.set(encodedUser, forKey: "SavedUser")
-                } catch {
-                    print("Error encoding user data to defaults")
-                }
+        let params = ["user_id": user.id, "outlet_id": outlet.id]
+        self.postAPIResults(endpoint: "users/togglefavourite", parameters: params) { userData in
+            do {
+                //: Save API call returned user to self
+                self.user = try User.decode(data: userData)
+                //: Encode self user and save in defaults
+                let defaults = UserDefaults.standard
+                let encodedUser = try self.user.encode()
+                defaults.set(encodedUser, forKey: "SavedUser")
+            } catch {
+                print("Error encoding user data to defaults")
             }
-        } catch {
-            print(error)
         }
     }
     

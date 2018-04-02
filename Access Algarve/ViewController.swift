@@ -150,7 +150,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
     
     private func loadResults(page: Int) -> Void {
         
-        var params = ["page": String(page)]
+        var params = ["page": page] as [String:Any]
         if currentLocation != nil {
             params["location"] = String(currentLocation.coordinate.latitude) + "," + String(currentLocation.coordinate.longitude)
             params["distance"] = String(10)

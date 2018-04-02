@@ -48,14 +48,8 @@ class SetUserPinViewController: UIViewController, UITextFieldDelegate {
                     user.pin = enteredPIN
                     let encodedUser = try self.user.encode()
                     defaults.set(encodedUser, forKey: "SavedUser")
-                    let parameters = ["pin": enteredPIN]
-                    let encoder = JSONEncoder()
-                    do {
-                        let jsonData = try encoder.encode(parameters)
-                        self.putAPIResults(endpoint: "users/" + String(self.user.id), parameters: jsonData) {_ in}
-                    } catch {
-                        print(error)
-                    }
+                    let params = ["pin": enteredPIN]
+                    self.putAPIResults(endpoint: "users/" + String(self.user.id), parameters: params) {_ in}
                     self.performSegue(withIdentifier: "validUserPinSegue", sender: self)
                 } catch {
                     print("Error decoding user data from defaults")

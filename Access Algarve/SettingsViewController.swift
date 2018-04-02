@@ -27,14 +27,8 @@ class SettingsViewController: UIViewController {
                     //let encodedUser = try user.encode()
                     //defaults.set(encodedUser, forKey: "SavedUser")
                     defaults.set(nil, forKey: "SavedUser")
-                    let parameters = ["status": 0]
-                    let encoder = JSONEncoder()
-                    do {
-                        let jsonData = try encoder.encode(parameters)
-                        self.putAPIResults(endpoint: "users/" + String(user.id), parameters: jsonData) {_ in}
-                    } catch {
-                        print(error)
-                    }
+                    let params = ["status": 0]
+                    self.putAPIResults(endpoint: "users/" + String(user.id), parameters: params) {_ in}
                 } catch {
                     print("Problem encoding user")
                 }

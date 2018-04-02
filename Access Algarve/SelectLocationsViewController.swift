@@ -7,13 +7,11 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SelectLocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var locationsTable: UITableView!
-    let loadingView = UIView()
-    let spinner = UIActivityIndicatorView()
-    let loadingLabel = UILabel()
     
     var user: User!
     var locations: [Location]! = []
@@ -57,7 +55,7 @@ class SelectLocationsViewController: UIViewController, UITableViewDelegate, UITa
         }
         
         //: Initiate loader
-        setLoadingScreen()
+        DispatchQueue.main.async {SVProgressHUD.show(withStatus: "Loading")}
         
         //: Load first set of results
         loadResults()
@@ -91,62 +89,19 @@ class SelectLocationsViewController: UIViewController, UITableViewDelegate, UITa
     
     private func loadResults() -> Void {
         
-        getAPIResults(endpoint: "outlets/locations", parameters: [:]) { data in
+        getAPIResults(endpoint: "outlets/locations", parameters: nil) { data in
             do {
                 //: Load the results
                 let locationsResults = try [Location].decode(data: data)
                 self.locations.append(contentsOf: locationsResults)
                 DispatchQueue.main.async {
                     self.locationsTable.reloadData()
-                    self.removeLoadingScreen()
+                    SVProgressHUD.dismiss()
                 }
             } catch {
                 print("Error decoding Locations data")
             }
         }
-        
-    }
-    
-    // Set the activity indicator into the main view
-    private func setLoadingScreen() {
-        
-        //Hide the tableView
-        locationsTable.separatorColor = invisible
-        
-        // Sets the view which contains the loading text and the spinner
-        let width: CGFloat = 120
-        let height: CGFloat = 30
-        let x = (locationsTable.frame.width / 2) - (width / 2)
-        let y = (locationsTable.frame.height / 2) - (height / 2)
-        loadingView.frame = CGRect(x: x, y: y, width: width, height: height)
-        
-        // Sets loading text
-        loadingLabel.textColor = .gray
-        loadingLabel.textAlignment = .center
-        loadingLabel.text = "Loading..."
-        loadingLabel.frame = CGRect(x: 0, y: 0, width: 140, height: 30)
-        
-        // Sets spinner
-        spinner.activityIndicatorViewStyle = .gray
-        spinner.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        spinner.startAnimating()
-        
-        // Adds text and spinner to the view
-        loadingView.addSubview(spinner)
-        loadingView.addSubview(loadingLabel)
-        
-        locationsTable.addSubview(loadingView)
-        
-    }
-    
-    // Remove the activity indicator from the main view
-    private func removeLoadingScreen() {
-        
-        // Hides and stops the text and the spinner
-        spinner.stopAnimating()
-        spinner.isHidden = true
-        loadingLabel.isHidden = true
-        locationsTable.separatorColor = currentColor
         
     }
 

@@ -25,7 +25,7 @@ extension UIViewController {
     }
     
     public func loadUser(user_id: Int, completion: @escaping (User)->()) {
-        getAPIResults(endpoint: "users/" + String(user_id), parameters: [:]) { userData in
+        getAPIResults(endpoint: "users/" + String(user_id), parameters: nil) { userData in
             do {
                 let defaults = UserDefaults.standard
                 defaults.set(userData, forKey: "SavedUser")
@@ -63,49 +63,103 @@ extension UIViewController {
         return validSubscriptionCounter
     }
     
-    public func getAPIResults(endpoint: String, parameters: [String:Any]?, completion: @escaping (Data)->()) {
-        var querystring = "?"
-        for (index, value) in parameters! {
-            querystring += "\(index)=\(value)&"
+    public func getEasyPayPaymentIdentifier(parameters: [String:Any]?, completion: @escaping (Data)->()) {
+        let scheme = "https"
+        let host = "www.easypay.pt"
+        let path = "/_s/api_easypay_01BG.php"
+        
+        var urlComponents = URLComponents()
+        urlComponents.scheme = scheme
+        urlComponents.host = host
+        urlComponents.path = path
+        if parameters != nil {
+            urlComponents.queryItems = []
+            for parameter in parameters! {
+                let queryItem = URLQueryItem(name: parameter.key, value: String(describing: parameter.value))
+                urlComponents.queryItems?.append(queryItem)
+            }
         }
-        let fullURL = endpoint + querystring.dropLast()
-        requestAPIResults(type: "GET", endpoint: fullURL, parameters: nil) { data in
+        
+        var urlRequest = URLRequest(url: urlComponents.url!)
+        urlRequest.httpMethod = "GET"
+        
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            // APIs usually respond with the data you just sent in your POST request
+            if let data = data {
+                //let utf8Representation = String(data: data, encoding: .utf8)
+                //print("response: ", utf8Representation)
+                completion(data)
+            } else {
+                print("no readable data received in response")
+            }
+        }
+        task.resume()
+
+    }
+    
+    public func getAPIResults(endpoint: String, parameters: [String:Any]?, completion: @escaping (Data)->()) {
+        requestAPIResults(type: "GET", endpoint: endpoint, parameters: parameters) { data in
              completion(data)
         }
     }
     
-    public func postAPIResults(endpoint: String, parameters: Data?, completion: @escaping (Data)->()) {
+    public func postAPIResults(endpoint: String, parameters:[String:Any]?, completion: @escaping (Data)->()) {
         requestAPIResults(type: "POST", endpoint: endpoint, parameters: parameters) { data in
             completion(data)
         }
     }
     
-    public func putAPIResults(endpoint: String, parameters: Data?, completion: @escaping (Data)->()) {
+    public func putAPIResults(endpoint: String, parameters: [String:Any]?, completion: @escaping (Data)->()) {
         requestAPIResults(type: "PUT", endpoint: endpoint, parameters: parameters) { data in
             completion(data)
         }
     }
     
-    public func deleteAPIResults(endpoint: String, parameters: Data?, completion: @escaping (Data)->()) {
+    public func deleteAPIResults(endpoint: String, parameters: [String:Any]?, completion: @escaping (Data)->()) {
         requestAPIResults(type: "DELETE", endpoint: endpoint, parameters: nil) { data in
             completion(data)
         }
     }
     
-    private func requestAPIResults(type: String, endpoint: String, parameters: Data?, completion: @escaping (Data)->() ) {
+    private func requestAPIResults(type: String, endpoint: String, parameters: [String:Any]?, completion: @escaping (Data)->() ) {
         
-        let apiUrl = "https://admin.accessalgarve.com/api/"
+        let scheme = "https"
+        let host = "admin.accessalgarve.com"
+        let path = "/api/" + endpoint
+        
+        var urlComponents = URLComponents()
+        urlComponents.scheme = scheme
+        urlComponents.host = host
+        urlComponents.path = path
+        if parameters != nil && type == "GET" {
+            urlComponents.queryItems = []
+            for parameter in parameters! {
+                let queryItem = URLQueryItem(name: parameter.key, value: String(describing: parameter.value))
+                urlComponents.queryItems?.append(queryItem)
+            }
+        }
         guard let token = Bundle.main.object(forInfoDictionaryKey: "API Token") as? String else {return}
         
-        let fullURL = apiUrl + endpoint
-        guard let url = URL(string: fullURL) else {return}
-        
-        var urlRequest = URLRequest(url: url)
+        var urlRequest = URLRequest(url: urlComponents.url!)
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
         urlRequest.httpMethod = type
-        if parameters != nil {urlRequest.httpBody = parameters}
+        if parameters != nil && type != "GET" {
+            do {
+                urlRequest.httpBody = try JSONStringify(value: parameters!).datify()
+            } catch {
+                print("Error encoding paramenters")
+            }
+            
+        }
         
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
