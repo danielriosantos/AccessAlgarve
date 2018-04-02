@@ -992,18 +992,109 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big-voucher-box-blue" translatesAutoresizingMaskIntoConstraints="NO" id="1Yk-MT-PY8">
-                                <rect key="frame" x="20" y="40" width="280" height="488"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfQ-fx-3bP">
+                                <rect key="frame" x="5" y="30" width="310" height="528"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13p-iy-IhL">
+                                        <rect key="frame" x="20" y="70" width="270" height="388"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I4K-uQ-iZd">
+                                                <rect key="frame" x="10" y="20" width="250" height="110"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="110" id="Z33-w6-9sJ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tandem Skydive" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcU-9E-bZX">
+                                                <rect key="frame" x="10" y="145" width="250" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="XIl-Cj-0ph"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SinkinSans-800Black" family="Sinkin Sans" pointSize="18"/>
+                                                <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy 1 Get 1 Free" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hm-Fo-qVH">
+                                                <rect key="frame" x="10" y="190" width="250" height="15"/>
+                                                <fontDescription key="fontDescription" name="SinkinSans-500Medium" family="Sinkin Sans" pointSize="15"/>
+                                                <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Savings: €50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1y-8w-Pth">
+                                                <rect key="frame" x="10" y="225" width="250" height="15"/>
+                                                <fontDescription key="fontDescription" name="SinkinSans-800Black" family="Sinkin Sans" pointSize="15"/>
+                                                <color key="textColor" red="0.8980392157" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When dinning Seasonal rating apply" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="du5-wQ-O1b">
+                                                <rect key="frame" x="10" y="335" width="250" height="12"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qAP-ML-0nE">
+                                                <rect key="frame" x="65" y="362" width="139.5" height="18"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-calendar-icon" translatesAutoresizingMaskIntoConstraints="NO" id="eFW-K4-Wet">
+                                                        <rect key="frame" x="0.0" y="0.0" width="17" height="18"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valid to 30 Dec 2017" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XV-fc-e89">
+                                                        <rect key="frame" x="27" y="0.0" width="112.5" height="18"/>
+                                                        <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="10"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="5Hm-Fo-qVH" secondAttribute="trailing" constant="10" id="12g-E7-CcD"/>
+                                            <constraint firstAttribute="trailing" secondItem="UcU-9E-bZX" secondAttribute="trailing" constant="10" id="6sQ-DY-tyD"/>
+                                            <constraint firstItem="Y1y-8w-Pth" firstAttribute="leading" secondItem="13p-iy-IhL" secondAttribute="leading" constant="10" id="B62-Mc-onf"/>
+                                            <constraint firstItem="Y1y-8w-Pth" firstAttribute="top" secondItem="5Hm-Fo-qVH" secondAttribute="bottom" constant="20" id="Eql-pb-H1C"/>
+                                            <constraint firstItem="qAP-ML-0nE" firstAttribute="centerX" secondItem="13p-iy-IhL" secondAttribute="centerX" id="H5v-yB-FDi"/>
+                                            <constraint firstItem="qAP-ML-0nE" firstAttribute="top" secondItem="du5-wQ-O1b" secondAttribute="bottom" constant="15" id="Kld-8z-81r"/>
+                                            <constraint firstAttribute="trailing" secondItem="I4K-uQ-iZd" secondAttribute="trailing" constant="10" id="NHZ-r0-dDw"/>
+                                            <constraint firstAttribute="trailing" secondItem="Y1y-8w-Pth" secondAttribute="trailing" constant="10" id="PhD-PI-X2X"/>
+                                            <constraint firstItem="du5-wQ-O1b" firstAttribute="leading" secondItem="13p-iy-IhL" secondAttribute="leading" constant="10" id="T0s-Ii-tGE"/>
+                                            <constraint firstItem="5Hm-Fo-qVH" firstAttribute="leading" secondItem="13p-iy-IhL" secondAttribute="leading" constant="10" id="Wbi-Hd-Ta2"/>
+                                            <constraint firstAttribute="trailing" secondItem="du5-wQ-O1b" secondAttribute="trailing" constant="10" id="age-hJ-eW2"/>
+                                            <constraint firstItem="5Hm-Fo-qVH" firstAttribute="top" secondItem="UcU-9E-bZX" secondAttribute="bottom" constant="20" id="fAk-C3-UHw"/>
+                                            <constraint firstItem="I4K-uQ-iZd" firstAttribute="leading" secondItem="13p-iy-IhL" secondAttribute="leading" constant="10" id="iBk-c9-zmS"/>
+                                            <constraint firstItem="UcU-9E-bZX" firstAttribute="top" secondItem="I4K-uQ-iZd" secondAttribute="bottom" constant="15" id="l3y-F8-3Q3"/>
+                                            <constraint firstItem="UcU-9E-bZX" firstAttribute="leading" secondItem="13p-iy-IhL" secondAttribute="leading" constant="10" id="udJ-UX-AST"/>
+                                            <constraint firstAttribute="bottom" secondItem="qAP-ML-0nE" secondAttribute="bottom" constant="8" id="vAv-sq-SZh"/>
+                                            <constraint firstItem="I4K-uQ-iZd" firstAttribute="top" secondItem="13p-iy-IhL" secondAttribute="top" constant="20" id="xt7-7y-1Nr"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="13p-iy-IhL" firstAttribute="top" secondItem="tfQ-fx-3bP" secondAttribute="top" constant="70" id="8vz-sC-ys2"/>
+                                    <constraint firstItem="13p-iy-IhL" firstAttribute="leading" secondItem="tfQ-fx-3bP" secondAttribute="leading" constant="20" id="L59-kx-pOh"/>
+                                    <constraint firstAttribute="bottom" secondItem="13p-iy-IhL" secondAttribute="bottom" constant="70" id="mZA-Hu-uoj"/>
+                                    <constraint firstAttribute="trailing" secondItem="13p-iy-IhL" secondAttribute="trailing" constant="20" id="yLj-Yz-smq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgf-ug-1E6">
-                                <rect key="frame" x="255" y="70" width="26" height="26"/>
+                                <rect key="frame" x="274" y="50" width="26" height="26"/>
                                 <state key="normal" image="white-x-icon"/>
                                 <connections>
                                     <segue destination="Qha-T1-Wkj" kind="unwind" unwindAction="didUnwindFromRedeemController:" id="V4c-wZ-Nlq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dkt-Lf-SX0">
-                                <rect key="frame" x="106.5" y="110" width="107" height="25"/>
+                                <rect key="frame" x="106" y="75" width="107" height="25"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Review Rules of Use">
@@ -1018,67 +1109,8 @@
                                     </attributedString>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I4K-uQ-iZd">
-                                <rect key="frame" x="45" y="155" width="230" height="90"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="Z33-w6-9sJ"/>
-                                    <constraint firstAttribute="width" constant="230" id="kBw-2z-pvF"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tandem Skydive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcU-9E-bZX">
-                                <rect key="frame" x="45" y="259" width="230" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="XIl-Cj-0ph"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SinkinSans-800Black" family="Sinkin Sans" pointSize="18"/>
-                                <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy 1 Get 1 Free" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hm-Fo-qVH">
-                                <rect key="frame" x="45" y="289" width="230" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="CrX-Gk-c3L"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SinkinSans-500Medium" family="Sinkin Sans" pointSize="15"/>
-                                <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZOr-tq-KD2">
-                                <rect key="frame" x="45" y="344" width="230" height="15"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Savings: €50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1y-8w-Pth">
-                                        <rect key="frame" x="0.0" y="0.0" width="230" height="15"/>
-                                        <fontDescription key="fontDescription" name="SinkinSans-800Black" family="Sinkin Sans" pointSize="15"/>
-                                        <color key="textColor" red="0.8980392157" green="0.20000000000000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When dinning Seasonal rating apply" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="du5-wQ-O1b">
-                                <rect key="frame" x="45" y="367" width="230" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ASQ-g0-yhA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <color key="textColor" red="0.25098039220000001" green="0.74901960779999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qAP-ML-0nE">
-                                <rect key="frame" x="90.5" y="415" width="139.5" height="18"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-calendar-icon" translatesAutoresizingMaskIntoConstraints="NO" id="eFW-K4-Wet">
-                                        <rect key="frame" x="0.0" y="0.0" width="17" height="18"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valid to 30 Dec 2017" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XV-fc-e89">
-                                        <rect key="frame" x="27" y="0.0" width="112.5" height="18"/>
-                                        <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="10"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdM-8B-c17">
-                                <rect key="frame" x="29" y="434" width="262" height="82"/>
+                                <rect key="frame" x="29" y="483" width="262" height="82"/>
                                 <state key="normal" image="blue-redeem-button"/>
                                 <connections>
                                     <segue destination="kHZ-n6-U4J" kind="show" identifier="redeemOfferSegue2" id="eep-6i-Jq9"/>
@@ -1087,48 +1119,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5Hm-Fo-qVH" firstAttribute="top" secondItem="UcU-9E-bZX" secondAttribute="bottom" constant="5" id="0pk-5P-i0d"/>
-                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="trailing" secondItem="UcU-9E-bZX" secondAttribute="trailing" constant="45" id="A1k-uz-VLJ"/>
-                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="trailing" secondItem="du5-wQ-O1b" secondAttribute="trailing" constant="45" id="BVz-jY-hnl"/>
-                            <constraint firstItem="I4K-uQ-iZd" firstAttribute="centerX" secondItem="74w-v7-2Lp" secondAttribute="centerX" id="H4J-sF-6Kk"/>
-                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="trailing" secondItem="1Yk-MT-PY8" secondAttribute="trailing" constant="20" id="HgM-hc-L6W"/>
-                            <constraint firstItem="1Yk-MT-PY8" firstAttribute="leading" secondItem="b2H-OD-9Ki" secondAttribute="leading" constant="20" id="NAw-2U-EML"/>
-                            <constraint firstItem="qAP-ML-0nE" firstAttribute="centerX" secondItem="74w-v7-2Lp" secondAttribute="centerX" id="Osp-tb-nn2"/>
+                            <constraint firstItem="tfQ-fx-3bP" firstAttribute="leading" secondItem="b2H-OD-9Ki" secondAttribute="leading" constant="5" id="8Ng-eb-LNt"/>
+                            <constraint firstItem="Dkt-Lf-SX0" firstAttribute="centerX" secondItem="74w-v7-2Lp" secondAttribute="centerX" id="9aH-2s-vu8"/>
+                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="bottom" secondItem="tfQ-fx-3bP" secondAttribute="bottom" constant="10" id="PkN-Xh-IDx"/>
                             <constraint firstItem="YdM-8B-c17" firstAttribute="leading" secondItem="b2H-OD-9Ki" secondAttribute="leading" constant="29" id="U6z-kv-SSN"/>
-                            <constraint firstItem="du5-wQ-O1b" firstAttribute="leading" secondItem="b2H-OD-9Ki" secondAttribute="leading" constant="45" id="UhK-2P-Ff8"/>
                             <constraint firstItem="b2H-OD-9Ki" firstAttribute="trailing" secondItem="YdM-8B-c17" secondAttribute="trailing" constant="29" id="Uwf-iu-Cj4"/>
-                            <constraint firstItem="qAP-ML-0nE" firstAttribute="top" secondItem="du5-wQ-O1b" secondAttribute="bottom" constant="8" id="Wxr-HS-nFa"/>
-                            <constraint firstItem="Dkt-Lf-SX0" firstAttribute="centerX" secondItem="74w-v7-2Lp" secondAttribute="centerX" id="Y2k-wn-yg2"/>
-                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="bottom" secondItem="YdM-8B-c17" secondAttribute="bottom" constant="52" id="Ysz-gK-e4I"/>
-                            <constraint firstItem="ZOr-tq-KD2" firstAttribute="top" secondItem="5Hm-Fo-qVH" secondAttribute="bottom" constant="5" id="ZG5-Xw-dKL"/>
-                            <constraint firstItem="UcU-9E-bZX" firstAttribute="top" secondItem="I4K-uQ-iZd" secondAttribute="bottom" constant="14" id="bIR-lw-KB5"/>
-                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="trailing" secondItem="ZOr-tq-KD2" secondAttribute="trailing" constant="45" id="d6y-fw-g25"/>
-                            <constraint firstAttribute="bottom" secondItem="1Yk-MT-PY8" secondAttribute="bottom" constant="40" id="eMZ-Aj-SNo"/>
-                            <constraint firstItem="I4K-uQ-iZd" firstAttribute="top" secondItem="Dkt-Lf-SX0" secondAttribute="bottom" constant="20" id="gUR-of-jbp"/>
-                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="trailing" secondItem="zgf-ug-1E6" secondAttribute="trailing" constant="39" id="gYi-es-7YD"/>
-                            <constraint firstItem="zgf-ug-1E6" firstAttribute="top" secondItem="b2H-OD-9Ki" secondAttribute="top" constant="50" id="hvH-tn-V7K"/>
-                            <constraint firstItem="ZOr-tq-KD2" firstAttribute="centerX" secondItem="74w-v7-2Lp" secondAttribute="centerX" id="i99-gw-8Gb"/>
-                            <constraint firstItem="ZOr-tq-KD2" firstAttribute="leading" secondItem="b2H-OD-9Ki" secondAttribute="leading" constant="45" id="jc4-7Q-SMm"/>
-                            <constraint firstItem="1Yk-MT-PY8" firstAttribute="top" secondItem="b2H-OD-9Ki" secondAttribute="top" constant="20" id="jhs-no-UY0"/>
-                            <constraint firstItem="UcU-9E-bZX" firstAttribute="leading" secondItem="b2H-OD-9Ki" secondAttribute="leading" constant="45" id="o7a-KK-IBA"/>
-                            <constraint firstItem="du5-wQ-O1b" firstAttribute="top" secondItem="ZOr-tq-KD2" secondAttribute="bottom" constant="8" id="r3F-kO-eBE"/>
-                            <constraint firstItem="Dkt-Lf-SX0" firstAttribute="top" secondItem="b2H-OD-9Ki" secondAttribute="top" constant="90" id="xhZ-Ea-qLL">
-                                <variation key="heightClass=regular-widthClass=compact" constant="90"/>
-                            </constraint>
-                            <constraint firstItem="5Hm-Fo-qVH" firstAttribute="leading" secondItem="b2H-OD-9Ki" secondAttribute="leading" constant="45" id="yFl-XL-DWg"/>
-                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="trailing" secondItem="5Hm-Fo-qVH" secondAttribute="trailing" constant="45" id="yeb-kK-bZM"/>
+                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="bottom" secondItem="YdM-8B-c17" secondAttribute="bottom" constant="3" id="Ysz-gK-e4I"/>
+                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="trailing" secondItem="tfQ-fx-3bP" secondAttribute="trailing" constant="5" id="Zee-AD-1kN"/>
+                            <constraint firstItem="b2H-OD-9Ki" firstAttribute="trailing" secondItem="zgf-ug-1E6" secondAttribute="trailing" constant="20" id="gYi-es-7YD"/>
+                            <constraint firstItem="zgf-ug-1E6" firstAttribute="top" secondItem="b2H-OD-9Ki" secondAttribute="top" constant="30" id="hvH-tn-V7K"/>
+                            <constraint firstItem="tfQ-fx-3bP" firstAttribute="top" secondItem="b2H-OD-9Ki" secondAttribute="top" constant="10" id="nhm-QT-0qT"/>
+                            <constraint firstItem="Dkt-Lf-SX0" firstAttribute="top" secondItem="b2H-OD-9Ki" secondAttribute="top" constant="55" id="zVR-it-5l2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b2H-OD-9Ki"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="xhZ-Ea-qLL"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular">
-                            <mask key="constraints">
-                                <include reference="xhZ-Ea-qLL"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="calendarIcon" destination="eFW-K4-Wet" id="Ae7-gT-mES"/>
@@ -1139,7 +1142,7 @@
                         <outlet property="redeemButton" destination="YdM-8B-c17" id="3fV-2j-pUQ"/>
                         <outlet property="savings" destination="Y1y-8w-Pth" id="ntB-lf-UB9"/>
                         <outlet property="validUntil" destination="3XV-fc-e89" id="h9M-rp-UhM"/>
-                        <outlet property="voucherBackground" destination="1Yk-MT-PY8" id="yip-Jz-bkE"/>
+                        <outlet property="voucherBackground" destination="tfQ-fx-3bP" id="KUa-15-YHk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZ8-Ll-ziQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5690,7 +5693,6 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <image name="adress-blue" width="140" height="131"/>
         <image name="back" width="12" height="22"/>
         <image name="back-arrow-blue" width="23" height="44"/>
-        <image name="big-voucher-box-blue" width="344" height="571"/>
         <image name="blue-button" width="182" height="47"/>
         <image name="blue-calendar-icon" width="17" height="18"/>
         <image name="blue-line" width="370" height="3"/>

@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import QuartzCore
 
 class RedeemViewController: UIViewController {
 
-    @IBOutlet weak var voucherBackground: UIImageView!
+    @IBOutlet weak var voucherBackground: UIView!
     @IBOutlet weak var merchantLogo: UIImageView!
     @IBOutlet weak var merchantName: UILabel!
     @IBOutlet weak var offerName: UILabel!
@@ -45,14 +46,19 @@ class RedeemViewController: UIViewController {
             currentColor = blue
             currentColorName = "blue"
         }
-        voucherBackground.image = UIImage(named: "big-voucher-box-" + currentColorName)
+        voucherBackground.backgroundColor = currentColor
         merchantName.textColor = currentColor
         offerName.textColor = currentColor
         offerConditions.textColor = currentColor
         calendarIcon.image = UIImage(named: currentColorName + "-calendar-icon")
         redeemButton.setImage(UIImage(named: currentColorName + "-redeem-button"), for: .normal)
         
-        let imageLink = "https://www.accessalgarve.com/images/logos/\(outlet.merchant.id)-logo.png"
+        var imageLink = ""
+        if outlet.id == 128 || outlet.id == 140 {
+            imageLink = "https://admin.accessalgarve.com/images/barcodes/\(offer.id)-barcode.png"
+        } else {
+            imageLink = "https://www.accessalgarve.com/images/logos/\(outlet.merchant.id)-logo.png"
+        }
         merchantLogo.downloadedFrom(link: imageLink)
         merchantLogo.contentMode = UIViewContentMode.scaleAspectFit
         merchantLogo.layer.masksToBounds = true

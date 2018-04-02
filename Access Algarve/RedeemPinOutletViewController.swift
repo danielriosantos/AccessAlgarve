@@ -116,8 +116,10 @@ class RedeemPinOutletViewController: UIViewController, UITextFieldDelegate {
                     let encodedUser = try self.user.encode()
                     let defaults = UserDefaults.standard
                     defaults.set(encodedUser, forKey: "SavedUser")
-                    DispatchQueue.main.async {SVProgressHUD.dismiss()}
-                    self.performSegue(withIdentifier: "correctOutletPinSegue", sender: self)
+                    DispatchQueue.main.async {
+                        SVProgressHUD.dismiss()
+                        self.performSegue(withIdentifier: "correctOutletPinSegue", sender: self)
+                    }
                 } catch {
                     DispatchQueue.main.async {SVProgressHUD.dismiss()}
                     let alert = UIAlertController(title: "Error", message: "There was an error redeeming the voucher", preferredStyle: UIAlertControllerStyle.alert)
