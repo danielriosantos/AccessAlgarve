@@ -14,7 +14,7 @@ class RedeemSuccessViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
     
-    @IBOutlet weak var voucherBackground: UIImageView!
+    @IBOutlet weak var voucherBackground: UIView!
     @IBOutlet weak var smileImage: UIImageView!
     @IBOutlet weak var redeemCongrats: UILabel!
     @IBOutlet weak var redeemSuccessMessage: UILabel!
@@ -51,7 +51,7 @@ class RedeemSuccessViewController: UIViewController, CLLocationManagerDelegate {
             currentColor = blue
             currentColorName = "blue"
         }
-        voucherBackground.image = UIImage(named: "smile-voucher-box-" + currentColorName)
+        voucherBackground.backgroundColor = currentColor
         smileImage.image = UIImage(named: currentColorName + "-smile-face")
         redeemCongrats.textColor = currentColor
         redeemSuccessMessage.textColor = currentColor

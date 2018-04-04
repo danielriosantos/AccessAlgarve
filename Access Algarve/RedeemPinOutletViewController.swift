@@ -11,7 +11,7 @@ import SVProgressHUD
 
 class RedeemPinOutletViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var voucherBackground: UIImageView!
+    @IBOutlet weak var voucherBackground: UIView!
     @IBOutlet weak var enterPinMessage: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var pin1: UITextField!
@@ -60,7 +60,7 @@ class RedeemPinOutletViewController: UIViewController, UITextFieldDelegate {
             currentColor = blue
             currentColorName = "blue"
         }
-        voucherBackground.image = UIImage(named: "small-voucher-box-" + currentColorName)
+        voucherBackground.backgroundColor = currentColor
         enterPinMessage.textColor = currentColor
         merchantName.textColor = currentColor
         offerName.textColor = currentColor

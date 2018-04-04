@@ -134,7 +134,7 @@ class OutletDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         tableHeightConstraint?.constant = CGFloat(tableHeight)
         
         let collectionHeightConstraint = self.amenitiesTableView.constraints.filter { $0.identifier == "collectionHeightConstraint"}.first
-        let amenitiesrows = Int(ceil(Double(outlet.amenities.count) / Double(5)))
+        let amenitiesrows = Int(ceil(Double(outlet.amenities.count) / Double(4)))
         let collectionHeight = amenitiesrows * 80 + (amenitiesrows - 1) * 10
         collectionHeightConstraint?.constant = CGFloat(collectionHeight)
     }

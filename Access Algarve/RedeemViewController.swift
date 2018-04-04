@@ -84,5 +84,7 @@ class RedeemViewController: UIViewController {
             redeemPinOutletViewController.offer = offer
         }
     }
+    
+    
 
 }

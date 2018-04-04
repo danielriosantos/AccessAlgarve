@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 extension UIViewController {
     
@@ -154,7 +155,8 @@ extension UIViewController {
         urlRequest.httpMethod = type
         if parameters != nil && type != "GET" {
             do {
-                urlRequest.httpBody = try JSONStringify(value: parameters!).datify()
+                //urlRequest.httpBody = try JSONStringify(value: parameters!).datify()
+                urlRequest.httpBody = try JSON(parameters!).rawData(options: .prettyPrinted)
             } catch {
                 print("Error encoding paramenters")
             }

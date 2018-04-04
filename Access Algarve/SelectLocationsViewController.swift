@@ -12,10 +12,12 @@ import SVProgressHUD
 class SelectLocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var locationsTable: UITableView!
+    @IBOutlet weak var steps: UIStackView!
+    @IBOutlet weak var bottomButton: UIButton!
     
     var user: User!
     var locations: [Location]! = []
-    var previousVC: String!
+    var previousVC: String = "createaccount"
     let currentColor = UIColor(red: 186.0/255.0, green: 186.0/255.0, blue: 186.0/255.0, alpha: 1.0)
     let invisible = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0)
     
@@ -41,6 +43,11 @@ class SelectLocationsViewController: UIViewController, UITableViewDelegate, UITa
 
         self.locationsTable.delegate = self
         self.locationsTable.dataSource = self
+        
+        if self.previousVC != "createaccount" {
+            self.steps.isHidden = true
+            self.bottomButton.setImage(UIImage(named: "close-button"), for: .normal)
+        }
         
         //: Load user previous location save
         let defaults = UserDefaults.standard
@@ -85,6 +92,19 @@ class SelectLocationsViewController: UIViewController, UITableViewDelegate, UITa
                     }
                 }
             }
+        }
+    }
+    
+    @IBAction func nextButtonClicked(_ sender: UIButton) {
+        switch self.previousVC {
+        case "home":
+            self.performSegue(withIdentifier: "unwindToHome", sender: self)
+        case "outlets":
+            self.performSegue(withIdentifier: "unwindToOutlets", sender: self)
+        case "searchresults":
+            self.performSegue(withIdentifier: "unwindToSearchResults", sender: self)
+        default:
+            self.performSegue(withIdentifier: "chooseVouchersSegue", sender: self)
         }
     }
     

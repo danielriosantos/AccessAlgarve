@@ -33,6 +33,10 @@ class SettingsViewController: UIViewController {
                     print("Problem encoding user")
                 }
             }
+        case "licenseSegue"?:
+            guard let licenseViewController = segue.destination as? LicenseViewController else {return}
+            licenseViewController.previousVC = "settings"
+/*
         case "resetPinSegue"?:
             let defaults = UserDefaults.standard
             if let savedUser = defaults.object(forKey: "SavedUser") as? Data {
@@ -44,6 +48,7 @@ class SettingsViewController: UIViewController {
                     print("Problem decoding user")
                 }
             }
+ */
         default:
             break
             

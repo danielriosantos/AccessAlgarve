@@ -40,5 +40,27 @@
 	</array>
 	<key>API Token</key>
 	<string>eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImQxZjk4OTRmNDE4NTY1ODgwYjhjYmNmOWQ4NzgxYjIzZTcxYjM3MTM3YTM3ZjI1OGVlMTUyZWE2NjdiNjQ5M2FiZDdkYTY4OTFhM2ZiZWQ2In0.eyJhdWQiOiIxIiwianRpIjoiZDFmOTg5NGY0MTg1NjU4ODBiOGNiY2Y5ZDg3ODFiMjNlNzFiMzcxMzdhMzdmMjU4ZWUxNTJlYTY2N2I2NDkzYWJkN2RhNjg5MWEzZmJlZDYiLCJpYXQiOjE0OTM5MTE5OTUsIm5iZiI6MTQ5MzkxMTk5NSwiZXhwIjoxNTI1NDQ3OTk1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.aFBi0zrXKa929lAA_3GPoCDyiaK9I_Un4eWoQuLcL8-Pm2DkaF3B0ihNXT16ZEspMvPn_GEMbLMCwT0bGXl5TOjgXUZbnuLBOQKBKMcwky6b7kqKpBldR5r2M7xEcZXe0OrcrBsZqvjDbrCcAXUhZ7f-WWW5zM1v-wqPyvtYPh3cbSwh5DkmPadkqzeMo4E3KpCd5FYaCWSi43PipV1Cmsxr6E79u4L3OfAscOOZZSYzreAzjtxBbL8awnUnvDDeJaHLRT7H9fALNGU6-MRh9hhVQTcE-VT4ZNdmaFcCyoXKLNhFaIHrkL7To1XgDiw4t7qu0yQ6NOQs6BnuXEGuv24wiQ8YYw0Yu_U07z-ZBwrdoEwzRwPWdp6v399GYk1Sac-Z9Yup6bLVfllV8CJummViSGWBhuhaGB3k2-kg_XoH8zfoxuAVepDslviMjcjBxOtBpAxLk3rGfyx0ymw0TMdtPVY_4W25gxgFt86ZpygXewfkCNnxqoETWDCExoJAW3vb9lQR8nBL-nFAKQg34_qepDOSbyoEil3H1CXYuLz6DizQAYTukVdY3BzJqb5noRdcZnQM4u5q7T1UwJMFsNw8dzik9RM0uWNJG61FVHGP2WDofmXhvPOi5CDxUvhd-p2fpqGvJTplTrYOEMvyWE6ZiZFEiZcocUHOHfdjxvs</string>
+    
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb196263414485824</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>196263414485824</string>
+    <key>FacebookDisplayName</key>
+    <string>Access Algarve</string>
+    
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-share-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
 </dict>
 </plist>
