@@ -36,5 +36,16 @@ class BlockedOfferViewController: UIViewController {
         let validDateString = formatter.string(from: validDate!)
         offerExpiry.text = "Valid Until " + validDateString
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRulesSegue" {
+            guard let rulesOfUseViewController = segue.destination as? RulesOfUseViewController else {return}
+            rulesOfUseViewController.previousVC = "blockedoffer"
+        }
+    }
+    
+    @IBAction func unwindToBlockedOfferViewController(_ segue: UIStoryboardSegue) {
+        
+    }
 
 }

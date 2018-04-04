@@ -82,9 +82,14 @@ class RedeemViewController: UIViewController {
             guard let redeemPinOutletViewController = segue.destination as? RedeemPinOutletViewController else {return}
             redeemPinOutletViewController.outlet = outlet
             redeemPinOutletViewController.offer = offer
+        } else if segue.identifier == "showRulesSegue" {
+            guard let rulesOfUseViewController = segue.destination as? RulesOfUseViewController else {return}
+            rulesOfUseViewController.previousVC = "redeem"
         }
     }
     
-    
+    @IBAction func unwindToRedeemViewController(_ segue: UIStoryboardSegue) {
+        
+    }
 
 }

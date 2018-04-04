@@ -18,6 +18,7 @@
 		BF388F802057BBDD00117674 /* RedeemPinOutletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF388F7F2057BBDD00117674 /* RedeemPinOutletViewController.swift */; };
 		BF3C80F5205D7DF1000FBCF8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C80F4205D7DF1000FBCF8 /* LoginViewController.swift */; };
 		BF55DE7F2072F9C0007998BD /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = BF55DE7E2072F9C0007998BD /* countries.json */; };
+		BF68C8FE207542D900C1563D /* RulesOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF68C8FD207542D900C1563D /* RulesOfUseViewController.swift */; };
 		BF6AAE7B20726D1F0067F7EA /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAE7A20726D1F0067F7EA /* ProfileSettingsViewController.swift */; };
 		BF75159F204E497A003591C0 /* DatabaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75159E204E497A003591C0 /* DatabaseExtension.swift */; };
 		BF7515A5204F127C003591C0 /* OutletDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7515A4204F127C003591C0 /* OutletDetailsViewController.swift */; };
@@ -102,6 +103,7 @@
 		BF388F7F2057BBDD00117674 /* RedeemPinOutletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemPinOutletViewController.swift; sourceTree = "<group>"; };
 		BF3C80F4205D7DF1000FBCF8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF55DE7E2072F9C0007998BD /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		BF68C8FD207542D900C1563D /* RulesOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesOfUseViewController.swift; sourceTree = "<group>"; };
 		BF6AAE7A20726D1F0067F7EA /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		BF75159E204E497A003591C0 /* DatabaseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseExtension.swift; sourceTree = "<group>"; };
 		BF7515A4204F127C003591C0 /* OutletDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletDetailsViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				BF0FCB99206F3E4F00B938F4 /* CartDetailsViewController.swift */,
 				659AC37A2067F81200C3535B /* NotificationsViewController.swift */,
 				BF79C2BF2074BD8500967A44 /* LicenseViewController.swift */,
+				BF68C8FD207542D900C1563D /* RulesOfUseViewController.swift */,
 				BFB7FC2E204895ED000522E8 /* ViewControllerTableViewCell.swift */,
 				BFA5190C206175EA0098859B /* LocationsTableViewCell.swift */,
 				659AC37E2068119300C3535B /* NotificationsTableViewCell.swift */,
@@ -560,6 +563,7 @@
 				BF388F7C205783F400117674 /* RedeemViewController.swift in Sources */,
 				BF7515A5204F127C003591C0 /* OutletDetailsViewController.swift in Sources */,
 				BFAB4FDF206C9BC00056E364 /* AnnotationPin.swift in Sources */,
+				BF68C8FE207542D900C1563D /* RulesOfUseViewController.swift in Sources */,
 				BF32B63C206C64B00054E5C2 /* OutletsLocationViewController.swift in Sources */,
 				BFF62642205B8FD8000F9CAE /* OutletLocationViewController.swift in Sources */,
 				BFF6263E205AFBF7000F9CAE /* RedeemSuccessViewController.swift in Sources */,

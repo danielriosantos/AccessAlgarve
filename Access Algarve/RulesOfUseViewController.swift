@@ -1,5 +1,5 @@
 //
-//  LicenseViewController.swift
+//  RulesOfUseViewController.swift
 //  Access Algarve
 //
 //  Created by Daniel Santos on 04/04/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LicenseViewController: UIViewController {
+class RulesOfUseViewController: UIViewController {
 
     var previousVC = "settings"
     
@@ -18,11 +18,13 @@ class LicenseViewController: UIViewController {
 
     @IBAction func backButtonClicked(_ sender: UIButton) {
         switch previousVC {
-        case "login":
-            self.performSegue(withIdentifier: "unwindToLogin", sender: self)
+        case "redeem":
+            self.performSegue(withIdentifier: "unwindToRedeemOffer", sender: self)
+        case "blockedoffer":
+            self.performSegue(withIdentifier: "unwindToBlockedOffer", sender: self)
         default:
             self.performSegue(withIdentifier: "unwindToSettings", sender: self)
         }
     }
-    
+
 }

@@ -45,7 +45,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         fbLoginButton.delegate = self
         self.view.addSubview(fbLoginButton)
-        fbLoginButton.frame = CGRect(x: 0, y: loginButton.frame.origin.y + loginButton.frame.height + 5, width: 190, height: 35)
+        fbLoginButton.frame = CGRect(x: 0, y: loginButton.frame.origin.y + loginButton.frame.height + 20, width: 190, height: 35)
         fbLoginButton.center.x = self.view.center.x
         
     }
