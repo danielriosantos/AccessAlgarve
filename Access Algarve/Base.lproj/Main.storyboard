@@ -1642,7 +1642,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="heK-nI-BIJ" kind="show" id="OZM-48-sYc"/>
+                                    <segue destination="heK-nI-BIJ" kind="show" identifier="showForgotPassword" id="OZM-48-sYc"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white-line" translatesAutoresizingMaskIntoConstraints="NO" id="uUR-cA-Xut">
@@ -3115,6 +3115,9 @@
                                     <constraint firstAttribute="height" constant="65" id="85e-hf-i3z"/>
                                 </constraints>
                                 <state key="normal" image="subscription-button"/>
+                                <connections>
+                                    <segue destination="UhB-yz-zZM" kind="show" id="X8J-BD-p8G"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3308,102 +3311,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forgot-password-box" translatesAutoresizingMaskIntoConstraints="NO" id="4C1-Qz-zr8">
-                                <rect key="frame" x="16" y="118" width="288" height="332"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKP-JU-Rda">
-                                <rect key="frame" x="75" y="185" width="171" height="21"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykQ-6m-1F6">
+                                <rect key="frame" x="20" y="120" width="280" height="348"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="topRight" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-5n-2RU" userLabel="Close">
+                                        <rect key="frame" x="239" y="15" width="26" height="26"/>
+                                        <state key="normal" image="cross"/>
+                                        <connections>
+                                            <action selector="closeButtonClicked:" destination="heK-nI-BIJ" eventType="touchUpInside" id="yXn-7z-w3x"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKP-JU-Rda">
+                                        <rect key="frame" x="54" y="60" width="171" height="18"/>
+                                        <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poL-0p-TzW">
+                                        <rect key="frame" x="15" y="194" width="250" height="40"/>
+                                        <color key="backgroundColor" red="0.92156862750000001" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="yPE-3K-C5V"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="UsM-1y-nH4" id="dKI-2n-8jS"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8G0-rB-pHR" userLabel="Send">
+                                        <rect key="frame" x="15" y="263" width="250" height="70"/>
+                                        <state key="normal" image="send-button"/>
+                                        <connections>
+                                            <action selector="sendButtonClicked:" destination="heK-nI-BIJ" eventType="touchUpInside" id="yH0-ec-XmD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="rBO-C8-xtJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="3ns-5n-2RU" secondAttribute="trailing" constant="15" id="7EK-Mh-pfp"/>
+                                    <constraint firstItem="poL-0p-TzW" firstAttribute="leading" secondItem="ykQ-6m-1F6" secondAttribute="leading" constant="15" id="9fM-uj-qBY"/>
+                                    <constraint firstAttribute="trailing" secondItem="poL-0p-TzW" secondAttribute="trailing" constant="15" id="FHt-hK-2HG"/>
+                                    <constraint firstItem="MKP-JU-Rda" firstAttribute="top" secondItem="ykQ-6m-1F6" secondAttribute="top" constant="60" id="Okr-JV-TgE"/>
+                                    <constraint firstAttribute="bottom" secondItem="8G0-rB-pHR" secondAttribute="bottom" constant="15" id="a0Q-hb-11A"/>
+                                    <constraint firstItem="8G0-rB-pHR" firstAttribute="centerX" secondItem="ykQ-6m-1F6" secondAttribute="centerX" id="cao-S1-gam"/>
+                                    <constraint firstItem="MKP-JU-Rda" firstAttribute="centerX" secondItem="ykQ-6m-1F6" secondAttribute="centerX" id="gFo-qw-eDS"/>
+                                    <constraint firstItem="poL-0p-TzW" firstAttribute="centerY" secondItem="ykQ-6m-1F6" secondAttribute="centerY" constant="40" id="jkD-wc-CEj"/>
+                                    <constraint firstItem="3ns-5n-2RU" firstAttribute="top" secondItem="ykQ-6m-1F6" secondAttribute="top" constant="15" id="kCJ-WY-Q6N"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your registered email " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6r-6Y-p0v">
-                                <rect key="frame" x="33" y="236" width="255.5" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="KG1-nN-CB8"/>
-                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your registered email address. We will send you a link to reset your password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6r-6Y-p0v">
+                                <rect key="frame" x="30" y="234.5" width="260" height="39"/>
                                 <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address. We will send you a password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKG-g0-uiB">
-                                <rect key="frame" x="22.5" y="259" width="275" height="13"/>
-                                <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="13"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reminder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cc9-Bb-VOz">
-                                <rect key="frame" x="128" y="274" width="65" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="dek-RU-CaX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="13"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="poL-0p-TzW">
-                                <rect key="frame" x="33" y="315" width="254" height="40"/>
-                                <color key="backgroundColor" red="0.92156862750000001" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="yPE-3K-C5V"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES" textContentType="email"/>
-                                <connections>
-                                    <outlet property="delegate" destination="UsM-1y-nH4" id="dKI-2n-8jS"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="topRight" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-5n-2RU" userLabel="Close">
-                                <rect key="frame" x="261" y="133" width="26" height="26"/>
-                                <state key="normal" image="cross"/>
-                                <connections>
-                                    <segue destination="HZf-Ix-zUZ" kind="unwind" identifier="unwindToLoginViewController" unwindAction="unwindToLoginViewController:" id="cgY-T0-OH4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8G0-rB-pHR" userLabel="Send">
-                                <rect key="frame" x="35" y="375" width="250" height="70"/>
-                                <state key="normal" image="send-button"/>
-                                <connections>
-                                    <action selector="sendButtonClicked:" destination="heK-nI-BIJ" eventType="touchUpInside" id="yH0-ec-XmD"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="PKG-g0-uiB" firstAttribute="top" secondItem="I6r-6Y-p0v" secondAttribute="bottom" constant="2" id="8Vz-zY-Ft1"/>
-                            <constraint firstItem="4C1-Qz-zr8" firstAttribute="top" secondItem="hq8-ao-Ftp" secondAttribute="top" constant="98" id="951-lP-87S"/>
-                            <constraint firstItem="Cc9-Bb-VOz" firstAttribute="top" secondItem="PKG-g0-uiB" secondAttribute="bottom" constant="2" id="D4d-Rp-BZt"/>
-                            <constraint firstItem="MKP-JU-Rda" firstAttribute="centerX" secondItem="U3r-oO-0z6" secondAttribute="centerX" id="IYX-9E-tFA"/>
-                            <constraint firstItem="poL-0p-TzW" firstAttribute="leading" secondItem="hq8-ao-Ftp" secondAttribute="leading" constant="33" id="K4K-th-ibd"/>
-                            <constraint firstItem="PKG-g0-uiB" firstAttribute="centerX" secondItem="U3r-oO-0z6" secondAttribute="centerX" id="OW7-GJ-cek"/>
-                            <constraint firstItem="hq8-ao-Ftp" firstAttribute="trailing" secondItem="poL-0p-TzW" secondAttribute="trailing" constant="33" id="QJ9-ll-xO0"/>
-                            <constraint firstItem="Cc9-Bb-VOz" firstAttribute="centerX" secondItem="U3r-oO-0z6" secondAttribute="centerX" id="d2H-CX-vVV"/>
-                            <constraint firstItem="I6r-6Y-p0v" firstAttribute="top" secondItem="MKP-JU-Rda" secondAttribute="bottom" constant="30" id="dRc-S0-wc1"/>
-                            <constraint firstItem="3ns-5n-2RU" firstAttribute="top" secondItem="hq8-ao-Ftp" secondAttribute="top" constant="113" id="dg5-Bf-E1l"/>
-                            <constraint firstItem="8G0-rB-pHR" firstAttribute="top" secondItem="poL-0p-TzW" secondAttribute="bottom" constant="20" id="gUp-11-V7g"/>
-                            <constraint firstItem="4C1-Qz-zr8" firstAttribute="trailing" secondItem="U3r-oO-0z6" secondAttribute="trailingMargin" id="iSW-rl-bbV"/>
-                            <constraint firstItem="4C1-Qz-zr8" firstAttribute="leading" secondItem="U3r-oO-0z6" secondAttribute="leadingMargin" id="mMi-23-myZ"/>
-                            <constraint firstItem="poL-0p-TzW" firstAttribute="top" secondItem="Cc9-Bb-VOz" secondAttribute="bottom" constant="20" id="olr-N1-yGW"/>
-                            <constraint firstItem="8G0-rB-pHR" firstAttribute="centerX" secondItem="U3r-oO-0z6" secondAttribute="centerX" id="pCs-o5-Dsr"/>
-                            <constraint firstItem="4C1-Qz-zr8" firstAttribute="centerY" secondItem="U3r-oO-0z6" secondAttribute="centerY" id="pT7-8y-KvG"/>
-                            <constraint firstItem="I6r-6Y-p0v" firstAttribute="centerX" secondItem="U3r-oO-0z6" secondAttribute="centerX" id="t8r-5E-0Ta"/>
-                            <constraint firstItem="hq8-ao-Ftp" firstAttribute="trailing" secondItem="3ns-5n-2RU" secondAttribute="trailing" constant="33" id="yOs-ZN-FQu"/>
-                            <constraint firstItem="MKP-JU-Rda" firstAttribute="top" secondItem="3ns-5n-2RU" secondAttribute="bottom" constant="26" id="yhz-LG-VVq"/>
+                            <constraint firstItem="ykQ-6m-1F6" firstAttribute="leading" secondItem="hq8-ao-Ftp" secondAttribute="leading" constant="20" id="2gU-Zx-6j5"/>
+                            <constraint firstItem="hq8-ao-Ftp" firstAttribute="trailing" secondItem="ykQ-6m-1F6" secondAttribute="trailing" constant="20" id="FQF-QN-Ewm"/>
+                            <constraint firstItem="hq8-ao-Ftp" firstAttribute="bottom" secondItem="ykQ-6m-1F6" secondAttribute="bottom" constant="100" id="OOj-ml-BLL"/>
+                            <constraint firstItem="I6r-6Y-p0v" firstAttribute="centerY" secondItem="ykQ-6m-1F6" secondAttribute="centerY" constant="-40" id="RTr-09-Sqk"/>
+                            <constraint firstItem="hq8-ao-Ftp" firstAttribute="trailing" secondItem="I6r-6Y-p0v" secondAttribute="trailing" constant="30" id="ZcP-Sz-m0L"/>
+                            <constraint firstItem="ykQ-6m-1F6" firstAttribute="top" secondItem="hq8-ao-Ftp" secondAttribute="top" constant="100" id="bk3-5M-BhY"/>
+                            <constraint firstItem="I6r-6Y-p0v" firstAttribute="leading" secondItem="U3r-oO-0z6" secondAttribute="leading" constant="30" id="p1W-Uu-HJz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hq8-ao-Ftp"/>
                     </view>
                     <connections>
                         <outlet property="email" destination="poL-0p-TzW" id="ILG-5l-l5W"/>
+                        <segue destination="HZf-Ix-zUZ" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLoginViewController:" id="WOD-Bx-HMz"/>
+                        <segue destination="HZf-Ix-zUZ" kind="unwind" identifier="unwindToResetPassword" unwindAction="unwindToResetPasswordViewController:" id="x4E-Zs-00v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xi5-TF-SkB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="HZf-Ix-zUZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3879.375" y="3341.1971830985917"/>
+            <point key="canvasLocation" x="3116.25" y="2599.6478873239439"/>
         </scene>
         <!--History-->
         <scene sceneID="DUB-fC-QUG">
@@ -3664,9 +3650,9 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dS-tt-NP5">
                                                 <rect key="frame" x="0.0" y="76" width="280" height="184"/>
-                                                <mutableString key="text">Please read this End-User License Agreement ("Agreement") carefully.
+                                                <string key="text">Please read this End-User License Agreement ("Agreement") carefully.
 
-This End User License Agreement (“Agreement”) is between you, as an induvial or entity (“End User”, “User” or “You”) and Sand Challenge Lda (“The Company”) and governs use of this Application made available through the Apple App Store and Google Play Store. By installing the (“Application”) Access Algarve, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Access Algarve App.</mutableString>
+This End User License Agreement (“Agreement”) is between you, as an induvial or entity (“End User”, “User” or “You”) and Sand Challenge Lda (“The Company”) and governs use of this Application made available through the Apple App Store and Google Play Store. By installing the (“Application”) Access Algarve, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Access Algarve App.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3725,7 +3711,7 @@ Delete, remove, copy, alter, decode or obscure trademarks or copyrights, intelle
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44B-r9-2i0">
                                                 <rect key="frame" x="0.0" y="760.5" width="280" height="171"/>
-                                                <mutableString key="text">4.1 You acknowledge and agree that the Application is provided under license, and not sold to you. You do not acquire any ownership interest in the Application under this Agreement, or any other rights thereto other than to use the Application in accordance with the license granted, and subject to all terms, conditions and restrictions, under this Agreement. The Company reserves and shall retain its entire right, title and interest in and to the Application, including all copyrights, trademarks and other intellectual property rights therein or relating thereto, except as expressly granted to you in this Agreement</mutableString>
+                                                <string key="text">4.1 You acknowledge and agree that the Application is provided under license, and not sold to you. You do not acquire any ownership interest in the Application under this Agreement, or any other rights thereto other than to use the Application in accordance with the license granted, and subject to all terms, conditions and restrictions, under this Agreement. The Company reserves and shall retain its entire right, title and interest in and to the Application, including all copyrights, trademarks and other intellectual property rights therein or relating thereto, except as expressly granted to you in this Agreement</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3738,8 +3724,8 @@ Delete, remove, copy, alter, decode or obscure trademarks or copyrights, intelle
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DB-Lk-fMx">
                                                 <rect key="frame" x="0.0" y="977.5" width="280" height="328.5"/>
-                                                <mutableString key="text">5.1 While using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally, identifiable information may include, but is not limited to your name, email, phone number, ("Personal Information"). We will never share your personal data and information with third parties without your consent.
-5.2 You recognise that when you download, install or use the Application, the Company may use automatic means (including, for example, cookies and web beacons) to collect information about your Mobile Device and about your use of the Application. You may also need to provide personal information to setup a profile to use certain features and enter restricted features or functionality of the Application. The Application may provide you with opportunities to share information about yourself with others. All information we collect through or in connection with this Application is subject to our Privacy Policy. By downloading, installing, using and providing information to or through this Application, you consent to all actions taken by us with respect to your information in compliance with the Privacy Policy.</mutableString>
+                                                <string key="text">5.1 While using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally, identifiable information may include, but is not limited to your name, email, phone number, ("Personal Information"). We will never share your personal data and information with third parties without your consent.
+5.2 You recognise that when you download, install or use the Application, the Company may use automatic means (including, for example, cookies and web beacons) to collect information about your Mobile Device and about your use of the Application. You may also need to provide personal information to setup a profile to use certain features and enter restricted features or functionality of the Application. The Application may provide you with opportunities to share information about yourself with others. All information we collect through or in connection with this Application is subject to our Privacy Policy. By downloading, installing, using and providing information to or through this Application, you consent to all actions taken by us with respect to your information in compliance with the Privacy Policy.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3752,8 +3738,8 @@ Delete, remove, copy, alter, decode or obscure trademarks or copyrights, intelle
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKD-mf-lDB">
                                                 <rect key="frame" x="0.0" y="1339" width="280" height="158"/>
-                                                <mutableString key="text">6.1 The Application may provide you with links to the Company's website sited at http//:www.accessalgarve.com (the "Website"). Your access to and use of such Content and Services are dictated by the Company’s Terms of Use and Privacy Policy agreements, which are each incorporated herein by this reference. 
-6.2 By opening and using such Content and Services you acknowledge your acceptance of such Terms of Use and Privacy Policy. Any violation of such Terms of Use will also be deemed a violation of this Agreement.</mutableString>
+                                                <string key="text">6.1 The Application may provide you with links to the Company's website sited at http//:www.accessalgarve.com (the "Website"). Your access to and use of such Content and Services are dictated by the Company’s Terms of Use and Privacy Policy agreements, which are each incorporated herein by this reference. 
+6.2 By opening and using such Content and Services you acknowledge your acceptance of such Terms of Use and Privacy Policy. Any violation of such Terms of Use will also be deemed a violation of this Agreement.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3766,10 +3752,10 @@ Delete, remove, copy, alter, decode or obscure trademarks or copyrights, intelle
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7i-lM-cVq">
                                                 <rect key="frame" x="0.0" y="1530" width="280" height="302"/>
-                                                <mutableString key="text">7.1 It is the sole right of the Company from time to time to provide changes and updates to the application, these may include bug fixes, performance improvement, design or layout changes, patches or error correction.
+                                                <string key="text">7.1 It is the sole right of the Company from time to time to provide changes and updates to the application, these may include bug fixes, performance improvement, design or layout changes, patches or error correction.
 7.2 The company may also remove or change features and functionality to the Applications at its own will and discretion.
 7.3 You agree that the company has no obligation to provide any updates or to continue to provide or enable any particular features or functionality. Based on your mobile device settings, when your mobile device is connected to the internet either: (a) the application will automatically download and install all available updates; or (b) you may receive notice of or be prompted to download and install available updates. You should promptly download and install all updates, and acknowledge and agree that the application or portions thereof may not properly operate should you fail to do so.
-7.4 You further agree that all updates will be judged as part of the application and be subject to all terms and conditions of this agreement.</mutableString>
+7.4 You further agree that all updates will be judged as part of the application and be subject to all terms and conditions of this agreement.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3782,7 +3768,7 @@ Delete, remove, copy, alter, decode or obscure trademarks or copyrights, intelle
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuC-0i-0yE">
                                                 <rect key="frame" x="0.0" y="1865" width="280" height="131.5"/>
-                                                <mutableString key="text">8.1 The application has features, functions and may display material provided by third parties, any and all information or material provided is deemed for the user’s convenience however the user will access them at their own risk and are subject to third party Terms of Use. Material displayed may include data, information, products, services or links to third party websites. The Company does not assume liability or responsibility for the accuracy validity, decency or other aspects of the third-party material.</mutableString>
+                                                <string key="text">8.1 The application has features, functions and may display material provided by third parties, any and all information or material provided is deemed for the user’s convenience however the user will access them at their own risk and are subject to third party Terms of Use. Material displayed may include data, information, products, services or links to third party websites. The Company does not assume liability or responsibility for the accuracy validity, decency or other aspects of the third-party material.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3795,14 +3781,14 @@ Delete, remove, copy, alter, decode or obscure trademarks or copyrights, intelle
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcV-cB-2XK">
                                                 <rect key="frame" x="0.0" y="2029.5" width="280" height="354.5"/>
-                                                <mutableString key="text">9.1 The term of the Agreement commences when you download the Application and will continue in effect until terminated by you or the Company
+                                                <string key="text">9.1 The term of the Agreement commences when you download the Application and will continue in effect until terminated by you or the Company
 9.1 We reserve the right to terminate or suspend your user account and/or the services at any time without assigning any reason.
 9.2 Without prejudice to the generality of the foregoing, we reserve the right to terminate or suspend your use of the services if:
 (a) there is abuse or misuse of the services by you; (b) if you violate any of the terms and conditions of this Agreement.
 9.3 We shall not be liable to you or to any other party for any damages, losses, cost or expenses howsoever caused by or arising out of such termination or suspension.
 9.4 There will be no refund to any kind on termination and you agree to waive all rights to claim or request of such refund.
 9.5 You may terminate this Agreement by uninstalling and deleting all data and Applications relation to the Company.
-9.6 Your termination of this agreement does not release your liability or responsibility which may have occurred prior to termination of this agreement, including but not limited to your requirement to pay any outstanding charges</mutableString>
+9.6 Your termination of this agreement does not release your liability or responsibility which may have occurred prior to termination of this agreement, including but not limited to your requirement to pay any outstanding charges</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3815,7 +3801,7 @@ Delete, remove, copy, alter, decode or obscure trademarks or copyrights, intelle
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOq-l2-UjG">
                                                 <rect key="frame" x="0.0" y="2417" width="290" height="315.5"/>
-                                                <mutableString key="text">10.1 The application is provided to licensee "as is" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the company, on its own behalf and on behalf of its affiliates and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the application, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the company provides no warranty or undertaking, and makes no representation of any kind that the application will meet your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected. Some jurisdictions do not allow the exclusion of, or limitations on implied warranties or the limitations on the applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to you</mutableString>
+                                                <string key="text">10.1 The application is provided to licensee "as is" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the company, on its own behalf and on behalf of its affiliates and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the application, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the company provides no warranty or undertaking, and makes no representation of any kind that the application will meet your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected. Some jurisdictions do not allow the exclusion of, or limitations on implied warranties or the limitations on the applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to you</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3828,7 +3814,7 @@ Delete, remove, copy, alter, decode or obscure trademarks or copyrights, intelle
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zs-jF-gZE">
                                                 <rect key="frame" x="0.0" y="2765.5" width="280" height="276"/>
-                                                <mutableString key="text">11.1 To the fullest extent permitted by applicable law, in no event will the company or its affiliates, or any of its or their respective licensors or service providers, have any liability arising from or related to your use of, or inability to use the application or the content and services for: (a) personal injury, property damage, lost profits, cost of substitute goods or services, loss of data, loss of goodwill, business interruption, computer failure or malfunction or any other consequential, incidental, indirect, exemplary, special or punitive damages (b) direct damages in amounts that in the aggregate exceed the amount actually paid by you for the application. The foregoing limitations will apply whether such damages arise out of breach of contract, tort (including negligence) or otherwise and regardless of whether such damages were foreseeable or the company was advised of the possibility of such damages. Some jurisdictions do not allow certain limitations of liability so some or all of the above limitations of liability may not apply to you.</mutableString>
+                                                <string key="text">11.1 To the fullest extent permitted by applicable law, in no event will the company or its affiliates, or any of its or their respective licensors or service providers, have any liability arising from or related to your use of, or inability to use the application or the content and services for: (a) personal injury, property damage, lost profits, cost of substitute goods or services, loss of data, loss of goodwill, business interruption, computer failure or malfunction or any other consequential, incidental, indirect, exemplary, special or punitive damages (b) direct damages in amounts that in the aggregate exceed the amount actually paid by you for the application. The foregoing limitations will apply whether such damages arise out of breach of contract, tort (including negligence) or otherwise and regardless of whether such damages were foreseeable or the company was advised of the possibility of such damages. Some jurisdictions do not allow certain limitations of liability so some or all of the above limitations of liability may not apply to you.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -4241,79 +4227,64 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <!--Reset Password-->
         <scene sceneID="8tc-i3-STC">
             <objects>
-                <viewController id="eP2-YS-KuJ" userLabel="Reset Password" sceneMemberID="viewController">
+                <viewController id="eP2-YS-KuJ" userLabel="Reset Password" customClass="ResetPasswordViewController" customModule="Access_Algarve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4RU-kR-Zvx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLW-xA-470">
-                                <rect key="frame" x="26" y="23" width="12" height="22"/>
+                                <rect key="frame" x="10" y="37" width="42" height="22"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <state key="normal" image="back"/>
                                 <connections>
                                     <segue destination="Jyi-BD-Qia" kind="unwind" unwindAction="unwindToSettingsViewController:" id="PZi-W8-vZ6"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CD8-q7-ePa">
-                                <rect key="frame" x="-19" y="22" width="339" height="23"/>
+                                <rect key="frame" x="75" y="40" width="170" height="18"/>
                                 <fontDescription key="fontDescription" name="SinkinSans-500Medium" family="Sinkin Sans" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCS-DL-np1">
-                                <rect key="frame" x="149" y="53" width="171" height="59"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2FD-wI-CXe">
+                                <rect key="frame" x="0.0" y="88" width="320" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYo-XZ-uxQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
+                                        <state key="normal" title="Button" image="cancel-button"/>
+                                        <connections>
+                                            <segue destination="Jyi-BD-Qia" kind="unwind" unwindAction="unwindToSettingsViewController:" id="Q5O-iK-Env"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hU-0e-PbH">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="60"/>
+                                        <state key="normal" title="Button" image="update-button"/>
+                                        <connections>
+                                            <action selector="updateButtonClicked:" destination="eP2-YS-KuJ" eventType="touchUpInside" id="pAC-kq-uWJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="171" id="vih-fR-fN2"/>
+                                    <constraint firstItem="IYo-XZ-uxQ" firstAttribute="centerY" secondItem="2FD-wI-CXe" secondAttribute="centerY" id="Dgv-6q-Kgb"/>
+                                    <constraint firstItem="2hU-0e-PbH" firstAttribute="width" secondItem="IYo-XZ-uxQ" secondAttribute="width" id="bXz-Ox-zri"/>
+                                    <constraint firstItem="2hU-0e-PbH" firstAttribute="centerY" secondItem="2FD-wI-CXe" secondAttribute="centerY" id="iOf-zT-Exc"/>
                                 </constraints>
-                                <state key="normal" image="update-button"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type Current Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYL-Sc-UYO">
-                                <rect key="frame" x="0.0" y="138" width="320" height="21"/>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Current Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q1X-oq-1bU">
+                                <rect key="frame" x="10" y="178" width="300" height="40"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="NXp-Th-hMe"/>
+                                    <constraint firstAttribute="height" constant="40" id="yMi-Z2-CLR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="15"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="promo-code" translatesAutoresizingMaskIntoConstraints="NO" id="X85-8a-DaU">
-                                <rect key="frame" x="12" y="120" width="373" height="126"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type New Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utg-gF-kiB">
-                                <rect key="frame" x="0.0" y="320" width="320" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="L4R-lm-fsw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="promo-code" translatesAutoresizingMaskIntoConstraints="NO" id="n9r-ob-XN9">
-                                <rect key="frame" x="16" y="312" width="369" height="126"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm New Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrb-Bv-eCa">
-                                <rect key="frame" x="104" y="440" width="193.5" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="HDK-T1-ugH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SinkinSans-400Regular" family="Sinkin Sans" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="promo-code" translatesAutoresizingMaskIntoConstraints="NO" id="0Va-AC-HY0">
-                                <rect key="frame" x="16" y="479" width="369" height="33"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXm-ub-x6b">
-                                <rect key="frame" x="0.0" y="52" width="159" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="159" id="YrV-Oa-fvK"/>
-                                </constraints>
-                                <state key="normal" image="cancel-button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
-                                    <segue destination="Jyi-BD-Qia" kind="unwind" unwindAction="unwindToSettingsViewController:" id="eEd-6r-Ask"/>
+                                    <outlet property="delegate" destination="eP2-YS-KuJ" id="z96-Uo-Xhf"/>
                                 </connections>
-                            </button>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGo-KP-EJB">
-                                <rect key="frame" x="0.0" y="230" width="320" height="30"/>
+                                <rect key="frame" x="98.5" y="248" width="123" height="30"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -4326,46 +4297,67 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <segue destination="heK-nI-BIJ" kind="show" id="oDl-ZW-2CD"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pFy-3t-x8h">
+                                <rect key="frame" x="10" y="308" width="300" height="40"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vis-em-6XZ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eP2-YS-KuJ" id="57Q-6E-QzA"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Pa-yZ-LG5">
+                                <rect key="frame" x="10" y="378" width="300" height="40"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LMi-hR-wph"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eP2-YS-KuJ" id="Qx5-SH-wA2"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="X85-8a-DaU" firstAttribute="top" secondItem="JCS-DL-np1" secondAttribute="bottom" constant="8" symbolic="YES" id="0UV-eZ-640"/>
-                            <constraint firstItem="Pec-xf-MpM" firstAttribute="trailing" secondItem="iXm-ub-x6b" secondAttribute="trailing" constant="161" id="3FK-Wg-kbw"/>
-                            <constraint firstItem="iXm-ub-x6b" firstAttribute="leading" secondItem="4RU-kR-Zvx" secondAttribute="leading" id="3Pm-4c-rFK"/>
-                            <constraint firstItem="n9r-ob-XN9" firstAttribute="leading" secondItem="4RU-kR-Zvx" secondAttribute="leadingMargin" id="9Ou-5t-LlR"/>
-                            <constraint firstItem="n9r-ob-XN9" firstAttribute="trailing" secondItem="0Va-AC-HY0" secondAttribute="trailing" id="CvG-9a-PbB"/>
-                            <constraint firstItem="MGo-KP-EJB" firstAttribute="leading" secondItem="utg-gF-kiB" secondAttribute="leading" id="DJa-oI-GZj"/>
-                            <constraint firstItem="lrb-Bv-eCa" firstAttribute="top" secondItem="utg-gF-kiB" secondAttribute="bottom" constant="99" id="DbA-Uc-dni"/>
-                            <constraint firstItem="n9r-ob-XN9" firstAttribute="leading" secondItem="0Va-AC-HY0" secondAttribute="leading" id="FPP-Qc-Vnc"/>
-                            <constraint firstItem="X85-8a-DaU" firstAttribute="trailing" secondItem="n9r-ob-XN9" secondAttribute="trailing" id="GFy-ir-vGh"/>
-                            <constraint firstItem="CYL-Sc-UYO" firstAttribute="trailing" secondItem="MGo-KP-EJB" secondAttribute="trailing" id="H8i-AG-zou"/>
-                            <constraint firstItem="CD8-q7-ePa" firstAttribute="leading" secondItem="4RU-kR-Zvx" secondAttribute="leadingMargin" constant="-35" id="JBq-8N-Mec"/>
-                            <constraint firstItem="CYL-Sc-UYO" firstAttribute="leading" secondItem="MGo-KP-EJB" secondAttribute="leading" id="MiM-3Q-FI5"/>
-                            <constraint firstItem="CD8-q7-ePa" firstAttribute="centerY" secondItem="SLW-xA-470" secondAttribute="centerY" id="N5j-bu-ejU"/>
-                            <constraint firstItem="CD8-q7-ePa" firstAttribute="trailing" secondItem="JCS-DL-np1" secondAttribute="trailing" id="Ool-II-atK"/>
-                            <constraint firstItem="MGo-KP-EJB" firstAttribute="trailing" secondItem="utg-gF-kiB" secondAttribute="trailing" id="UI2-Ms-rDH"/>
-                            <constraint firstItem="n9r-ob-XN9" firstAttribute="top" secondItem="X85-8a-DaU" secondAttribute="bottom" constant="66" id="VDm-ej-qNU"/>
-                            <constraint firstItem="CD8-q7-ePa" firstAttribute="top" secondItem="Pec-xf-MpM" secondAttribute="top" constant="2" id="W3h-Ga-jbY"/>
-                            <constraint firstItem="lrb-Bv-eCa" firstAttribute="centerX" secondItem="0Va-AC-HY0" secondAttribute="centerX" id="ai3-Q7-Kl8"/>
-                            <constraint firstItem="JCS-DL-np1" firstAttribute="leading" secondItem="Pec-xf-MpM" secondAttribute="leading" constant="149" id="cZl-Db-CMA"/>
-                            <constraint firstItem="utg-gF-kiB" firstAttribute="top" secondItem="MGo-KP-EJB" secondAttribute="bottom" constant="60" id="eQH-TK-mWN"/>
-                            <constraint firstItem="MGo-KP-EJB" firstAttribute="top" secondItem="CYL-Sc-UYO" secondAttribute="bottom" constant="71" id="fsw-Bx-zUh"/>
-                            <constraint firstAttribute="trailing" secondItem="CD8-q7-ePa" secondAttribute="trailing" id="g28-bf-k8g"/>
-                            <constraint firstItem="JCS-DL-np1" firstAttribute="top" secondItem="CD8-q7-ePa" secondAttribute="bottom" constant="8" symbolic="YES" id="hfF-0u-c90"/>
-                            <constraint firstItem="0Va-AC-HY0" firstAttribute="top" secondItem="lrb-Bv-eCa" secondAttribute="bottom" constant="18" id="nRl-DL-KuY"/>
-                            <constraint firstItem="SLW-xA-470" firstAttribute="leading" secondItem="Pec-xf-MpM" secondAttribute="leading" constant="26" id="nye-8T-rDR"/>
-                            <constraint firstItem="lrb-Bv-eCa" firstAttribute="top" secondItem="n9r-ob-XN9" secondAttribute="bottom" constant="2" id="r6V-8s-DhW"/>
-                            <constraint firstItem="X85-8a-DaU" firstAttribute="top" secondItem="iXm-ub-x6b" secondAttribute="bottom" constant="8" symbolic="YES" id="s5P-kJ-gMw"/>
-                            <constraint firstItem="n9r-ob-XN9" firstAttribute="top" secondItem="MGo-KP-EJB" secondAttribute="bottom" constant="52" id="tHz-2f-D6C"/>
-                            <constraint firstItem="iXm-ub-x6b" firstAttribute="leading" secondItem="CYL-Sc-UYO" secondAttribute="leading" id="tkn-HO-aKf"/>
-                            <constraint firstItem="X85-8a-DaU" firstAttribute="leading" secondItem="Pec-xf-MpM" secondAttribute="leading" constant="12" id="wvx-pW-NyJ"/>
-                            <constraint firstItem="CYL-Sc-UYO" firstAttribute="top" secondItem="JCS-DL-np1" secondAttribute="bottom" constant="26" id="xVV-ht-0lZ"/>
-                            <constraint firstItem="JCS-DL-np1" firstAttribute="trailing" secondItem="CYL-Sc-UYO" secondAttribute="trailing" id="xlf-9C-z4c"/>
-                            <constraint firstItem="CD8-q7-ePa" firstAttribute="bottom" secondItem="SLW-xA-470" secondAttribute="bottom" id="yA3-AA-Kim"/>
+                            <constraint firstItem="MGo-KP-EJB" firstAttribute="top" secondItem="Q1X-oq-1bU" secondAttribute="bottom" constant="30" id="0fc-aH-l5a"/>
+                            <constraint firstItem="SLW-xA-470" firstAttribute="leading" secondItem="Pec-xf-MpM" secondAttribute="leading" constant="10" id="4Ht-rE-cyA"/>
+                            <constraint firstItem="MGo-KP-EJB" firstAttribute="centerX" secondItem="4RU-kR-Zvx" secondAttribute="centerX" id="4IN-Uu-j95"/>
+                            <constraint firstItem="pFy-3t-x8h" firstAttribute="top" secondItem="MGo-KP-EJB" secondAttribute="bottom" constant="30" id="6IH-8e-Qao"/>
+                            <constraint firstItem="Pec-xf-MpM" firstAttribute="trailing" secondItem="pFy-3t-x8h" secondAttribute="trailing" constant="10" id="F6s-qg-J16"/>
+                            <constraint firstItem="2FD-wI-CXe" firstAttribute="leading" secondItem="Pec-xf-MpM" secondAttribute="leading" id="Izo-TS-0iQ"/>
+                            <constraint firstItem="Pec-xf-MpM" firstAttribute="trailing" secondItem="6Pa-yZ-LG5" secondAttribute="trailing" constant="10" id="Jwn-LG-PW8"/>
+                            <constraint firstItem="2FD-wI-CXe" firstAttribute="centerX" secondItem="4RU-kR-Zvx" secondAttribute="centerX" id="KKF-iv-XXe"/>
+                            <constraint firstItem="Q1X-oq-1bU" firstAttribute="top" secondItem="2FD-wI-CXe" secondAttribute="bottom" constant="30" id="M6d-Fb-4sp"/>
+                            <constraint firstItem="6Pa-yZ-LG5" firstAttribute="top" secondItem="pFy-3t-x8h" secondAttribute="bottom" constant="30" id="Mi1-cs-3Sq"/>
+                            <constraint firstItem="Q1X-oq-1bU" firstAttribute="leading" secondItem="Pec-xf-MpM" secondAttribute="leading" constant="10" id="RXV-pm-TRR"/>
+                            <constraint firstItem="6Pa-yZ-LG5" firstAttribute="leading" secondItem="Pec-xf-MpM" secondAttribute="leading" constant="10" id="TrB-bI-IG5"/>
+                            <constraint firstItem="pFy-3t-x8h" firstAttribute="leading" secondItem="Pec-xf-MpM" secondAttribute="leading" constant="10" id="bSw-YE-xIc"/>
+                            <constraint firstItem="2FD-wI-CXe" firstAttribute="top" secondItem="CD8-q7-ePa" secondAttribute="bottom" constant="30" id="lRI-oT-2Eo"/>
+                            <constraint firstItem="CD8-q7-ePa" firstAttribute="centerX" secondItem="4RU-kR-Zvx" secondAttribute="centerX" id="p5l-wa-UxS"/>
+                            <constraint firstItem="2FD-wI-CXe" firstAttribute="trailing" secondItem="Pec-xf-MpM" secondAttribute="trailing" id="qva-Id-gpU"/>
+                            <constraint firstItem="SLW-xA-470" firstAttribute="top" secondItem="Pec-xf-MpM" secondAttribute="top" constant="17" id="rgA-20-Wxf"/>
+                            <constraint firstItem="CD8-q7-ePa" firstAttribute="top" secondItem="Pec-xf-MpM" secondAttribute="top" constant="20" id="uU1-mV-jlw"/>
+                            <constraint firstItem="Pec-xf-MpM" firstAttribute="trailing" secondItem="Q1X-oq-1bU" secondAttribute="trailing" constant="10" id="xxn-xt-1Y0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pec-xf-MpM"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPassword" destination="6Pa-yZ-LG5" id="PXu-nk-rl7"/>
+                        <outlet property="newPassword" destination="pFy-3t-x8h" id="IRt-TE-wt5"/>
+                        <outlet property="oldPassword" destination="Q1X-oq-1bU" id="YJZ-i1-dtB"/>
+                        <segue destination="bJU-h1-1J1" kind="show" identifier="goToLoginSegue" id="C3F-wq-sXV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWY-yx-Hgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Jyi-BD-Qia" userLabel="Exit" sceneMemberID="exit"/>
@@ -5501,7 +5493,7 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <image name="buy-app-image" width="369" height="203"/>
         <image name="buy-button-unselected" width="24" height="24"/>
         <image name="buy-icon" width="36" height="31"/>
-        <image name="cancel-button" width="195" height="60"/>
+        <image name="cancel-button" width="194" height="60"/>
         <image name="cartoon" width="89" height="130"/>
         <image name="confirm-button" width="837" height="161"/>
         <image name="continue-browsing-button" width="364" height="70"/>
@@ -5511,7 +5503,6 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <image name="favourites-heart-icon-unselected" width="63" height="55"/>
         <image name="favourites-icon" width="19" height="17"/>
         <image name="food&amp;drink-button" width="861" height="191"/>
-        <image name="forgot-password-box" width="344" height="410"/>
         <image name="grey-background" width="414" height="79"/>
         <image name="grey-box" width="394" height="60"/>
         <image name="grey-box-arrow-down" width="368" height="33"/>
@@ -5540,7 +5531,6 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <image name="profile-button-unselected" width="24" height="24"/>
         <image name="profile-icon" width="28" height="30"/>
         <image name="profile-image" width="413" height="228"/>
-        <image name="promo-code" width="369" height="33"/>
         <image name="purchase-button" width="411" height="125"/>
         <image name="red-circle" width="9" height="9"/>
         <image name="refine-search-button" width="26" height="26"/>
@@ -5552,7 +5542,7 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <image name="text-bubble" width="286" height="95"/>
         <image name="text-fields" width="368" height="33"/>
         <image name="total-savings" width="875" height="492"/>
-        <image name="update-button" width="194" height="59"/>
+        <image name="update-button" width="198" height="60"/>
         <image name="voucher-box" width="406" height="122"/>
         <image name="vouchers-used" width="43" height="33"/>
         <image name="web-blue" width="137" height="131"/>
@@ -5562,16 +5552,18 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wSE-hp-Ww1"/>
-        <segue reference="biZ-ES-U94"/>
+        <segue reference="X8J-BD-p8G"/>
         <segue reference="kUS-8y-cRe"/>
         <segue reference="ECt-b3-LJ9"/>
         <segue reference="DZM-eP-3Te"/>
-        <segue reference="Zja-Wa-AaG"/>
+        <segue reference="f9U-MS-4Nv"/>
+        <segue reference="OZM-48-sYc"/>
         <segue reference="nz3-f1-fUy"/>
-        <segue reference="s8l-jI-1v0"/>
+        <segue reference="NH6-1x-PTI"/>
         <segue reference="nll-vr-fzY"/>
+        <segue reference="C3F-wq-sXV"/>
         <segue reference="wI1-2C-MP6"/>
         <segue reference="bhB-Co-xUU"/>
-        <segue reference="peR-1u-djb"/>
+        <segue reference="dnG-iW-dBU"/>
     </inferredMetricsTieBreakers>
 </document>

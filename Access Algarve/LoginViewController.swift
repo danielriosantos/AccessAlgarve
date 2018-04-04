@@ -45,7 +45,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         fbLoginButton.delegate = self
         self.view.addSubview(fbLoginButton)
-        fbLoginButton.frame = CGRect(x: 0, y: loginButton.frame.origin.y + loginButton.frame.height + 30, width: 190, height: 35)
+        fbLoginButton.frame = CGRect(x: 0, y: loginButton.frame.origin.y + loginButton.frame.height + 5, width: 190, height: 35)
         fbLoginButton.center.x = self.view.center.x
         
     }
@@ -132,6 +132,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         if segue.identifier == "licenseSegue" {
             guard let licenseViewController = segue.destination as? LicenseViewController else {return}
             licenseViewController.previousVC = "login"
+        } else if segue.identifier == "showForgotPassword" {
+            guard let forgotPasswordViewController = segue.destination as? ForgotPasswordViewController else {return}
+            forgotPasswordViewController.previousVC = "login"
         }
     }
     

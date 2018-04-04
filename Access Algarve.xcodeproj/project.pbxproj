@@ -22,6 +22,7 @@
 		BF75159F204E497A003591C0 /* DatabaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75159E204E497A003591C0 /* DatabaseExtension.swift */; };
 		BF7515A5204F127C003591C0 /* OutletDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7515A4204F127C003591C0 /* OutletDetailsViewController.swift */; };
 		BF79C2C02074BD8500967A44 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF79C2BF2074BD8500967A44 /* LicenseViewController.swift */; };
+		BF79C2C320750D5000967A44 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF79C2C220750D4F00967A44 /* ResetPasswordViewController.swift */; };
 		BF834FA1206AAB4B00A1556D /* PurchaseHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF834FA0206AAB4B00A1556D /* PurchaseHistoryTableViewCell.swift */; };
 		BF834FA3206AAC8C00A1556D /* PurchaseHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF834FA2206AAC8C00A1556D /* PurchaseHistoryViewController.swift */; };
 		BF837076205E13A9003B8D21 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF837075205E13A9003B8D21 /* SettingsViewController.swift */; };
@@ -105,6 +106,7 @@
 		BF75159E204E497A003591C0 /* DatabaseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseExtension.swift; sourceTree = "<group>"; };
 		BF7515A4204F127C003591C0 /* OutletDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletDetailsViewController.swift; sourceTree = "<group>"; };
 		BF79C2BF2074BD8500967A44 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		BF79C2C220750D4F00967A44 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		BF834FA0206AAB4B00A1556D /* PurchaseHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		BF834FA2206AAC8C00A1556D /* PurchaseHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryViewController.swift; sourceTree = "<group>"; };
 		BF837075205E13A9003B8D21 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				BFCAD90F206A0518004F6742 /* UsedOffersViewController.swift */,
 				BF834FA2206AAC8C00A1556D /* PurchaseHistoryViewController.swift */,
 				BF85BB93206401540089A9ED /* ForgotPasswordViewController.swift */,
+				BF79C2C220750D4F00967A44 /* ResetPasswordViewController.swift */,
 				BFC2E58F206766F50031836C /* FavouritesViewController.swift */,
 				BF85BB99206440530089A9ED /* CartViewController.swift */,
 				BF0FCB99206F3E4F00B938F4 /* CartDetailsViewController.swift */,
@@ -537,6 +540,7 @@
 				659AC37B2067F81200C3535B /* NotificationsViewController.swift in Sources */,
 				BF75159F204E497A003591C0 /* DatabaseExtension.swift in Sources */,
 				BF834FA3206AAC8C00A1556D /* PurchaseHistoryViewController.swift in Sources */,
+				BF79C2C320750D5000967A44 /* ResetPasswordViewController.swift in Sources */,
 				BFDC2B1C20697FF400F22300 /* SearchResultsViewController.swift in Sources */,
 				BF85BB9A206440530089A9ED /* CartViewController.swift in Sources */,
 				BF32B63A206C3A670054E5C2 /* AmenityCollectionViewCell.swift in Sources */,
@@ -729,11 +733,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 62DFZMQT4A;
+				DEVELOPMENT_TEAM = QRRQ5K2G32;
 				INFOPLIST_FILE = "$(SRCROOT)/Access Algarve/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.danielriosantos.AccessAlgarve;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.creation-media.accessalgarve";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -746,11 +750,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 62DFZMQT4A;
+				DEVELOPMENT_TEAM = QRRQ5K2G32;
 				INFOPLIST_FILE = "$(SRCROOT)/Access Algarve/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.danielriosantos.AccessAlgarve;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.creation-media.accessalgarve";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
