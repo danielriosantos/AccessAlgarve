@@ -31,25 +31,8 @@ class ProfileSettingsViewController: UIViewController, UITextFieldDelegate, UIPi
     
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // Try to find next responder
-//        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
-//            nextField.becomeFirstResponder()
-//        } else {
-//            // Not found, so remove keyboard.
-//            textField.resignFirstResponder()
-//        }
-        
         textField.resignFirstResponder()
-        //self.view.endEditing(true)
-        
-        // Do not add a line break
         return false
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        self.datePickerView.isHidden = true
-        self.countryPickerView.isHidden = true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -71,8 +54,12 @@ class ProfileSettingsViewController: UIViewController, UITextFieldDelegate, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.countryPicker.delegate = self
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboards))
+        
+        view.addGestureRecognizer(tap)
+        
         self.countryPicker.dataSource = self
+        self.countryPicker.delegate = self
         
         let defaults = UserDefaults.standard
         if let savedUser = defaults.object(forKey: "SavedUser") as? Data {
@@ -101,6 +88,12 @@ class ProfileSettingsViewController: UIViewController, UITextFieldDelegate, UIPi
             }
         }
 
+    }
+    
+    @objc func dismissKeyboards() {
+        self.view.endEditing(true)
+        self.datePickerView.isHidden = true
+        self.countryPickerView.isHidden = true
     }
 
     @IBAction func backButtonClicked(_ sender: UIButton) {
@@ -142,7 +135,7 @@ class ProfileSettingsViewController: UIViewController, UITextFieldDelegate, UIPi
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             let selectedDate = formatter.date(from: self.userBirthday.text!)
-            self.datePicker.date = selectedDate!
+            if selectedDate != nil {self.datePicker.date = selectedDate!}
             self.datePickerView.isHidden = false
         } else if sender.tag == 5 || sender.tag == 6 {
             sender.resignFirstResponder()
@@ -153,7 +146,7 @@ class ProfileSettingsViewController: UIViewController, UITextFieldDelegate, UIPi
                     selectedRow = index
                 }
             }
-            self.countryPicker.selectRow(selectedRow, inComponent: 0, animated: true)
+            if selectedRow != nil {self.countryPicker.selectRow(selectedRow, inComponent: 0, animated: true)}
             self.senderField = sender
             self.countryPickerView.isHidden = false
         }

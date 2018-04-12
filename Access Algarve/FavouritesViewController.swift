@@ -55,9 +55,12 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
                 let coordsArr = coordstring.components(separatedBy: ",")
                 outletLocation = CLLocation(latitude: CLLocationDegrees(coordsArr[0])!, longitude: CLLocationDegrees(coordsArr[1])!)
             }
-            if outletLocation != nil {
+            if outletLocation != nil && self.currentLocation != nil {
                 distance = outletLocation.distance(from: self.currentLocation) / 1000
                 distanceMeters = outletLocation.distance(from: self.currentLocation)
+            } else {
+                distance = 0
+                distanceMeters = 0
             }
             
             if (self.user.favourites[indexPath.row].outlet.merchant != nil) {cell.voucherCompanyLogo.downloadedFrom(link: "https://www.accessalgarve.com/images/logos/\(self.user.favourites[indexPath.row].outlet.merchant.id)-logo.png")}

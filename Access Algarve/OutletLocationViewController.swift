@@ -41,18 +41,20 @@ class OutletLocationViewController: UIViewController, CLLocationManagerDelegate 
         }
         
         //: Show user location and center
-        map.showsUserLocation = true
-        let userLocation = CLLocationCoordinate2DMake(self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude)
-        var outletLocation: CLLocation!
-        var distance: CLLocationDistance = 0
-        if  coordstring != "" {
-            let coordsArr = coordstring.components(separatedBy: ",")
-            outletLocation = CLLocation(latitude: CLLocationDegrees(coordsArr[0])!, longitude: CLLocationDegrees(coordsArr[1])!)
-        }
-        if outletLocation != nil {
-            distance = outletLocation.distance(from: self.currentLocation) * 2.2
-            let viewRegion = MKCoordinateRegionMakeWithDistance(userLocation, distance, distance)
-            map.setRegion(viewRegion, animated: true)
+        if self.currentLocation != nil {
+            map.showsUserLocation = true
+            let userLocation = CLLocationCoordinate2DMake(self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude)
+            var outletLocation: CLLocation!
+            var distance: CLLocationDistance = 0
+            if  coordstring != "" {
+                let coordsArr = coordstring.components(separatedBy: ",")
+                outletLocation = CLLocation(latitude: CLLocationDegrees(coordsArr[0])!, longitude: CLLocationDegrees(coordsArr[1])!)
+            }
+            if outletLocation != nil {
+                distance = outletLocation.distance(from: self.currentLocation) * 2.2
+                let viewRegion = MKCoordinateRegionMakeWithDistance(userLocation, distance, distance)
+                map.setRegion(viewRegion, animated: true)
+            }
         }
         
         

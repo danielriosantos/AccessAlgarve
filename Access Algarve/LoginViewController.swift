@@ -13,10 +13,11 @@ import SwiftyJSON
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
-    @IBOutlet var mainView: UIView!
-    @IBOutlet var email: UITextField!
-    @IBOutlet var password: UITextField!
-    @IBOutlet var loginButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     var user: User!
     
@@ -43,11 +44,19 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboards))
+        
+        view.addGestureRecognizer(tap)
+        
         fbLoginButton.delegate = self
-        self.view.addSubview(fbLoginButton)
+        self.scrollView.addSubview(fbLoginButton)
         fbLoginButton.frame = CGRect(x: 0, y: loginButton.frame.origin.y + loginButton.frame.height + 20, width: 190, height: 35)
         fbLoginButton.center.x = self.view.center.x
         
+    }
+    
+    @objc func dismissKeyboards() {
+        self.view.endEditing(true)
     }
     
     func fetchProfile() {
@@ -56,10 +65,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             (connection, result, error) in
             
             if let error = error {
+                DispatchQueue.main.async {SVProgressHUD.dismiss()}
                 print(error.localizedDescription)
             } else {
                 let json = JSON(result!)
-                print(json)
+                //print(json)
                 let email = json["email"].stringValue
                 
                 //: Check if user exists in database, otherwise create it
@@ -122,10 +132,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             
             
         })
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

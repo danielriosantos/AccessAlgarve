@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class SettingsViewController: UIViewController {
 
@@ -29,6 +30,10 @@ class SettingsViewController: UIViewController {
                     defaults.set(nil, forKey: "SavedUser")
                     let params = ["status": 0]
                     self.putAPIResults(endpoint: "users/" + String(user.id), parameters: params) {_ in}
+                    DispatchQueue.main.async {
+                        let loginManager = FBSDKLoginManager()
+                        loginManager.logOut()
+                    }
                 } catch {
                     print("Problem encoding user")
                 }

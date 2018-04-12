@@ -60,9 +60,12 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
                 let coordsArr = coordstring.components(separatedBy: ",")
                 outletLocation = CLLocation(latitude: CLLocationDegrees(coordsArr[0])!, longitude: CLLocationDegrees(coordsArr[1])!)
             }
-            if outletLocation != nil {
+            if outletLocation != nil && self.currentLocation != nil {
                 distance = outletLocation.distance(from: self.currentLocation) / 1000
                 distanceMeters = outletLocation.distance(from: self.currentLocation)
+            } else {
+                distance = 0
+                distanceMeters = 0
             }
             
             if (self.outlets[indexPath.row].merchant != nil) {cell.voucherCompanyLogo.downloadedFrom(link: "https://www.accessalgarve.com/images/logos/\(self.outlets[indexPath.row].merchant.id)-logo.png")}

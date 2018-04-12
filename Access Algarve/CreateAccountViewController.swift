@@ -14,6 +14,7 @@ import FBSDKLoginKit
 
 class CreateAccountViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, FBSDKLoginButtonDelegate {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var confirmpassword: UITextField!
@@ -58,11 +59,6 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate, UIPick
         return false
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        self.countryPickerView.isHidden = true
-    }
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -83,10 +79,14 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate, UIPick
         
         super.viewDidLoad()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboards))
+        
+        view.addGestureRecognizer(tap)
+        
         self.countryPicker.delegate = self
         self.countryPicker.dataSource = self
         fbLoginButton.delegate = self
-        self.view.addSubview(fbLoginButton)
+        self.scrollView.addSubview(fbLoginButton)
         fbLoginButton.frame = CGRect(x: 0, y: createButton.frame.origin.y + createButton.frame.height + 65, width: 190, height: 35)
         fbLoginButton.center.x = self.view.center.x
         
@@ -103,12 +103,18 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate, UIPick
         
     }
     
+    @objc func dismissKeyboards() {
+        self.view.endEditing(true)
+        self.countryPickerView.isHidden = true
+    }
+    
     func fetchProfile() {
         let params = ["fields": "id, name, email, first_name, last_name, age_range, link, gender, locale, timezone, picture.type(large), updated_time, verified"]
         FBSDKGraphRequest(graphPath: "me", parameters: params).start(completionHandler: {
             (connection, result, error) in
             
             if let error = error {
+                DispatchQueue.main.async {SVProgressHUD.dismiss()}
                 print(error.localizedDescription)
             } else {
                 let json = JSON(result!)

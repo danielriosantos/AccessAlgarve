@@ -9,13 +9,29 @@
 import UIKit
 import SVProgressHUD
 
-class ResetPasswordViewController: UIViewController {
-
+class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
+ 
     @IBOutlet weak var oldPassword: UITextField!
     @IBOutlet weak var newPassword: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
 
     var user: User!
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
