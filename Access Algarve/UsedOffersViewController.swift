@@ -48,6 +48,7 @@ class UsedOffersViewController: UIViewController, UITableViewDelegate, UITableVi
             
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            formatter.locale = Locale(identifier: "UTC")
             let redeemDate = formatter.date(from: self.user.redemptions[indexPath.row].created_at)
             formatter.dateFormat = "dd/MM/yyyy"
             let redeemDateString = formatter.string(from: redeemDate!)

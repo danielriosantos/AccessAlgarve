@@ -20,6 +20,9 @@
 		BF55DE7F2072F9C0007998BD /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = BF55DE7E2072F9C0007998BD /* countries.json */; };
 		BF68C8FE207542D900C1563D /* RulesOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF68C8FD207542D900C1563D /* RulesOfUseViewController.swift */; };
 		BF6AAE7B20726D1F0067F7EA /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6AAE7A20726D1F0067F7EA /* ProfileSettingsViewController.swift */; };
+		BF726B932087822900C38D4A /* MyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF726B8C2087822000C38D4A /* MyAPIClient.swift */; };
+		BF726B952087822900C38D4A /* PaymentContextFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF726B8E2087822500C38D4A /* PaymentContextFooterView.swift */; };
+		BF726B972087822900C38D4A /* CheckoutRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF726B902087822900C38D4A /* CheckoutRowView.swift */; };
 		BF75159F204E497A003591C0 /* DatabaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75159E204E497A003591C0 /* DatabaseExtension.swift */; };
 		BF7515A5204F127C003591C0 /* OutletDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7515A4204F127C003591C0 /* OutletDetailsViewController.swift */; };
 		BF79C2C02074BD8500967A44 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF79C2BF2074BD8500967A44 /* LicenseViewController.swift */; };
@@ -32,6 +35,7 @@
 		BF85BB94206401540089A9ED /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85BB93206401540089A9ED /* ForgotPasswordViewController.swift */; };
 		BF85BB98206422FB0089A9ED /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85BB97206422FB0089A9ED /* UserProfileViewController.swift */; };
 		BF85BB9A206440530089A9ED /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85BB99206440530089A9ED /* CartViewController.swift */; };
+		BFA06ECC20884AE9001E726F /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA06ECB20884AE8001E726F /* Buttons.swift */; };
 		BFA519092060757A0098859B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA519082060757A0098859B /* CreateAccountViewController.swift */; };
 		BFA5190D206175EA0098859B /* LocationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5190C206175EA0098859B /* LocationsTableViewCell.swift */; };
 		BFA5190F2061774E0098859B /* SelectLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5190E2061774E0098859B /* SelectLocationsViewController.swift */; };
@@ -105,6 +109,9 @@
 		BF55DE7E2072F9C0007998BD /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		BF68C8FD207542D900C1563D /* RulesOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesOfUseViewController.swift; sourceTree = "<group>"; };
 		BF6AAE7A20726D1F0067F7EA /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
+		BF726B8C2087822000C38D4A /* MyAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAPIClient.swift; sourceTree = "<group>"; };
+		BF726B8E2087822500C38D4A /* PaymentContextFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentContextFooterView.swift; sourceTree = "<group>"; };
+		BF726B902087822900C38D4A /* CheckoutRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutRowView.swift; sourceTree = "<group>"; };
 		BF75159E204E497A003591C0 /* DatabaseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseExtension.swift; sourceTree = "<group>"; };
 		BF7515A4204F127C003591C0 /* OutletDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutletDetailsViewController.swift; sourceTree = "<group>"; };
 		BF79C2BF2074BD8500967A44 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +124,7 @@
 		BF85BB93206401540089A9ED /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		BF85BB97206422FB0089A9ED /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		BF85BB99206440530089A9ED /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		BFA06ECB20884AE8001E726F /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		BFA519082060757A0098859B /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		BFA5190C206175EA0098859B /* LocationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewCell.swift; sourceTree = "<group>"; };
 		BFA5190E2061774E0098859B /* SelectLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationsViewController.swift; sourceTree = "<group>"; };
@@ -188,9 +196,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF726B892087820500C38D4A /* Stripe */ = {
+			isa = PBXGroup;
+			children = (
+				BFA06ECB20884AE8001E726F /* Buttons.swift */,
+				BF726B902087822900C38D4A /* CheckoutRowView.swift */,
+				BF726B8C2087822000C38D4A /* MyAPIClient.swift */,
+				BF726B8E2087822500C38D4A /* PaymentContextFooterView.swift */,
+			);
+			path = Stripe;
+			sourceTree = "<group>";
+		};
 		BFB7FBC7204832BC000522E8 = {
 			isa = PBXGroup;
 			children = (
+				BF726B892087820500C38D4A /* Stripe */,
 				BFB7FC0720483BEF000522E8 /* Fonts */,
 				BFB7FBD2204832BC000522E8 /* Access Algarve */,
 				BFB7FBD1204832BC000522E8 /* Products */,
@@ -471,21 +491,25 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Access Algarve/Pods-Access Algarve-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyXMLParser.framework",
 			);
@@ -553,11 +577,14 @@
 				BFB7FBD6204832BC000522E8 /* ViewController.swift in Sources */,
 				BF6AAE7B20726D1F0067F7EA /* ProfileSettingsViewController.swift in Sources */,
 				BFB7FC3520490101000522E8 /* OutletsViewController.swift in Sources */,
+				BF726B932087822900C38D4A /* MyAPIClient.swift in Sources */,
 				BFA5190D206175EA0098859B /* LocationsTableViewCell.swift in Sources */,
+				BFA06ECC20884AE9001E726F /* Buttons.swift in Sources */,
 				BF85BB94206401540089A9ED /* ForgotPasswordViewController.swift in Sources */,
 				BFA5190F2061774E0098859B /* SelectLocationsViewController.swift in Sources */,
 				BF837076205E13A9003B8D21 /* SettingsViewController.swift in Sources */,
 				BFB7FBD4204832BC000522E8 /* AppDelegate.swift in Sources */,
+				BF726B972087822900C38D4A /* CheckoutRowView.swift in Sources */,
 				BFB7FC2F204895ED000522E8 /* ViewControllerTableViewCell.swift in Sources */,
 				BF834FA1206AAB4B00A1556D /* PurchaseHistoryTableViewCell.swift in Sources */,
 				BF388F7C205783F400117674 /* RedeemViewController.swift in Sources */,
@@ -567,6 +594,7 @@
 				BF32B63C206C64B00054E5C2 /* OutletsLocationViewController.swift in Sources */,
 				BFF62642205B8FD8000F9CAE /* OutletLocationViewController.swift in Sources */,
 				BFF6263E205AFBF7000F9CAE /* RedeemSuccessViewController.swift in Sources */,
+				BF726B952087822900C38D4A /* PaymentContextFooterView.swift in Sources */,
 				BF388F802057BBDD00117674 /* RedeemPinOutletViewController.swift in Sources */,
 				BFFA8956205C592100FC55B2 /* Extensions.swift in Sources */,
 				659AC37F2068119300C3535B /* NotificationsTableViewCell.swift in Sources */,

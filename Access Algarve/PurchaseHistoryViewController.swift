@@ -27,12 +27,14 @@ class PurchaseHistoryViewController: UIViewController, UITableViewDelegate, UITa
             
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            formatter.locale = Locale(identifier: "UTC")
             let expiryDate = formatter.date(from: self.user.subscriptions[indexPath.row].end_date)
             formatter.dateFormat = "dd MMM yyyy"
             let expiryDateString = formatter.string(from: expiryDate!)
             cell.productExpiry.text = "All vouchers are valid until " + expiryDateString
             
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            formatter.locale = Locale(identifier: "UTC")
             let purchaseDate = formatter.date(from: self.user.subscriptions[indexPath.row].created_at)
             formatter.dateFormat = "dd/MM/yyyy"
             let purchaseDateString = formatter.string(from: purchaseDate!)

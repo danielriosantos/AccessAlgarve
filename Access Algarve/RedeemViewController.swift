@@ -67,6 +67,7 @@ class RedeemViewController: UIViewController {
         savings.text = "Savings: €" + offer.max_savings
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.locale = Locale(identifier: "UTC")
         let validDate = formatter.date(from: offer.end_date)
         formatter.dateFormat = "dd MMM yyyy"
         let validDateString = formatter.string(from: validDate!)

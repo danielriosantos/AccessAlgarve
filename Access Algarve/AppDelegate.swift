@@ -9,6 +9,7 @@
 import UIKit
 import SVProgressHUD
 import FBSDKCoreKit
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         SVProgressHUD.setDefaultMaskType(.black)
+        
+        STPPaymentConfiguration.shared().publishableKey = "pk_live_ctsrbf9HQeu6BsvjpRlqxeUg"
+        STPPaymentConfiguration.shared().companyName = "Access Algarve"
+        STPPaymentConfiguration.shared().canDeletePaymentMethods = true
+        STPPaymentConfiguration.shared().requiredBillingAddressFields = .none
+        STPPaymentConfiguration.shared().requiredShippingAddressFields = .none
+        STPPaymentConfiguration.shared().createCardSources = true
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -51,12 +59,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
+        
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        let stripeHandled = Stripe.handleURLCallback(with: url)
         
-        return handled
+        if (stripeHandled) {
+            return true
+        }
+        else {
+            let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+            
+            return handled
+        }
+        
+        //return false
+    }
+    
+    // This method is where you handle URL opens if you are using univeral link URLs (eg "https://example.comstripe_ios_callback")
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+            if let url = userActivity.webpageURL {
+                let stripeHandled = Stripe.handleURLCallback(with: url)
+                
+                if (stripeHandled) {
+                    return true
+                }
+                else {
+                    // This was not a stripe url, do whatever url handling your app
+                    // normally does, if any.
+                }
+            }
+            
+        }
+        return false
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

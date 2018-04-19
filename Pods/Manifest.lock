@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.7.1)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -12,14 +13,17 @@ PODS:
   - ImageSlideshow (1.5.1):
     - ImageSlideshow/Core (= 1.5.1)
   - ImageSlideshow/Core (1.5.1)
+  - Stripe (12.1.2)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.0.0)
   - SwiftyXMLParser (4.1.0)
 
 DEPENDENCIES:
+  - Alamofire
   - FBSDKCoreKit
   - FBSDKLoginKit
   - ImageSlideshow (~> 1.5)
+  - Stripe
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - SwiftyJSON
   - SwiftyXMLParser (from `https://github.com/yahoojapan/SwiftyXMLParser.git`)
@@ -39,14 +43,16 @@ CHECKOUT OPTIONS:
     :git: https://github.com/yahoojapan/SwiftyXMLParser.git
 
 SPEC CHECKSUMS:
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FBSDKCoreKit: e08ccfcefa7bc1347a07c276dac9bf6c7fe57024
   FBSDKLoginKit: 99797ac39252fef6f72600b886f6ee60b4b29cab
   ImageSlideshow: ae3de479b8c70dc751142d21573f5a28dbb97d4d
+  Stripe: 3230cdf8a8b0c04902e45e86f222fb82a926239c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyXMLParser: b5a79fb8a730903703d0a92d30752a0b05158967
 
-PODFILE CHECKSUM: b0eface704519bcd6ef181612edd23fba59664ab
+PODFILE CHECKSUM: 8e84f001f4671ac1cc1ecf85430f797c54595fbe
 
 COCOAPODS: 1.4.0

@@ -8,6 +8,8 @@ target 'Access Algarve' do
   pod 'ImageSlideshow', '~> 1.5'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
+  pod 'Stripe'
+  pod 'Alamofire'
 end
 
 inhibit_all_warnings!

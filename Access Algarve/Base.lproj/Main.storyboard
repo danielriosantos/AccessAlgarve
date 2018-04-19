@@ -5079,6 +5079,7 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
                         <viewLayoutGuide key="safeArea" id="abX-IW-1Mz"/>
                     </view>
                     <connections>
+                        <outlet property="buyButton" destination="NkF-r7-1fD" id="gKd-MH-jyB"/>
                         <outlet property="cartTotal" destination="q8z-Pl-IdR" id="inu-Sd-uZu"/>
                         <outlet property="productExpiry" destination="ceu-cg-hv4" id="8vV-Bb-4uN"/>
                         <outlet property="productImage" destination="CcP-bL-bz5" id="Tt1-4Q-J6Z"/>
@@ -5634,6 +5635,6 @@ Access Algarve voucher can be redeemed  7 days a week, excluding the below indic
         <segue reference="C3F-wq-sXV"/>
         <segue reference="hCJ-I8-ZZi"/>
         <segue reference="bhB-Co-xUU"/>
-        <segue reference="dnG-iW-dBU"/>
+        <segue reference="42M-dN-nzS"/>
     </inferredMetricsTieBreakers>
 </document>

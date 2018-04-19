@@ -55,7 +55,10 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         locationManager.distanceFilter = 100
         
         //: Initiate loader
-        DispatchQueue.main.async {SVProgressHUD.show(withStatus: "Loading")}
+        DispatchQueue.main.async {
+            self.notificationsTableView.separatorColor = self.invisible
+            SVProgressHUD.show(withStatus: "Loading")
+        }
         
         //: Load first set of results
         loadResults()

@@ -134,6 +134,7 @@ class ProfileSettingsViewController: UIViewController, UITextFieldDelegate, UIPi
             sender.superview?.endEditing(true)
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
+            formatter.locale = Locale(identifier: "UTC")
             let selectedDate = formatter.date(from: self.userBirthday.text!)
             if selectedDate != nil {self.datePicker.date = selectedDate!}
             self.datePickerView.isHidden = false
@@ -160,6 +161,7 @@ class ProfileSettingsViewController: UIViewController, UITextFieldDelegate, UIPi
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
+        formatter.locale = Locale(identifier: "UTC")
         let selectedDateString = formatter.string(from: sender.date)
         self.userBirthday.text = selectedDateString
     }

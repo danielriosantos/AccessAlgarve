@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Stripe
 
 struct Redemption: Codable {
     let id: Int

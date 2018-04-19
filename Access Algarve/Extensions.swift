@@ -44,6 +44,7 @@ extension UIViewController {
         for subscription in forUser.subscriptions {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            formatter.locale = Locale(identifier: "UTC")
             let subscriptionFromDate = formatter.date(from: subscription.start_date)!
             let subscriptionToDate = formatter.date(from: subscription.end_date)!
             if date >= subscriptionFromDate && date <= subscriptionToDate && subscription.status == 1 {validSubscription = true}
@@ -57,6 +58,7 @@ extension UIViewController {
         for subscription in forUser.subscriptions {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            formatter.locale = Locale(identifier: "UTC")
             let subscriptionFromDate = formatter.date(from: subscription.start_date)!
             let subscriptionToDate = formatter.date(from: subscription.end_date)!
             if date >= subscriptionFromDate && date <= subscriptionToDate && subscription.status == 1 {validSubscriptionCounter += 1}

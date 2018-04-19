@@ -73,6 +73,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let segueidentifier = segue.identifier else {return}
         if segueidentifier == "viewProductDetailsSegue" {
+            //let cartDetailsViewController = CartDetailsViewController(product: self.selectedProduct)
+            //self.navigationController?.pushViewController(cartDetailsViewController, animated: true)
             guard let cartDetailsViewController = segue.destination as? CartDetailsViewController else {return}
             cartDetailsViewController.product = self.selectedProduct
         } else if segueidentifier == "showFavourites" {
